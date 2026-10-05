@@ -1,0 +1,16 @@
+﻿.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.vercel/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+__pycache__/
+.venv/
