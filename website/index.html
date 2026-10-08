@@ -1746,6 +1746,45 @@ img{display:block;max-width:100%}
   .swatch-filter-wrap{overflow-x:auto;justify-content:flex-start;padding-bottom:10px;white-space:nowrap;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
 }
 
+/* ============================================================
+   EXACT REFERENCE SLIDING DIAGRAMS (from dev-site bundle)
+   Pure-CSS interactive window/door models — hover to slide.
+   ============================================================ */
+.casement-designs .container{width:100%;max-width:100%;margin:0 auto;padding:0 1rem}
+.animated-window-wrapper{display:flex;flex-direction:column;align-items:center;gap:15px}
+.animated-door-wrapper{display:flex;flex-direction:column;align-items:center;gap:15px}
+.casement-designs .window-model{padding:0}
+.casement-designs .window-frame{height:auto}
+.door-title-text{font-family:Inter,sans-serif;font-size:.85rem;color:#444;font-weight:600;text-align:center;margin-top:12px;text-transform:uppercase;letter-spacing:.5px}
+.door-model{perspective:1400px;cursor:pointer}
+.door-frame{border:8px solid #b0b0b0;background:#e2f4fd;border-radius:6px;display:flex;position:relative;box-shadow:0 15px 35px rgba(0,0,0,.1),inset 0 0 20px rgba(0,0,0,.08);transition:border-color .3s ease,box-shadow .3s ease;overflow:hidden}
+.door-model:hover .door-frame{border-color:#909090;box-shadow:0 20px 45px rgba(13,110,170,.15),inset 0 0 25px rgba(0,0,0,.1)}
+.door-sash{flex:1;border:6px solid #d8d8d8;background:rgba(195,235,255,.45);transition:transform .85s cubic-bezier(.25,1,.5,1);position:relative;box-shadow:inset 0 0 15px rgba(0,0,0,.08),0 0 5px rgba(0,0,0,.05);transform-style:preserve-3d;z-index:2;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.door-sash-hinge-left{transform-origin:left center}
+.door-sash-hinge-right{transform-origin:right center}
+.door-model:hover .door-sash-hinge-left{transform:rotateY(-80deg);box-shadow:5px 0 15px rgba(0,0,0,.15)}
+.door-model:hover .door-sash-hinge-right{transform:rotateY(80deg);box-shadow:-5px 0 15px rgba(0,0,0,.15)}
+.door-model:hover .door-sash-slide-left{transform:translateZ(10px) translate(-85%);z-index:3}
+.door-model:hover .door-sash-slide-right{transform:translateZ(10px) translate(85%);z-index:3}
+.door-divider-vertical{width:7px;background:#b0b0b0;height:100%;z-index:1}
+.door-divider-horizontal{height:7px;background:#b0b0b0;width:100%;z-index:1}
+.door-glass-reflection{position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.65),rgba(255,255,255,0) 60%);pointer-events:none}
+.door-handle{position:absolute;top:55%;display:flex;flex-direction:column;align-items:center;z-index:5;transition:transform .3s ease}
+.door-handle-right{right:10px}
+.door-handle-left{left:10px}
+.door-handle-hidden{display:none}
+.handle-base{width:6px;height:25px;background:#2c3e50;border-radius:2px;box-shadow:1px 1px 3px rgba(0,0,0,.25)}
+.handle-lever{width:16px;height:5px;background:#34495e;border-radius:1px;position:absolute;top:5px;box-shadow:1px 2px 3px rgba(0,0,0,.2)}
+.door-handle-right .handle-lever{right:-8px}
+.door-handle-left .handle-lever{left:-8px}
+.door-fixed{flex:1;border:6px solid #d8d8d8;background:rgba(195,235,255,.3);position:relative;display:flex;align-items:center;justify-content:center;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);box-shadow:inset 0 0 12px rgba(0,0,0,.06)}
+.diamond-divider{display:flex;align-items:center;justify-content:center;gap:15px;margin:20px 0 40px}
+.diamond-divider .line{height:2px;width:60px;background-color:#007bff}
+.diamond-divider .diamond{width:10px;height:10px;background-color:#fff;transform:rotate(45deg)}
+.diamond-divider.dark .diamond{background-color:#fff;border:2px solid #007bff}
+.section-title-center{text-align:center;margin-bottom:60px}
+.section-title-center h2{font-size:2rem;font-weight:300;color:#333;margin-bottom:15px;text-transform:uppercase}
+
 </style>
 </head>
 <body>
@@ -2321,7 +2360,90 @@ function prosDims(data){
 
 function li(x){return '<li>'+x+'</li>'}
 
+/* ============================================================
+   EXACT REFERENCE SLIDING DIAGRAMS (from dev-site bundle)
+   Data-driven pure-CSS window/door models — hover to slide.
+   Pane types: fixed | slide (hinge: left|right)
+   ============================================================ */
+var SLIDING_WINDOW_DESIGNS=[
+  {width:"120px",height:"120px",name:"2-Track 2-Panel",panes:[{type:"slide",hinge:"right"},{type:"slide",hinge:"left"}]},
+  {width:"180px",height:"120px",name:"2-Track 3-Panel",panes:[{type:"slide",hinge:"right"},{type:"fixed"},{type:"slide",hinge:"left"}]},
+  {width:"240px",height:"120px",name:"2-Track 4-Panel",panes:[{type:"fixed"},{type:"slide",hinge:"right"},{type:"slide",hinge:"left"},{type:"fixed"}]},
+  {width:"180px",height:"120px",name:"3-Track 3-Panel",panes:[{type:"slide",hinge:"right"},{type:"slide",hinge:"left"},{type:"slide",hinge:"right"}]},
+  {width:"180px",height:"160px",name:"Sliding with Top Fixed",topPanes:[{type:"fixed"},{type:"fixed"}],panes:[{type:"slide",hinge:"right"},{type:"slide",hinge:"left"}]}
+];
+var SLIDING_DOOR_DESIGNS=[
+  {width:"180px",height:"220px",name:"2-Track 2-Panel (Left Slide)",panes:[{type:"slide",hinge:"left"},{type:"fixed"}]},
+  {width:"180px",height:"220px",name:"2-Track 2-Panel (Right Slide)",panes:[{type:"fixed"},{type:"slide",hinge:"right"}]},
+  {width:"260px",height:"220px",name:"3-Panel Sliding (Center Slide)",panes:[{type:"fixed"},{type:"slide",hinge:"left"},{type:"fixed"}]},
+  {width:"320px",height:"220px",name:"2-Track 4-Panel (Center Opening)",panes:[{type:"fixed"},{type:"slide",hinge:"right"},{type:"slide",hinge:"left"},{type:"fixed"}]}
+];
+function renderSlidingPane(p){
+  if(p.type==="fixed")return '<div class="window-fixed">'+(p.label?'<span class="fixed-label">'+p.label+'</span>':'')+'</div>';
+  var s="",o="handle-pos-right";
+  if(p.type==="slide"){s="sash-slide-"+p.hinge;o=p.hinge==="left"?"handle-pos-right":"handle-pos-left";}
+  else if(p.type==="tilt"){s="sash-tilt-"+p.hinge;o=p.hinge==="left"?"handle-pos-right":"handle-pos-left";}
+  else{s="sash-hinge-"+p.hinge;if(p.hinge==="right")o="handle-pos-left";if(p.hinge==="top")o="handle-pos-bottom";}
+  return '<div class="window-sash '+s+'"><div class="window-handle '+o+'"></div></div>';
+}
+function renderSlidingWindowRow(panes,height){
+  var h='<div class="window-row" style="display:flex;height:'+height+';width:100%">';
+  for(var i=0;i<panes.length;i++){h+=renderSlidingPane(panes[i]);if(i<panes.length-1)h+='<div class="window-divider-vertical"></div>';}
+  return h+'</div>';
+}
+function renderSlidingWindow(d,frameMaterial){
+  var fm=frameMaterial==="aluminium"?" frame-material-aluminium":"";
+  var h='<div class="animated-window-wrapper"><div class="window-model" style="width:'+d.width+';height:'+d.height+'"><div class="window-frame'+fm+'" style="width:100%;height:100%;flex-direction:column">';
+  if(d.topPanes)h+=renderSlidingWindowRow(d.topPanes,"30%")+'<div class="window-divider-horizontal"></div>';
+  h+=renderSlidingWindowRow(d.panes,(d.topPanes&&d.bottomPanes)?"40%":(d.topPanes||d.bottomPanes)?"70%":"100%");
+  if(d.bottomPanes)h+='<div class="window-divider-horizontal"></div>'+renderSlidingWindowRow(d.bottomPanes,"30%");
+  h+='</div></div>';
+  if(d.name)h+='<div style="margin-top:12px;font-size:0.85rem;font-weight:500;color:#555;text-align:center;max-width:'+d.width+'">'+d.name+'</div>';
+  return h+'</div>';
+}
+function renderSlidingDoorPane(p){
+  if(p.type==="fixed")return '<div class="door-fixed">'+(p.label?'<span class="fixed-label">'+p.label+'</span>':'')+'</div>';
+  var o="",u="door-handle-right";
+  if(p.type==="slide"){o="door-sash-slide-"+p.hinge;u=p.hinge==="left"?"door-handle-right":"door-handle-left";}
+  else{o="door-sash-hinge-"+p.hinge;if(p.hinge==="right")u="door-handle-left";}
+  var handle=u!=="door-handle-hidden"?'<div class="door-handle '+u+'"><div class="handle-base"></div><div class="handle-lever"></div></div>':'';
+  return '<div class="door-sash '+o+'"><div class="door-glass-reflection"></div>'+handle+'</div>';
+}
+function renderSlidingDoorRow(panes,height){
+  var h='<div class="door-row" style="display:flex;height:'+height+';width:100%">';
+  for(var i=0;i<panes.length;i++){h+=renderSlidingDoorPane(panes[i]);if(i<panes.length-1)h+='<div class="door-divider-vertical"></div>';}
+  return h+'</div>';
+}
+function renderSlidingDoor(d){
+  var h='<div class="animated-door-wrapper"><div class="door-model" style="width:'+d.width+';height:'+d.height+'"><div class="door-frame" style="width:100%;height:100%;flex-direction:column">';
+  if(d.topPanes)h+=renderSlidingDoorRow(d.topPanes,"25%")+'<div class="door-divider-horizontal"></div>';
+  h+=renderSlidingDoorRow(d.panes,d.topPanes?"75%":"100%");
+  h+='</div></div>';
+  if(d.name)h+='<div class="door-title-text">'+d.name+'</div>';
+  return h+'</div>';
+}
+function renderSlidingSection(title,subtitle,designsHtml){
+  return '<section class="casement-designs" style="background-color:#f9fcfd;padding:80px 0"><div class="container"><div class="section-title-center"><h2>'+title+'</h2><div class="diamond-divider dark"><div class="line"></div><div class="diamond"></div><div class="line"></div></div><p style="text-align:center;color:#666;margin-top:10px;margin-bottom:50px">'+subtitle+'</p></div><div class="designs-grid-wrapper"><div style="display:flex;flex-direction:column;gap:60px;align-items:center;width:100%"><div style="display:flex;gap:30px;flex-wrap:wrap;justify-content:center;align-items:flex-start;width:100%">'+designsHtml+'</div></div></div></div></section>';
+}
+
 function modelSection(data,aluminium){
+  if(data.anim==='slide'){
+    var isDoor=data.kind==='door',title,subtitle,designs;
+    if(isDoor){
+      title='SLIDING UPVC DOORS DESIGNS';
+      subtitle='Hover over the doors to experience how they slide open and close.';
+      designs=SLIDING_DOOR_DESIGNS.map(renderSlidingDoor).join('');
+    }else if(aluminium){
+      title='ALUMINIUM SLIDING DESIGNS';
+      subtitle='Hover over the windows to experience smooth sliding mechanics with brushed-aluminium casings.';
+      designs=SLIDING_WINDOW_DESIGNS.map(function(d){return renderSlidingWindow(d,'aluminium');}).join('');
+    }else{
+      title='SLIDING UPVC WINDOWS DESIGNS';
+      subtitle='Hover over the windows to experience how they slide open.';
+      designs=SLIDING_WINDOW_DESIGNS.map(function(d){return renderSlidingWindow(d);}).join('');
+    }
+    return renderSlidingSection(title,subtitle,designs);
+  }
   var noun=data.kind==='door'?'DOOR':'WINDOW';
   var heading=aluminium?(data.anim==='slide'?'SLIDING ALUMINIUM CONFIGURATIONS':'CASEMENT ALUMINIUM CONFIGURATIONS'):(data.title.replace('INVENTA ','')+(data.title.indexOf('DESIGNS')>-1?'':' DESIGNS'));
   var prompt=data.anim==='slide'?'Click or tap any configuration to see the precision horizontal glide in action.':data.anim==='fold'?'Click or tap to view the staggered concertina multi-panel folding action.':data.anim==='tilt'?'Click any model or toggle modes to test both Tilt (ventilation) and Turn (full opening) mechanics.':'Click or tap any model to test the smooth hinged opening action.';
