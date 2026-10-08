@@ -1,0 +1,394 @@
+/* ==========================================================================
+   EcoTreeSection Styles — Procedural Green Tree Scroll Experience
+   ========================================================================== */
+
+.eco-tree-section-wrapper {
+  position: relative;
+  width: 100%;
+  height: 420vh;
+  background-color: #071a12;
+  margin: 0;
+  padding: 0;
+}
+
+.eco-tree-sticky-viewport {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at 70% 45%, #245f3b 0%, #14532d 38%, #0b2a1c 72%, #071a12 100%);
+  color: #ffffff;
+}
+
+/* Subtle static ambient glow behind canopy */
+.eco-tree-ambient-glow {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, rgba(20, 83, 45, 0.02) 60%, transparent 80%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.eco-tree-container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+/* Left Editorial Story Column */
+.eco-story-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  max-width: 540px;
+  position: relative;
+  z-index: 5;
+}
+
+.eco-eyebrow {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #4ade80;
+  margin-bottom: 24px;
+}
+
+.eco-chapter-deck {
+  position: relative;
+  min-height: 220px;
+}
+
+.eco-chapter-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.eco-chapter-card.active {
+  pointer-events: auto;
+}
+
+.eco-chapter-title {
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.eco-chapter-body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.eco-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 36px 0 28px 0;
+}
+
+/* Sustainability Metric Counters */
+.eco-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.eco-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.eco-metric-number {
+  font-family: 'Outfit', 'Poppins', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #86efac;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.eco-metric-label {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.35;
+}
+
+/* Right Illustration Column */
+.eco-graphic-column {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.eco-svg-tree {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  max-height: 85vh;
+  overflow: visible;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+}
+
+/* Ensure stroke paths do not fill */
+.eco-svg-tree #branches path,
+.eco-svg-tree #roots path {
+  fill: none !important;
+}
+
+/* ==========================================================================
+   CANOPY MICRO-MOTION KEYFRAMES (8 Independent Leaf Groups)
+   Subtle air movement: 1-2px translate, 0.4deg-1.2deg rotate, 6s-10s
+   Trunk, branches, grass, and flowers remain 100% STATIC.
+   ========================================================================== */
+.canopy-sway-0 {
+  transform-origin: 240px 280px;
+  animation: canopySway0 7.2s ease-in-out infinite alternate;
+}
+@keyframes canopySway0 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(1.4px, -1.2px) rotate(0.8deg); }
+}
+
+.canopy-sway-1 {
+  transform-origin: 360px 270px;
+  animation: canopySway1 8.6s ease-in-out infinite alternate;
+}
+@keyframes canopySway1 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(-1.2px, -1.5px) rotate(-0.7deg); }
+}
+
+.canopy-sway-2 {
+  transform-origin: 200px 330px;
+  animation: canopySway2 6.8s ease-in-out infinite alternate;
+}
+@keyframes canopySway2 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(1.5px, -0.8px) rotate(1.1deg); }
+}
+
+.canopy-sway-3 {
+  transform-origin: 400px 320px;
+  animation: canopySway3 9.4s ease-in-out infinite alternate;
+}
+@keyframes canopySway3 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(-1.4px, -1.0px) rotate(-0.9deg); }
+}
+
+.canopy-sway-4 {
+  transform-origin: 300px 220px;
+  animation: canopySway4 7.8s ease-in-out infinite alternate;
+}
+@keyframes canopySway4 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(0.8px, -1.6px) rotate(0.5deg); }
+}
+
+.canopy-sway-5 {
+  transform-origin: 270px 380px;
+  animation: canopySway5 8.2s ease-in-out infinite alternate;
+}
+@keyframes canopySway5 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(1.2px, -0.9px) rotate(0.6deg); }
+}
+
+.canopy-sway-6 {
+  transform-origin: 330px 380px;
+  animation: canopySway6 9.0s ease-in-out infinite alternate;
+}
+@keyframes canopySway6 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(-1.1px, -1.2px) rotate(-0.8deg); }
+}
+
+.canopy-sway-7 {
+  transform-origin: 300px 170px;
+  animation: canopySway7 10.2s ease-in-out infinite alternate;
+}
+@keyframes canopySway7 {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  100% { transform: translate(1.0px, -1.8px) rotate(0.7deg); }
+}
+
+/* ==========================================================================
+   FALLING LEAVES (4 Leaves maximum, drifting softly & fading)
+   ========================================================================== */
+.falling-leaf-item {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.leaf-fall-1 {
+  top: 28%;
+  left: 36%;
+  animation: leafDrift1 10.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes leafDrift1 {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.8); }
+  15% { opacity: 0.85; }
+  80% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(65px, 180px) rotate(140deg) scale(0.7); }
+}
+
+.leaf-fall-2 {
+  top: 24%;
+  left: 64%;
+  animation: leafDrift2 12.0s cubic-bezier(0.4, 0, 0.6, 1) infinite 3.5s;
+}
+@keyframes leafDrift2 {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.85); }
+  15% { opacity: 0.85; }
+  80% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(-55px, 200px) rotate(-160deg) scale(0.75); }
+}
+
+.leaf-fall-3 {
+  top: 35%;
+  left: 48%;
+  animation: leafDrift3 11.0s cubic-bezier(0.4, 0, 0.6, 1) infinite 7.0s;
+}
+@keyframes leafDrift3 {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.9); }
+  15% { opacity: 0.9; }
+  80% { opacity: 0.7; }
+  100% { opacity: 0; transform: translate(45px, 160px) rotate(110deg) scale(0.8); }
+}
+
+.leaf-fall-4 {
+  top: 20%;
+  left: 54%;
+  animation: leafDrift4 13.5s cubic-bezier(0.4, 0, 0.6, 1) infinite 5.2s;
+}
+@keyframes leafDrift4 {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg) scale(0.8); }
+  15% { opacity: 0.8; }
+  80% { opacity: 0.65; }
+  100% { opacity: 0; transform: translate(-40px, 220px) rotate(-130deg) scale(0.7); }
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .eco-tree-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 0 30px;
+  }
+  .eco-chapter-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .eco-tree-section-wrapper {
+    height: 300vh;
+  }
+  .eco-tree-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .eco-story-column {
+    max-width: 100%;
+    align-items: center;
+  }
+  .eco-divider {
+    margin: 20px 0 16px 0;
+  }
+  .eco-metrics-row {
+    justify-content: center;
+  }
+  .eco-svg-tree {
+    max-height: 50vh;
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 576px) {
+  .eco-chapter-title {
+    font-size: 1.7rem;
+  }
+  .eco-chapter-body {
+    font-size: 0.92rem;
+  }
+  .eco-metrics-row {
+    gap: 12px;
+  }
+  .eco-metric-number {
+    font-size: 1.5rem;
+  }
+  .eco-metric-label {
+    font-size: 0.75rem;
+  }
+  .eco-svg-tree {
+    max-height: 42vh;
+    max-width: 320px;
+  }
+}
+
+/* ==========================================================================
+   PREFERS REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .eco-tree-section-wrapper {
+    height: auto !important;
+  }
+  .eco-tree-sticky-viewport {
+    position: relative !important;
+    height: auto !important;
+    padding: 80px 0;
+  }
+  .canopy-sway-0,
+  .canopy-sway-1,
+  .canopy-sway-2,
+  .canopy-sway-3,
+  .canopy-sway-4,
+  .canopy-sway-5,
+  .canopy-sway-6,
+  .canopy-sway-7 {
+    animation: none !important;
+  }
+  .falling-leaf-item {
+    display: none !important;
+  }
+}

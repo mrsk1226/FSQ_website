@@ -1,0 +1,896 @@
+/* ============================================================
+   DESIGN DIAGRAMS COMPONENT STYLES
+   FSQ Dev Website Exact Interactive Geometry & Layout
+   ============================================================ */
+
+.design-diagrams-section {
+  background: #f9fcfd;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.design-diagrams-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.design-section-heading {
+  font-family: Poppins, sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.design-section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0 40px;
+}
+
+.design-divider-line {
+  width: 60px;
+  height: 2px;
+  background: #0d6eaa;
+}
+
+.design-divider-diamond {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #0d6eaa;
+  transform: rotate(45deg);
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.design-section-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 10px 0 50px;
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
+
+/* ============================================================
+   NATURAL-WIDTH FLEX SYSTEM
+   ============================================================ */
+.design-groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+.design-row {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.animated-window-wrapper,
+.animated-door-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+/* ============================================================
+   WINDOW DIAGRAM GEOMETRY & CSS 3D
+   ============================================================ */
+.window-model {
+  perspective: 1200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.window-frame {
+  border: var(--frame-border-width, 6px) solid var(--frame-border-color, #a0a0a0);
+  background: var(--frame-base, #d9f0fa);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-shadow:
+    var(--frame-shadow-val, 2px 2px 10px rgba(0,0,0,.15)),
+    inset 0 0 15px rgba(0,0,0,.1);
+  transition: border-color .45s ease, background-color .45s ease, box-shadow .45s ease;
+  box-sizing: border-box;
+}
+
+.window-model:hover .window-frame,
+.window-model.is-open .window-frame {
+  border-color: var(--frame-border-hover, #888);
+  box-shadow:
+    2px 4px 14px rgba(13,110,170,.18),
+    inset 0 0 15px rgba(0,0,0,.1);
+}
+
+.window-row {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.window-divider-vertical {
+  width: var(--mullion-width, 5px);
+  background: var(--mullion-base, #a0a0a0);
+  height: 100%;
+  flex-shrink: 0;
+  transition: background-color .45s ease;
+}
+
+.window-divider-horizontal {
+  height: var(--mullion-width, 5px);
+  background: var(--mullion-base, #a0a0a0);
+  width: 100%;
+  flex-shrink: 0;
+  transition: background-color .45s ease;
+}
+
+.window-fixed {
+  flex: 1;
+  border: var(--sash-border-width, 4px) solid var(--bead-base, #c0c0c0);
+  background: var(--glass-tint, rgba(180,230,255,.45));
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 10px rgba(0,0,0,.1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  box-sizing: border-box;
+  transition: border-color .45s ease, background-color .45s ease;
+}
+
+.window-fixed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.7),
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.window-sash {
+  flex: 1;
+  border: var(--sash-border-width, 4px) solid var(--sash-border-color, #c0c0c0);
+  background: var(--glass-tint, rgba(180,230,255,.45));
+  position: relative;
+  transform-style: preserve-3d;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+  box-shadow:
+    inset 0 0 10px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.05);
+  transition:
+    transform .9s cubic-bezier(.25,1,.5,1),
+    border-color .45s ease,
+    background-color .45s ease;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.window-sash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.7),
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+/* ============================================================
+   WINDOW HANDLES & HARDWARE
+   ============================================================ */
+.window-handle {
+  position: absolute;
+  width: 4px;
+  height: 22px;
+  background: var(--hw-main, #666);
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 1px 1px 3px rgba(0,0,0,.3);
+  z-index: 5;
+  transition: transform .3s ease, background-color .45s ease;
+}
+
+/* Sliding Touch Lock */
+.sliding-touch-lock {
+  position: absolute;
+  width: 6px;
+  height: 24px;
+  background: linear-gradient(to right, #475569, #1e293b);
+  border-radius: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 1px 1px 3px rgba(0,0,0,.3);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.handle-pos-right { right: 4px; }
+.handle-pos-left  { left: 4px; }
+
+.handle-pos-bottom {
+  bottom: 4px;
+  left: 50%;
+  width: 22px;
+  height: 4px;
+  top: auto;
+  transform: translateX(-50%);
+}
+
+/* ============================================================
+   WINDOW 3D HOVER TRANSFORMS
+   ============================================================ */
+.sash-hinge-left {
+  transform-origin: left center;
+}
+
+.sash-hinge-right {
+  transform-origin: right center;
+}
+
+.sash-hinge-top {
+  transform-origin: top center;
+}
+
+.sash-hinge-bottom {
+  transform-origin: bottom center;
+}
+
+.window-model:hover .sash-hinge-left,
+.window-model.is-open .sash-hinge-left {
+  transform: rotateY(-80deg);
+}
+
+.window-model:hover .sash-hinge-right,
+.window-model.is-open .sash-hinge-right {
+  transform: rotateY(80deg);
+}
+
+.window-model:hover .sash-hinge-top,
+.window-model.is-open .sash-hinge-top {
+  transform: rotateX(60deg);
+}
+
+.window-model:hover .sash-hinge-bottom,
+.window-model.is-open .sash-hinge-bottom {
+  transform: rotateX(-60deg);
+}
+
+.window-model:hover .sash-slide-left,
+.window-model.is-open .sash-slide-left {
+  transform: translateZ(10px) translateX(-85%);
+  z-index: 4;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.12), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.window-model:hover .sash-slide-right,
+.window-model.is-open .sash-slide-right {
+  transform: translateZ(10px) translateX(85%);
+  z-index: 4;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.12), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sash-tilt-left {
+  transform-origin: bottom center;
+}
+
+.window-model:hover .sash-tilt-left,
+.window-model.is-open .sash-tilt-left {
+  transform: rotateX(-15deg) translateZ(10px);
+}
+
+.sash-tilt-right {
+  transform-origin: right center;
+}
+
+.window-model:hover .sash-tilt-right,
+.window-model.is-open .sash-tilt-right {
+  transform: rotateY(75deg);
+}
+
+/* ============================================================
+   CONTROLLED PREVIEW & TILT/TURN ACTION STATES
+   ============================================================ */
+.window-model.is-preview .sash-hinge-left {
+  transform: rotateY(-25deg);
+}
+.window-model.is-preview .sash-hinge-right {
+  transform: rotateY(25deg);
+}
+.window-model.is-preview .sash-hinge-top {
+  transform: rotateX(20deg);
+}
+.window-model.is-preview .sash-hinge-bottom {
+  transform: rotateX(-20deg);
+}
+.window-model.is-preview .sash-slide-left {
+  transform: translateZ(10px) translateX(-25%);
+  z-index: 4;
+}
+.window-model.is-preview .sash-slide-right {
+  transform: translateZ(10px) translateX(25%);
+  z-index: 4;
+}
+.window-model.is-preview .sash-tilt-left {
+  transform: rotateX(-8deg) translateZ(6px);
+}
+.window-model.is-preview .sash-tilt-right {
+  transform: rotateY(25deg);
+}
+
+/* Tilt Action: top swings inward */
+.window-model.is-tilt .sash-tilt-left {
+  transform-origin: bottom center;
+  transform: rotateX(-15deg) translateZ(10px);
+}
+.window-model.is-tilt .sash-tilt-right {
+  transform-origin: bottom center;
+  transform: rotateX(-15deg) translateZ(10px);
+}
+
+/* Turn Action: sash swings inward on side hinge */
+.window-model.is-turn .sash-tilt-left {
+  transform-origin: left center;
+  transform: rotateY(-75deg);
+}
+.window-model.is-turn .sash-tilt-right {
+  transform-origin: right center;
+  transform: rotateY(75deg);
+}
+
+/* ============================================================
+   DOOR DIAGRAM GEOMETRY & CSS 3D
+   ============================================================ */
+.door-model {
+  perspective: 1400px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+
+.door-frame {
+  border: 8px solid #b0b0b0;
+  background: #e2f4fd;
+  border-radius: 6px;
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.1),
+    inset 0 0 20px rgba(0,0,0,.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: border-color .3s ease, box-shadow .3s ease;
+  box-sizing: border-box;
+}
+
+.door-model:hover .door-frame,
+.door-model.is-open .door-frame {
+  border-color: #909090;
+  box-shadow:
+    0 20px 45px rgba(13,110,170,.15),
+    inset 0 0 25px rgba(0,0,0,.1);
+}
+
+.door-row {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.door-sash {
+  flex: 1;
+  border: 6px solid #d8d8d8;
+  background: rgba(195,235,255,.45);
+  transform-style: preserve-3d;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+  position: relative;
+  height: 100%;
+  transition:
+    transform .9s cubic-bezier(.25,1,.5,1);
+  box-sizing: border-box;
+}
+
+.door-sash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.7),
+      transparent 50%
+    );
+  pointer-events: none;
+}
+
+.door-fixed {
+  flex: 1;
+  border: 6px solid #d8d8d8;
+  background: rgba(195,235,255,.3);
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.door-divider-vertical {
+  width: 7px;
+  background: #b0b0b0;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.door-divider-horizontal {
+  height: 7px;
+  background: #b0b0b0;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.door-handle {
+  position: absolute;
+  width: 5px;
+  height: 28px;
+  background: #555;
+  border-radius: 2px;
+  top: 52%;
+  transform: translateY(-50%);
+  box-shadow: 1px 1px 4px rgba(0,0,0,.35);
+  z-index: 5;
+}
+
+/* Door 3D Hover Transforms */
+.door-sash-hinge-left {
+  transform-origin: left center;
+}
+
+.door-sash-hinge-right {
+  transform-origin: right center;
+}
+
+.door-model:hover .door-sash-hinge-left,
+.door-model.is-open .door-sash-hinge-left {
+  transform: rotateY(-80deg);
+}
+
+.door-model:hover .door-sash-hinge-right,
+.door-model.is-open .door-sash-hinge-right {
+  transform: rotateY(80deg);
+}
+
+.door-model:hover .door-sash-slide-left,
+.door-model.is-open .door-sash-slide-left {
+  transform: translateZ(10px) translateX(-85%);
+  z-index: 4;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.12), inset 0 0 12px rgba(0,0,0,0.08);
+}
+
+.door-model:hover .door-sash-slide-right,
+.door-model.is-open .door-sash-slide-right {
+  transform: translateZ(10px) translateX(85%);
+  z-index: 4;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.12), inset 0 0 12px rgba(0,0,0,0.08);
+}
+
+/* Slide & Fold progressive folding */
+.door-sash-fold {
+  transform-origin: left center;
+  transition: transform .9s cubic-bezier(.25,1,.5,1);
+}
+
+.door-model:hover .door-sash-fold-1,
+.door-model.is-open .door-sash-fold-1 {
+  transform: translateX(0) rotateY(-72deg) scaleX(.25);
+}
+
+.door-model:hover .door-sash-fold-2,
+.door-model.is-open .door-sash-fold-2 {
+  transform: translateX(-110%) rotateY(72deg) scaleX(.25);
+}
+
+.door-model:hover .door-sash-fold-3,
+.door-model.is-open .door-sash-fold-3 {
+  transform: translateX(-220%) rotateY(-72deg) scaleX(.25);
+}
+
+.door-model:hover .door-sash-fold-4,
+.door-model.is-open .door-sash-fold-4 {
+  transform: translateX(-330%) rotateY(72deg) scaleX(.25);
+}
+
+/* ============================================================
+   ALUMINIUM MATERIAL VARIANT
+   ============================================================ */
+.frame-material-aluminium {
+  border-color: #7f8c8d !important;
+  background:
+    linear-gradient(
+      135deg,
+      #64748b,
+      #94a3b8 20%,
+      #f8fafc 40%,
+      #f8fafc 45%,
+      #94a3b8 60%,
+      #64748b
+    ) !important;
+  background-size: 200% 200% !important;
+  background-position: 0% 0% !important;
+  box-shadow:
+    0 12px 25px rgba(0,0,0,.12),
+    inset 0 0 10px rgba(255,255,255,.8) !important;
+  transition:
+    background-position .65s cubic-bezier(.25,1,.5,1),
+    border-color .3s ease !important;
+}
+
+.window-model:hover .frame-material-aluminium,
+.door-model:hover .frame-material-aluminium,
+.window-model.is-open .frame-material-aluminium,
+.door-model.is-open .frame-material-aluminium {
+  background-position: 100% 100% !important;
+  border-color: #556263 !important;
+}
+
+.frame-material-aluminium .window-divider-vertical,
+.frame-material-aluminium .window-divider-horizontal,
+.frame-material-aluminium .door-divider-vertical,
+.frame-material-aluminium .door-divider-horizontal {
+  background: #7f8c8d !important;
+}
+
+/* ============================================================
+   DIAGRAM LABEL
+   ============================================================ */
+.diagram-label {
+  margin-top: 12px;
+  font-size: .85rem;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+  line-height: 1.35;
+  font-family: Poppins, sans-serif;
+  word-break: normal;
+  hyphens: manual;
+}
+
+.animated-door-wrapper .diagram-label {
+  font-family: Inter, sans-serif;
+  font-size: .85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #444;
+}
+
+
+/* ============================================================
+   LAMINATE GRID
+   ============================================================ */
+.laminate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  border: 1px solid #eee;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.laminate-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.laminate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.laminate-item:hover .laminate-img {
+  transform: scale(1.05);
+}
+
+.laminate-color-block {
+  width: 100%;
+  height: 100%;
+  transition: transform .4s ease;
+}
+
+.laminate-item:hover .laminate-color-block {
+  transform: scale(1.05);
+}
+
+.laminate-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255,.95);
+  padding: 15px;
+  text-align: center;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #333;
+  transform: translateY(100%);
+  transition: transform .3s cubic-bezier(.4,0,.2,1);
+  font-family: Poppins, sans-serif;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.06);
+}
+
+.laminate-item:hover .laminate-overlay {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+@media (max-width: 900px) {
+  .design-row {
+    gap: 20px;
+  }
+  .design-section-heading {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .design-diagrams-section {
+    padding: 50px 0;
+  }
+  .design-row {
+    gap: 16px;
+  }
+  .design-groups-container {
+    gap: 40px;
+  }
+  .design-section-heading {
+    font-size: 1.35rem;
+  }
+  .design-section-subtitle {
+    font-size: 0.9rem;
+    margin: 10px 0 35px;
+  }
+  .laminate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   STUDIO WINDOW ADAPTER — REALISTIC MATERIAL SKIN
+   Enhances the existing technical geometry with realistic profile
+   depth, extrusion bevels, gasket lines, woodgrain, and glass reflections.
+   Single source of truth for all window kinematics.
+   ============================================================ */
+
+.studio-window-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
+  user-select: none;
+}
+
+.studio-window-stage .window-model {
+  perspective: 1600px;
+  position: relative;
+  margin: 0 auto;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+.studio-window-stage.view-front .window-model {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+.studio-window-stage.view-angle .window-model {
+  transform: rotateY(10deg) rotateX(-2deg);
+}
+
+/* Layered Contact Shadow below the live window */
+.studio-window-stage .window-model::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 6%;
+  right: 6%;
+  height: 24px;
+  background: radial-gradient(ellipse at center, rgba(13, 33, 48, 0.32) 0%, rgba(13, 33, 48, 0.1) 45%, transparent 75%);
+  filter: blur(6px);
+  transform: translateZ(-20px);
+  pointer-events: none;
+}
+
+/* Profile extrusion bevel depth */
+.studio-window-stage .window-frame {
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.14),
+    0 2px 6px rgba(0, 0, 0, 0.08),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+
+/* Continuous EPDM compression gasket */
+.studio-window-stage .window-fixed::before,
+.studio-window-stage .window-sash::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1.5px solid var(--gasket-color, #1e252b);
+  border-radius: 1px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Glass specular light streak (NO CAD/Technical drawing images) */
+.studio-window-stage .window-fixed::after,
+.studio-window-stage .window-sash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    transparent 42%,
+    rgba(255, 255, 255, 0.12) 65%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Studio scaled handles */
+.studio-window-stage .window-handle {
+  width: 6px;
+  height: 36px;
+  background: linear-gradient(135deg, #cbd5e1 0%, #64748b 50%, #334155 100%);
+  border-radius: 2.5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.studio-window-stage .sliding-touch-lock {
+  width: 8px;
+  height: 38px;
+  background: linear-gradient(to right, #475569 0%, #334155 50%, #1e293b 100%);
+  border-radius: 2.5px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), 1px 2px 4px rgba(0,0,0,0.35);
+}
+
+/* --- A. WHITE uPVC MULTI-LIGHTING EXTRUSION SHADER --- */
+.studio-window-stage.finish-white .window-frame {
+  border-color: #d5dad8;
+  background: linear-gradient(135deg, #ffffff 0%, #f6f7f5 50%, #ecefed 100%);
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.12),
+    inset 0 1.5px 0 #ffffff,
+    inset 0 -1.5px 0 #cfd5d2,
+    inset 1.5px 0 0 #ffffff,
+    inset -1.5px 0 0 #d5dad8;
+}
+
+.studio-window-stage.finish-white .window-sash {
+  border-color: #e8ece9;
+  box-shadow:
+    inset 0 1px 0 #ffffff,
+    inset 0 -1px 0 #cfd5d2,
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.studio-window-stage.finish-white .window-fixed {
+  border-color: #cfd5d2;
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.08),
+    inset 0 -1px 0 #ffffff;
+}
+
+.studio-window-stage.finish-white .window-divider-vertical {
+  background: linear-gradient(to right, #ecefed 0%, #ffffff 40%, #f6f7f5 70%, #d5dad8 100%);
+  box-shadow: inset 1px 0 0 #ffffff, inset -1px 0 0 #bec5c2;
+}
+
+.studio-window-stage.finish-white .window-divider-horizontal {
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f7f5 50%, #cfd5d2 100%);
+  box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #bec5c2;
+}
+
+/* --- B. WOODGRAIN PROCEDURAL LAMINATE SHADER --- */
+.studio-window-stage.finish-wood .window-frame {
+  background-color: var(--frame-base, #b27a3c);
+  border-color: var(--frame-shadow, #835522);
+  box-shadow:
+    0 10px 28px rgba(15, 23, 42, 0.2),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.3),
+    inset 0 -1.5px 1px rgba(0, 0, 0, 0.35);
+}
+
+.studio-window-stage.finish-wood .window-sash {
+  border-color: var(--frame-base, #b27a3c);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.studio-window-stage.finish-wood .window-fixed {
+  border-color: var(--frame-shadow, #835522);
+}
+
+.studio-window-stage.finish-wood .window-divider-vertical {
+  background-color: var(--frame-base, #b27a3c);
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.25) 0%, transparent 60%, rgba(0,0,0,0.25) 100%),
+    repeating-linear-gradient(90deg, var(--frame-base, #b27a3c) 0px, var(--frame-grain-dark, #784b1a) 2px, var(--frame-base, #b27a3c) 4px, var(--frame-grain-light, #c98e4b) 6px, var(--frame-base, #b27a3c) 8px);
+}
+
+.studio-window-stage.finish-wood .window-divider-horizontal {
+  background-color: var(--frame-base, #b27a3c);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, transparent 60%, rgba(0,0,0,0.25) 100%),
+    repeating-linear-gradient(0deg, var(--frame-base, #b27a3c) 0px, var(--frame-grain-dark, #784b1a) 2px, var(--frame-base, #b27a3c) 4px, var(--frame-grain-light, #c98e4b) 6px, var(--frame-base, #b27a3c) 8px);
+}
+
+/* --- C. ALUMINIUM ARCHITECTURAL PROFILE SHADER --- */
+.studio-window-stage.material-aluminium .window-frame {
+  border-width: 6px;
+  border-color: var(--frame-shadow, #3a3f45);
+  background: var(--frame-base, #525960);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.studio-window-stage.material-aluminium .window-sash {
+  border-width: 4px;
+  border-color: var(--frame-base, #525960);
+}
+
+.studio-window-stage.material-aluminium .window-fixed {
+  border-width: 4px;
+  border-color: var(--frame-shadow, #3a3f45);
+}

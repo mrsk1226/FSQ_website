@@ -1,0 +1,723 @@
+/* ============================================================
+   REALISTIC WINDOW MODEL — ARCHITECTURAL CSS 3D SYSTEM
+   High-Fidelity Four Square Fenestration 3D Window Renderer
+   ============================================================ */
+
+:root {
+  --fsq-blue: #0d6eaa;
+  --fsq-blue-dark: #0a5a8c;
+  --fsq-navy: #0d2130;
+  --fsq-surface: #f9fcfd;
+
+  /* White uPVC Multi-Lighting Base Tokens */
+  --upvc-face: #f6f7f5;
+  --upvc-highlight: #ffffff;
+  --upvc-mid: #ecefed;
+  --upvc-shadow: #d5dad8;
+  --upvc-recess: #c7cdcb;
+  --epdm-gasket: #1e252b;
+}
+
+/* ============================================================
+   1. PERSPECTIVE STAGE & LIGHTING MODES
+   ============================================================ */
+.realistic-window-stage {
+  perspective: 1600px;
+  perspective-origin: 50% 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+/* Lighting Simulator Filter Overlays */
+.realistic-window-stage.lighting-daylight {
+  --stage-light-ambient: rgba(255, 255, 255, 0.95);
+  --glass-reflect-tone: rgba(230, 245, 255, 0.45);
+}
+
+.realistic-window-stage.lighting-warm {
+  --stage-light-ambient: rgba(254, 243, 199, 0.85);
+  --glass-reflect-tone: rgba(253, 230, 138, 0.35);
+}
+
+.realistic-window-stage.lighting-evening {
+  --stage-light-ambient: rgba(148, 163, 184, 0.65);
+  --glass-reflect-tone: rgba(226, 232, 240, 0.25);
+}
+
+/* ============================================================
+   2. WINDOW CONTAINER & VIEW ANGLES
+   ============================================================ */
+.realistic-window-model {
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+  box-sizing: border-box;
+}
+
+.realistic-window-model.mode-experience {
+  width: clamp(380px, 42vw, 560px);
+  height: clamp(300px, 32vw, 420px);
+  margin: 0 auto;
+}
+
+.realistic-window-model.mode-card {
+  width: 100%;
+  height: 100%;
+}
+
+/* 3D View Angle Modifiers */
+.realistic-window-model.view-front {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+.realistic-window-model.view-angle {
+  transform: rotateY(10deg) rotateX(-2deg);
+}
+
+/* Ambient Layered Contact Shadow below the window */
+.realistic-window-model::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 6%;
+  right: 6%;
+  height: 26px;
+  background: radial-gradient(ellipse at center, rgba(13, 33, 48, 0.32) 0%, rgba(13, 33, 48, 0.1) 45%, transparent 75%);
+  filter: blur(6px);
+  transform: translateZ(-20px);
+  pointer-events: none;
+}
+
+/* ============================================================
+   3. FOUR-MEMBER OUTER FRAME ARCHITECTURE
+   Independent structural rails & jambs with extrusion bevels
+   ============================================================ */
+.realistic-outer-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  transform-style: preserve-3d;
+  box-sizing: border-box;
+  padding: 12px;
+}
+
+/* Frame Member Dimensions */
+.frame-member {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.frame-member-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.frame-member-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.frame-member-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.frame-member-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* ============================================================
+   4. MATERIAL SHADERS: WHITE uPVC vs WOODGRAIN vs ALUMINIUM
+   ============================================================ */
+
+/* --- A. White uPVC (Multi-lighting layered extrusion) --- */
+.material-white-upvc .frame-member-top,
+.material-white-upvc .sash-rail-top {
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f7f5 60%, #ecefed 100%);
+  box-shadow: inset 0 1.5px 0 #ffffff, inset 0 -1px 0 #d5dad8;
+}
+
+.material-white-upvc .frame-member-bottom,
+.material-white-upvc .sash-rail-bottom {
+  background: linear-gradient(to bottom, #f6f7f5 0%, #ecefed 50%, #d5dad8 100%);
+  box-shadow: inset 0 1px 0 #ffffff, inset 0 -1.5px 0 #c7cdcb;
+}
+
+.material-white-upvc .frame-member-left,
+.material-white-upvc .sash-stile-left {
+  background: linear-gradient(to right, #ffffff 0%, #f6f7f5 55%, #ecefed 100%);
+  box-shadow: inset 1.5px 0 0 #ffffff, inset -1px 0 0 #d5dad8;
+}
+
+.material-white-upvc .frame-member-right,
+.material-white-upvc .sash-stile-right {
+  background: linear-gradient(to right, #f6f7f5 0%, #ecefed 65%, #d5dad8 100%);
+  box-shadow: inset 1px 0 0 #ffffff, inset -1.5px 0 0 #c7cdcb;
+}
+
+.material-white-upvc .realistic-divider-vertical {
+  background: linear-gradient(to right, #ecefed 0%, #ffffff 40%, #f6f7f5 70%, #d5dad8 100%);
+  box-shadow: inset 1px 0 0 #ffffff, inset -1px 0 0 #c7cdcb;
+}
+
+.material-white-upvc .realistic-divider-horizontal {
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f7f5 50%, #d5dad8 100%);
+  box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #c7cdcb;
+}
+
+/* --- B. Woodgrain Laminate (Horizontal vs Vertical grain orientation) --- */
+.material-woodgrain-upvc .frame-member-top,
+.material-woodgrain-upvc .sash-rail-top,
+.material-woodgrain-upvc .realistic-divider-horizontal {
+  background-color: var(--frame-base);
+  background-image:
+    linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, transparent 60%, rgba(0,0,0,0.25) 100%),
+    repeating-linear-gradient(
+      0deg,
+      var(--frame-base) 0px,
+      var(--frame-grain-dark) 2px,
+      var(--frame-base) 4px,
+      var(--frame-grain-light) 6px,
+      var(--frame-base) 8px
+    );
+  box-shadow: inset 0 1.5px 1px rgba(255,255,255,0.3), inset 0 -1px 1px rgba(0,0,0,0.35);
+}
+
+.material-woodgrain-upvc .frame-member-bottom,
+.material-woodgrain-upvc .sash-rail-bottom {
+  background-color: var(--frame-base);
+  background-image:
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%),
+    repeating-linear-gradient(
+      0deg,
+      var(--frame-base) 0px,
+      var(--frame-grain-dark) 2px,
+      var(--frame-base) 4px,
+      var(--frame-grain-light) 6px,
+      var(--frame-base) 8px
+    );
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1.5px 2px rgba(0,0,0,0.45);
+}
+
+.material-woodgrain-upvc .frame-member-left,
+.material-woodgrain-upvc .sash-stile-left,
+.material-woodgrain-upvc .realistic-divider-vertical {
+  background-color: var(--frame-base);
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.3) 0%, transparent 60%, rgba(0,0,0,0.25) 100%),
+    repeating-linear-gradient(
+      90deg,
+      var(--frame-base) 0px,
+      var(--frame-grain-dark) 2px,
+      var(--frame-base) 4px,
+      var(--frame-grain-light) 6px,
+      var(--frame-base) 8px
+    );
+  box-shadow: inset 1.5px 0 1px rgba(255,255,255,0.3), inset -1px 0 1px rgba(0,0,0,0.35);
+}
+
+.material-woodgrain-upvc .frame-member-right,
+.material-woodgrain-upvc .sash-stile-right {
+  background-color: var(--frame-base);
+  background-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%),
+    repeating-linear-gradient(
+      90deg,
+      var(--frame-base) 0px,
+      var(--frame-grain-dark) 2px,
+      var(--frame-base) 4px,
+      var(--frame-grain-light) 6px,
+      var(--frame-base) 8px
+    );
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.15), inset -1.5px 0 2px rgba(0,0,0,0.45);
+}
+
+/* --- C. Aluminium Powder Coat & Anodized Satin --- */
+.material-aluminium .frame-member-top,
+.material-aluminium .sash-rail-top,
+.material-aluminium .realistic-divider-horizontal {
+  background: linear-gradient(to bottom, var(--frame-highlight) 0%, var(--frame-base) 50%, var(--frame-shadow) 100%);
+  box-shadow: inset 0 1.5px 1px rgba(255,255,255,0.4), inset 0 -1px 1px rgba(0,0,0,0.3);
+}
+
+.material-aluminium .frame-member-bottom,
+.material-aluminium .sash-rail-bottom {
+  background: linear-gradient(to bottom, var(--frame-base) 0%, var(--frame-shadow) 80%, #0f172a 100%);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2), inset 0 -1.5px 2px rgba(0,0,0,0.5);
+}
+
+.material-aluminium .frame-member-left,
+.material-aluminium .sash-stile-left,
+.material-aluminium .realistic-divider-vertical {
+  background: linear-gradient(to right, var(--frame-highlight) 0%, var(--frame-base) 50%, var(--frame-shadow) 100%);
+  box-shadow: inset 1.5px 0 1px rgba(255,255,255,0.4), inset -1px 0 1px rgba(0,0,0,0.3);
+}
+
+.material-aluminium .frame-member-right,
+.material-aluminium .sash-stile-right {
+  background: linear-gradient(to right, var(--frame-base) 0%, var(--frame-shadow) 80%, #0f172a 100%);
+  box-shadow: inset 1px 0 1px rgba(255,255,255,0.2), inset -1.5px 0 2px rgba(0,0,0,0.5);
+}
+
+/* ============================================================
+   5. 45-DEGREE WELDED MITRE CORNER DETAILS & DRAINAGE SLOTS
+   ============================================================ */
+.weld-line {
+  position: absolute;
+  width: 16px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.weld-tl {
+  top: 5px;
+  left: -2px;
+  transform: rotate(45deg);
+}
+
+.weld-tr {
+  top: 5px;
+  right: -2px;
+  transform: rotate(-45deg);
+}
+
+.weld-bl {
+  bottom: 5px;
+  left: -2px;
+  transform: rotate(-45deg);
+}
+
+.weld-br {
+  bottom: 5px;
+  right: -2px;
+  transform: rotate(45deg);
+}
+
+/* Decorative Geometric Drainage Slots on Bottom Rail */
+.drainage-slot {
+  position: absolute;
+  bottom: 3px;
+  width: 14px;
+  height: 2.5px;
+  background: #334155;
+  border-radius: 1px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
+
+.drainage-slot-left {
+  left: 24px;
+}
+
+.drainage-slot-right {
+  right: 24px;
+}
+
+/* ============================================================
+   6. INNER FRAME REVEAL & SLIDING TRACKS
+   ============================================================ */
+.realistic-frame-reveal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #f1f5f9;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.16);
+  border-radius: 2px;
+  overflow: visible;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+/* Sliding Stainless Steel Rails at Bottom */
+.sliding-track-system {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(to bottom, #94a3b8 0%, #cbd5e1 30%, #64748b 70%, #334155 100%);
+  border-top: 1px solid #475569;
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 -1px 3px rgba(0,0,0,0.15);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sliding-track-system::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #f8fafc;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.4);
+}
+
+/* Mullion Dividers */
+.realistic-window-row {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.realistic-divider-vertical {
+  width: 10px;
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.realistic-divider-horizontal {
+  height: 10px;
+  width: 100%;
+  flex-shrink: 0;
+  z-index: 2;
+  position: relative;
+}
+
+/* ============================================================
+   7. INDEPENDENT SASH EXTRUSION & GLAZING BEADS
+   ============================================================ */
+
+/* Fixed Pane Lite */
+.realistic-pane-fixed {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+/* Operable Sash (3D Extruded Chamber) */
+.realistic-pane-sash {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 2;
+  overflow: visible;
+}
+
+/* Sash Perimeter Extrusion Members */
+.sash-profile-perimeter {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.sash-rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+.sash-rail-top { top: 0; }
+.sash-rail-bottom { bottom: 0; }
+
+.sash-stile {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+}
+.sash-stile-left { left: 0; }
+.sash-stile-right { right: 0; }
+
+/* Glazing Bead (Interior holding strip) */
+.sash-glazing-bead,
+.fixed-glazing-bead {
+  position: absolute;
+  inset: 5px;
+  border: 3px solid rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* EPDM Gasket (Continuous dark charcoal compression seal) */
+.sash-epdm-gasket,
+.fixed-epdm-gasket {
+  position: absolute;
+  inset: 7px;
+  border: 1.5px solid var(--epdm-gasket);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ============================================================
+   8. REALISTIC GLASS PANE RENDERING (NO BROCHURE / CAD IMAGES)
+   ============================================================ */
+.realistic-glass-pane {
+  position: absolute;
+  inset: 8px;
+  background: var(--glass-tint, rgba(225, 245, 255, 0.45));
+  overflow: hidden;
+  z-index: 1;
+  transform: translateZ(1px);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Moving Specular Reflection Layer */
+.glass-reflection-layer {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.12) 30%,
+    transparent 55%,
+    rgba(255, 255, 255, 0.1) 80%
+  );
+  transition: transform 0.2s ease-out;
+  z-index: 2;
+}
+
+/* Fine Diagonal Highlight Sheen */
+.glass-specular-streak {
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: 25%;
+  width: 20%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: rotate(-35deg);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Frosted Satin Diffusion */
+.realistic-glass-pane.is-frosted {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(245, 250, 252, 0.92);
+}
+
+.realistic-glass-pane.is-frosted .glass-specular-streak {
+  opacity: 0.3;
+}
+
+/* Solar Reflective Finish */
+.realistic-glass-pane.is-reflective {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(145, 185, 215, 0.45) 30%,
+    rgba(30, 60, 90, 0.3) 70%
+  );
+}
+
+/* Double Glazed Unit Spacer Indicator Badge */
+.dgu-spacer-badge {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(13, 110, 170, 0.88);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 5;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   9. HARDWARE SYSTEM: ESPAG LEVER, TOUCH LOCK, EURO HANDLE
+   ============================================================ */
+
+/* Hardware Finishes */
+.hardware-white { --hw-main: #f8fafc; --hw-hi: #ffffff; --hw-sh: #94a3b8; }
+.hardware-chrome { --hw-main: #94a3b8; --hw-hi: #f1f5f9; --hw-sh: #475569; }
+.hardware-black { --hw-main: #1e293b; --hw-hi: #475569; --hw-sh: #0f172a; }
+.hardware-bronze { --hw-main: #78350f; --hw-hi: #b45309; --hw-sh: #451a03; }
+.hardware-gold { --hw-main: #ca8a04; --hw-hi: #fef08a; --hw-sh: #854d0e; }
+
+/* --- A. Casement Espagnolette Lever Handle --- */
+.realistic-handle {
+  position: absolute;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.handle-type-lever {
+  width: 14px;
+  height: 38px;
+}
+
+.handle-rosette {
+  position: absolute;
+  top: 6px;
+  left: 2px;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--hw-hi, #cbd5e1) 0%, var(--hw-main, #64748b) 50%, var(--hw-sh, #334155) 100%);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.handle-neck {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 4px;
+  height: 6px;
+  background: var(--hw-sh, #334155);
+}
+
+.handle-lever {
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  width: 5px;
+  height: 26px;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--hw-hi, #f8fafc), var(--hw-main, #64748b) 60%, var(--hw-sh, #334155));
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* --- B. Sliding Touch Lock Hardware (NO D-Handle / NO Lever!) --- */
+.sliding-touch-lock {
+  position: absolute;
+  z-index: 10;
+  width: 10px;
+  height: 42px;
+  background: linear-gradient(to right, #475569 0%, #334155 40%, #1e293b 100%);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 1px 2px 5px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: transform 0.14s ease, filter 0.14s ease;
+  pointer-events: none;
+}
+
+.touch-lock-housing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.touch-lock-button {
+  width: 6px;
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom, #94a3b8, #64748b);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.touch-lock-indicator {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #10b981; /* Green lock indicator */
+  box-shadow: 0 0 3px #10b981;
+}
+
+/* Touch Lock Micro-Animation on Unlock */
+.realistic-pane-sash.is-unlocking .sliding-touch-lock {
+  transform: translateY(-50%) scale(0.96) !important;
+  filter: brightness(1.2);
+}
+
+.realistic-pane-sash.is-unlocking .touch-lock-indicator {
+  background: #ef4444; /* Red indicator when unlatched */
+  box-shadow: 0 0 3px #ef4444;
+}
+
+/* Handle Positions */
+.handle-pos-right {
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.handle-pos-left {
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.handle-pos-bottom {
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg);
+}
+
+/* ============================================================
+   10. ACCESSIBILITY & REDUCED MOTION (SINGLE KINEMATICS ENGINE IN DESIGN-DIAGRAMS.CSS)
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .realistic-pane-sash,
+  .realistic-handle,
+  .sliding-touch-lock,
+  .glass-reflection-layer,
+  .realistic-window-model {
+    transition: none !important;
+  }
+}
