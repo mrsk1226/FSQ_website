@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "key": "green opening only; RGB G>180 R/B<90 G-max(R,B)>140",
+  "rooms": [
+    {
+      "id": "photo-bedroom",
+      "name": "Photo Bedroom",
+      "image": "/textures/rooms-real/bedroom.webp",
+      "width": 1536,
+      "height": 1024,
+      "opening": {
+        "x": 0.3346354166666667,
+        "y": 0.1494140625,
+        "w": 0.37109375,
+        "h": 0.373046875
+      },
+      "pixelRect": [
+        514,
+        153,
+        570,
+        382
+      ],
+      "greenFill": 1,
+      "wallColor": [
+        180,
+        157,
+        134
+      ],
+      "status": "PROVISIONAL",
+      "sourceSha256": "46049c1e65daafec0f6acb61f7f828cea48c5d7f4f061dda510854400965073c",
+      "optimizedBytes": 142088
+    },
+    {
+      "id": "photo-living",
+      "name": "Photo Living Room",
+      "image": "/textures/rooms-real/living.webp",
+      "width": 1536,
+      "height": 1024,
+      "opening": {
+        "x": 0.3190104166666667,
+        "y": 0.1484375,
+        "w": 0.3619791666666667,
+        "h": 0.3525390625
+      },
+      "pixelRect": [
+        490,
+        152,
+        556,
+        361
+      ],
+      "greenFill": 0.9955110703680823,
+      "wallColor": [
+        189,
+        163,
+        134
+      ],
+      "status": "PROVISIONAL",
+      "sourceSha256": "2be2163a44c21d1db0ba389128d184c15e1174104dac5f1b81a31724cd490d26",
+      "optimizedBytes": 144386
+    },
+    {
+      "id": "photo-garden-sitting",
+      "name": "Photo Garden Sitting Room",
+      "image": "/textures/rooms-real/garden-sitting.webp",
+      "width": 1536,
+      "height": 1024,
+      "opening": {
+        "x": 0.310546875,
+        "y": 0.1318359375,
+        "w": 0.3880208333333333,
+        "h": 0.375
+      },
+      "pixelRect": [
+        477,
+        135,
+        596,
+        384
+      ],
+      "greenFill": 0.997806557606264,
+      "wallColor": [
+        197,
+        170,
+        139
+      ],
+      "status": "PROVISIONAL",
+      "sourceSha256": "b1c99b3f709a188f039bc0e4c5b9ff3e26dace338005489e6bef6ae921bee887",
+      "optimizedBytes": 230096
+    }
+  ]
+}

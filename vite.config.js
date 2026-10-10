@@ -10,7 +10,7 @@ export default defineConfig({
         '**/.git/**',
         '**/backups/**',
         '**/*.bak',
-        '**/public/**',
+        '**/public/models/rooms/**',
         '**/room-screenshots/**',
         '**/docs/**',
         '**/scripts/**',

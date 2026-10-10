@@ -12,7 +12,7 @@ export function installTouchLocks(a,source){
   const keeper=bank.getObjectByName(`${m.id}_TouchLock_${side}_Keeper`);a.root.updateMatrixWorld(true);a.root.attach(keeper);delete keeper.userData.motionId;
   m.hardwareReference='Phase3F owner photograph; dimensions provisional';
   // A genuine pocket removes the stile face behind the recessed lock, rather than hiding a block behind it.
-  const stile=m.node.getObjectByName(`${m.id}_${positive?'Right':'Left'}`),height=stile.geometry.parameters.height,pw=stile.geometry.parameters.width,depth=stile.geometry.parameters.depth,center=stile.position.clone();
+  const stile=m.node.getObjectByName(`${m.id}_${positive?'Right':'Left'}`),height=stile.geometry.parameters?.height||(stile.geometry.boundingBox.max.y-stile.geometry.boundingBox.min.y),pw=stile.geometry.parameters?.width||(stile.geometry.boundingBox.max.x-stile.geometry.boundingBox.min.x),depth=stile.geometry.parameters?.depth||(stile.geometry.boundingBox.max.z-stile.geometry.boundingBox.min.z),center=stile.position.clone();
   stile.parent.remove(stile);stile.geometry.dispose();
   function bar(name,x,y,z,w,h,d){const mesh=new T.Mesh(new T.BoxGeometry(w,h,d),a.mats.profile);mesh.name=`${m.id}_${name}`;mesh.position.set(x,y,z);mesh.userData.role='profile';mesh.userData.motionId=m.id;mesh.castShadow=true;mesh.receiveShadow=true;surface.add(mesh);const p=mesh.geometry.attributes.position,uv=mesh.geometry.attributes.uv;for(let i=0;i<p.count;i++)uv.setXY(i,(p.getY(i)+h/2)/Math.max(h,1.25),.15+.7*(p.getX(i)/w+.5));}
   const holeW=.028,holeH=.196,sideW=(pw-holeW)/2,endH=(height-holeH)/2;

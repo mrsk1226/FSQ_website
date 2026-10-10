@@ -38,7 +38,8 @@ export const WindowExperienceConfigurator = ({
       type: params.get("type"),
       design: params.get("design"),
       finish: params.get("finish"),
-      glass: params.get("glass")
+      glass: params.get("glass"),
+      room: params.get("room")
     };
   };
 
@@ -128,7 +129,7 @@ export const WindowExperienceConfigurator = ({
   const [outdoorView, setOutdoorView] = useState("ooty");
 
   // 9. Architectural Interior Room Environment: "smart" | "ooty-bay" | "hillside-living" | "city-bedroom" | ...
-  const [roomPreset, setRoomPreset] = useState("smart");
+  const [roomPreset, setRoomPreset] = useState(initialParams.room || "photo-living");
 
   // Quotation Modal State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -145,7 +146,7 @@ export const WindowExperienceConfigurator = ({
   useEffect(() => {
     if (!currentRoute) return;
     const qParams = parseParams(currentRoute);
-    if (!qParams.product && !qParams.type && !qParams.design && !qParams.finish && !qParams.glass) {
+    if (!qParams.product && !qParams.type && !qParams.design && !qParams.finish && !qParams.glass && !qParams.room) {
       return;
     }
 
@@ -183,6 +184,8 @@ export const WindowExperienceConfigurator = ({
       if (matchFin) setSelectedFinish(matchFin);
     }
 
+    if (qParams.room) setRoomPreset(qParams.room === "smart" ? "photo-living" : qParams.room);
+
     if (qParams.glass) {
       const matchG = glassOptions.find((g) => g.id === qParams.glass);
       if (matchG) setSelectedGlass(matchG);
@@ -219,7 +222,6 @@ export const WindowExperienceConfigurator = ({
   // Handle Design Change
   const handleDesignChange = (newIdx) => {
     setSelectedDesignIdx(newIdx);
-    setMechanismState("closed");
   };
 
   // Handle Finish Change (Only visual coating changes, NO remount or geometry rebuild)
@@ -242,6 +244,7 @@ export const WindowExperienceConfigurator = ({
     params.set("design", selectedDesignIdx.toString());
     if (selectedFinish?.id) params.set("finish", selectedFinish.id);
     if (selectedGlass?.id) params.set("glass", selectedGlass.id);
+    params.set("room",roomPreset);
 
     const currentHash = window.location.hash || "";
     const baseHash = currentHash.split("?")[0];
@@ -252,7 +255,7 @@ export const WindowExperienceConfigurator = ({
     if (window.location.hash !== newHash || window.location.search) {
       window.history.replaceState(null, "", newUrl);
     }
-  }, [product, windowType, selectedDesignIdx, selectedFinish?.id, selectedGlass?.id]);
+  }, [product, windowType, selectedDesignIdx, selectedFinish?.id, selectedGlass?.id,roomPreset]);
 
   return (
     <div style={{ background: "#f8fafc", minHeight: "100vh", padding: "40px 0 80px" }}>
@@ -564,15 +567,21 @@ export const WindowExperienceConfigurator = ({
                   outline: "none"
                 }}
               >
-                <option value="smart">✨ Auto Smart-Matched</option>
-                <option value="ooty-bay">Bay Seating (Curved Window Seat)</option>
-                <option value="hillside-living">Hillside Living Room (Five-Panel)</option>
-                <option value="city-bedroom">City View Bedroom (Three-Panel)</option>
-                <option value="modern-bedroom">Modern Bedroom</option>
-                <option value="luxury-living">Luxury Living Room</option>
-                <option value="apartment-living">Apartment Living Room</option>
-                <option value="home-office">Contemporary Office</option>
-                <option value="garden-living">Garden Living Sunroom</option>
+                <optgroup label="Photo rooms">
+                  <option value="photo-living">Photo Living Room</option>
+                  <option value="photo-bedroom">Photo Bedroom</option>
+                  <option value="photo-garden-sitting">Photo Garden Sitting Room</option>
+                </optgroup>
+                <optgroup label="Procedural fallback rooms">
+                  <option value="ooty-bay">Fallback - Bay Seating</option>
+                  <option value="hillside-living">Fallback - Hillside Living Room</option>
+                  <option value="city-bedroom">Fallback - City Bedroom</option>
+                  <option value="modern-bedroom">Fallback - Modern Bedroom</option>
+                  <option value="luxury-living">Fallback - Luxury Living Room</option>
+                  <option value="apartment-living">Fallback - Apartment Living Room</option>
+                  <option value="home-office">Fallback - Home Office</option>
+                  <option value="garden-living">Fallback - Garden Living Room</option>
+                </optgroup>
               </select>
             </div>
           </div>

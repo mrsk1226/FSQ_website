@@ -23,4 +23,4 @@ export function resolveStudioRecord(product,type,design){
  return studioRecords.find(r=>r.product===product&&r.type===type&&r.design===design) ||
  studioRecords.find(r=>r.product===product&&r.type===type&&r.name===design?.name) || null;
 }
-export const recoveredAsset='/models/FSQ_UPVC_Casement_2Open_Material_v03_Web_r01.glb';
+export const recoveredAsset='/models/FSQ_UPVC_Casement_2Open_Material_v04_Web_r01.glb';

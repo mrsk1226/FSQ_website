@@ -1,17 +1,58 @@
 import * as T from 'three';
+import {installFrictionStay,updateFrictionStay} from './studioFrictionStay.js';
 import {RoundedBoxGeometry} from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
 export function createMaterials(aluminium=false){return {
  profile:new T.MeshStandardMaterial({color:aluminium?0x50565b:0xf5f6f2,metalness:aluminium?.75:0,roughness:aluminium?.32:.42}),
  glass:new T.MeshPhysicalMaterial({color:0xf4fcff,transmission:1,roughness:.025,ior:1.5,thickness:.005,transparent:true,opacity:1,depthWrite:false}),
  gasket:new T.MeshStandardMaterial({color:0x202724,roughness:.85}),hardware:new T.MeshStandardMaterial({color:0xc1c6ca,metalness:.9,roughness:.25}),
- trim:new T.MeshStandardMaterial({color:0xdedbd2,roughness:.75})};}
+ trim:new T.MeshStandardMaterial({color:0xdedbd2,roughness:.75}),
+ seam:new T.LineBasicMaterial({color:aluminium?0x25292c:0x484d50,linewidth:1,depthTest:true})};}
 function box(parent,name,x,y,z,w,h,d,material,role){const geometry=new T.BoxGeometry(w,h,d);
  if(role==='profile'){const pos=geometry.attributes.position,normal=geometry.attributes.normal,uv=geometry.attributes.uv,alongX=w>h,length=alongX?w:h,span=Math.max(1.25,length);for(let i=0;i<pos.count;i++){const longitudinal=alongX?pos.getX(i):pos.getY(i);const front=Math.abs(normal.getZ(i))>.5;const transverse=front?(alongX?pos.getY(i):pos.getX(i)):pos.getZ(i);const extent=front?(alongX?h:w):d;uv.setXY(i,(longitudinal+length/2)/span,.15+.7*(transverse/extent+.5));}uv.needsUpdate=true;}
  const m=new T.Mesh(geometry,material);m.position.set(x,y,z);m.name=name;m.userData.role=role;m.castShadow=role!=='glass';m.receiveShadow=true;parent.add(m);return m;}
-function ring(parent,name,x,y,z,w,h,p,d,mat,role='profile'){
- box(parent,`${name}_Head`,x,y+h/2-p/2,z,w,p,d,mat,role);box(parent,`${name}_Sill`,x,y-h/2+p/2,z,w,p,d,mat,role);
- box(parent,`${name}_Left`,x-w/2+p/2,y,z,p,h-2*p,d,mat,role);box(parent,`${name}_Right`,x+w/2-p/2,y,z,p,h-2*p,d,mat,role);
+function createMitreGeometry(side,w,h,p,d){
+ let v0,v1,v2,v3,len;const isHoriz=side==='Head'||side==='Sill';
+ if(side==='Head'){v0=[-w/2,p/2];v1=[w/2,p/2];v2=[w/2-p,-p/2];v3=[-w/2+p,-p/2];len=w;}
+ else if(side==='Sill'){v0=[-w/2,-p/2];v1=[w/2,-p/2];v2=[w/2-p,p/2];v3=[-w/2+p,p/2];len=w;}
+ else if(side==='Left'){v0=[-p/2,-h/2];v1=[-p/2,h/2];v2=[p/2,h/2-p];v3=[p/2,-h/2+p];len=h;}
+ else if(side==='Right'){v0=[p/2,-h/2];v1=[p/2,h/2];v2=[-p/2,h/2-p];v3=[-p/2,-h/2+p];len=h;}
+ const zF=d/2,zB=-d/2;
+ const pFront=(side==='Head'||side==='Left')?[[v0,zF],[v3,zF],[v2,zF],[v0,zF],[v2,zF],[v1,zF]]:[[v0,zF],[v1,zF],[v2,zF],[v0,zF],[v2,zF],[v3,zF]];
+ const pBack=(side==='Head'||side==='Left')?[[v0,zB],[v2,zB],[v3,zB],[v0,zB],[v1,zB],[v2,zB]]:[[v0,zB],[v3,zB],[v2,zB],[v0,zB],[v2,zB],[v1,zB]];
+ const quad=(a,b,c,d_pt)=>[a,b,c,a,c,d_pt];
+ const sideQuads=[];
+ if(side==='Head'){sideQuads.push(...quad([v0,zF],[v1,zF],[v1,zB],[v0,zB]),...quad([v3,zF],[v3,zB],[v2,zB],[v2,zF]),...quad([v0,zF],[v0,zB],[v3,zB],[v3,zF]),...quad([v1,zF],[v2,zF],[v2,zB],[v1,zB]));}
+ else if(side==='Sill'){sideQuads.push(...quad([v1,zF],[v0,zF],[v0,zB],[v1,zB]),...quad([v2,zF],[v2,zB],[v3,zB],[v3,zF]),...quad([v0,zF],[v3,zF],[v3,zB],[v0,zB]),...quad([v2,zF],[v1,zF],[v1,zB],[v2,zB]));}
+ else if(side==='Left'){sideQuads.push(...quad([v1,zF],[v0,zF],[v0,zB],[v1,zB]),...quad([v3,zF],[v2,zF],[v2,zB],[v3,zB]),...quad([v2,zF],[v1,zF],[v1,zB],[v2,zB]),...quad([v0,zF],[v3,zF],[v3,zB],[v0,zB]));}
+ else if(side==='Right'){sideQuads.push(...quad([v0,zF],[v1,zF],[v1,zB],[v0,zB]),...quad([v2,zF],[v3,zF],[v3,zB],[v2,zB]),...quad([v1,zF],[v2,zF],[v2,zB],[v1,zB]),...quad([v3,zF],[v0,zF],[v0,zB],[v3,zB]));}
+ const allTris=[...pFront,...pBack,...sideQuads];
+ const positions=new Float32Array(allTris.length*3);
+ for(let i=0;i<allTris.length;i++){positions[i*3]=allTris[i][0][0];positions[i*3+1]=allTris[i][0][1];positions[i*3+2]=allTris[i][1];}
+ const geom=new T.BufferGeometry();geom.setAttribute('position',new T.BufferAttribute(positions,3));geom.computeVertexNormals();
+ const uvs=new Float32Array(allTris.length*2),posAttr=geom.attributes.position,normAttr=geom.attributes.normal,span=Math.max(1.25,len);
+ for(let i=0;i<posAttr.count;i++){const longitudinal=isHoriz?posAttr.getX(i):posAttr.getY(i);const front=Math.abs(normAttr.getZ(i))>.5;const transverse=front?(isHoriz?posAttr.getY(i):posAttr.getX(i)):posAttr.getZ(i);const extent=front?p:d;uvs[i*2]=(longitudinal+len/2)/span;uvs[i*2+1]=.15+.7*(transverse/extent+.5);}
+ geom.setAttribute('uv',new T.BufferAttribute(uvs,2));geom.computeBoundingBox();
+ geom.parameters={width:isHoriz?w:p,height:isHoriz?p:h,depth:d};
+ return geom;
+}
+function mitreMember(parent,side,name,x,y,z,w,h,p,d,material,role){
+ const geometry=createMitreGeometry(side,w,h,p,d);const m=new T.Mesh(geometry,material);m.position.set(x,y,z);m.name=name;m.userData.role=role;m.castShadow=role!=='glass';m.receiveShadow=true;parent.add(m);return m;
+}
+function ring(parent,name,x,y,z,w,h,p,d,mat,role='profile',seamMat=null){
+ mitreMember(parent,'Head',`${name}_Head`,x,y+h/2-p/2,z,w,h,p,d,mat,role);mitreMember(parent,'Sill',`${name}_Sill`,x,y-h/2+p/2,z,w,h,p,d,mat,role);
+ mitreMember(parent,'Left',`${name}_Left`,x-w/2+p/2,y,z,w,h,p,d,mat,role);mitreMember(parent,'Right',`${name}_Right`,x+w/2-p/2,y,z,w,h,p,d,mat,role);
+ if(role==='profile'&&seamMat){
+  const sc=[
+   x-w/2,y+h/2,z+d/2+.0002, x-w/2+p,y+h/2-p,z+d/2+.0002, x-w/2+p,y+h/2-p,z+d/2+.0002, x-w/2+p,y+h/2-p,z-d/2-.0002,
+   x+w/2,y+h/2,z+d/2+.0002, x+w/2-p,y+h/2-p,z+d/2+.0002, x+w/2-p,y+h/2-p,z+d/2+.0002, x+w/2-p,y+h/2-p,z-d/2-.0002,
+   x-w/2,y-h/2,z+d/2+.0002, x-w/2+p,y-h/2+p,z+d/2+.0002, x-w/2+p,y-h/2+p,z+d/2+.0002, x-w/2+p,y-h/2+p,z-d/2-.0002,
+   x+w/2,y-h/2,z+d/2+.0002, x+w/2-p,y-h/2+p,z+d/2+.0002, x+w/2-p,y-h/2+p,z+d/2+.0002, x+w/2-p,y-h/2+p,z-d/2-.0002,
+   x-w/2,y+h/2,z-d/2-.0002, x-w/2+p,y+h/2-p,z-d/2-.0002, x+w/2,y+h/2,z-d/2-.0002, x+w/2-p,y+h/2-p,z-d/2-.0002,
+   x-w/2,y-h/2,z-d/2-.0002, x-w/2+p,y-h/2+p,z-d/2-.0002, x+w/2,y-h/2,z-d/2-.0002, x+w/2-p,y-h/2+p,z-d/2-.0002
+  ];
+  const sg=new T.BufferGeometry();sg.setAttribute('position',new T.Float32BufferAttribute(sc,3));const sl=new T.LineSegments(sg,seamMat);sl.name=`${name}_Mitre_Seams`;parent.add(sl);
+ }
 }
 export function buildAssembly(record){
  const {design,product,type}=record;const root=new T.Group();root.name=record.id;const mats=createMaterials(product==='aluminium');
@@ -30,8 +71,8 @@ export function buildAssembly(record){
   const surface=new T.Group();surface.name=`${key}_Attached_Components`;surface.position.z=z-sash.position.z;sash.add(surface);
   const sx=x-sash.position.x,sy=y-sash.position.y;
   const pw=fixed?.025:profile;
-  ring(surface,key,sx,sy,0,w-.006,h-.006,pw,tracks?.032:depth*.5,mats.profile);
-  ring(surface,`${key}_Bead`,sx,sy,.027,w-2*pw,h-2*pw,.012,.01,mats.profile);
+  ring(surface,key,sx,sy,0,w-.006,h-.006,pw,tracks?.032:depth*.5,mats.profile,'profile',mats.seam);
+  ring(surface,`${key}_Bead`,sx,sy,.027,w-2*pw,h-2*pw,.012,.01,mats.profile,'profile',mats.seam);
   ring(surface,`${key}_Seal`,sx,sy,.018,w-2*pw-.015,h-2*pw-.015,.006,.008,mats.gasket,'gasket');
   box(surface,`${key}_Glass`,sx,sy,0,w-2*pw-.025,h-2*pw-.025,.005,mats.glass,'glass');
   let handle=null;
@@ -58,15 +99,15 @@ export function buildAssembly(record){
   }else if(tt){motion={kind:'tilt',node:sash,left,rest:sash.position.clone(),width:w,height:h,handle};}
   else if(fold){motion={kind:'fold',node:sash,carriage,rest:sash.position.clone(),width:w,pitch:(width-2*profile)/groupPanels.length,index,count:groupPanels.length};}
   else if(!fixed){motion={kind:top?'top':'casement',node:sash,left,handle};}
-  if(motion){motion.id=key;motion.target=0;motion.current=0;motion.mode='turn';motion.locked=false;motions.push(motion);sash.traverse(n=>{n.userData.motionId=key;});}
+  if(motion){motion.id=key;motion.target=0;motion.current=0;motion.mode='turn';motion.locked=false;motions.push(motion);if(motion.kind==='casement'||motion.kind==='top'){sash.updateMatrix();installFrictionStay(motion,{width:w,height:h,sideX:sx-w/2+pw/2,bottom:sy-h/2+.003,front:surface.position.z+depth*.25});}sash.traverse(n=>{n.userData.motionId=key;});}
   panels.push({id:key,type:p.type,hinge:p.hinge||null,track:motion?.track??(tracks?0:null),width:w,height:h,x,y});
  };
  if(design.concept){
   const segment=width/design.angles.reduce((sum,a)=>sum+Math.cos(T.MathUtils.degToRad(a)),0);let cursorX=-width/2,cursorZ=0;const outline=[new T.Vector2(cursorX,cursorZ)];
-  design.angles.forEach((angle,i)=>{const g=new T.Group();const a=-T.MathUtils.degToRad(angle);g.position.set(cursorX+Math.cos(a)*segment/2,0,cursorZ-Math.sin(a)*segment/2);g.rotation.y=a;root.add(g);ring(g,`BayFrame${i}`,0,base+height/2,0,segment,height,profile,depth,mats.profile);pane(g,design.panes[i],0,base+height/2,segment-2*profile,height-2*profile,0,`bay_${i}`,i,design.panes);cursorX+=Math.cos(a)*segment;cursorZ-=Math.sin(a)*segment;outline.push(new T.Vector2(cursorX,cursorZ));if(i<design.panes.length-1){const join=new T.Mesh(new T.CylinderGeometry(.045,.045,height,12),mats.profile);join.position.set(cursorX,base+height/2,cursorZ);join.name=`Bay_Corner_${i}`;join.userData.role='profile';root.add(join);}});
+  design.angles.forEach((angle,i)=>{const g=new T.Group();const a=-T.MathUtils.degToRad(angle);g.position.set(cursorX+Math.cos(a)*segment/2,0,cursorZ-Math.sin(a)*segment/2);g.rotation.y=a;root.add(g);ring(g,`BayFrame${i}`,0,base+height/2,0,segment,height,profile,depth,mats.profile,'profile',mats.seam);pane(g,design.panes[i],0,base+height/2,segment-2*profile,height-2*profile,0,`bay_${i}`,i,design.panes);cursorX+=Math.cos(a)*segment;cursorZ-=Math.sin(a)*segment;outline.push(new T.Vector2(cursorX,cursorZ));if(i<design.panes.length-1){const join=new T.Mesh(new T.CylinderGeometry(.045,.045,height,12),mats.profile);join.position.set(cursorX,base+height/2,cursorZ);join.name=`Bay_Corner_${i}`;join.userData.role='profile';root.add(join);}});
   const slab=new T.ExtrudeGeometry(new T.Shape(outline),{depth:.035,bevelEnabled:false});slab.rotateX(Math.PI/2);for(const y of [base,base+height+.035]){const mesh=new T.Mesh(slab.clone(),mats.trim);mesh.position.y=y;mesh.name='Bay_Installation_Slab';mesh.userData.role='installation';root.add(mesh);}slab.dispose();
  }else{
-  ring(root,'OuterFrame',0,base+height/2,-.04,width,height,profile,depth,mats.profile);
+  ring(root,'OuterFrame',0,base+height/2,-.04,width,height,profile,depth,mats.profile,'profile',mats.seam);
   let bottom=base+profile;
   rows.forEach((row,ri)=>{const h=(height-2*profile)*row.fraction,w=(width-2*profile)/row.panes.length,y=bottom+h/2;
    const french=/french/i.test(design.name),folding=type==='door-fold';
@@ -96,5 +137,6 @@ export function applyMotion(m){const p=m.current;
  else if(m.kind==='tilt'){m.node.position.copy(m.rest);m.node.rotation.set(0,0,0);const opening=Math.max(0,(p-.25)/.75);if(m.handle)m.handle.rotation.z=(m.left?-1:1)*(m.mode==='tilt'?Math.PI:Math.PI/2)*Math.min(1,p/.25);if(m.mode==='tilt')m.node.rotation.x=T.MathUtils.degToRad(10)*opening;else {m.node.rotation.y=(m.left?-1:1)*T.MathUtils.degToRad(65)*opening;}}
  else if(m.kind==='fold'){const angle=T.MathUtils.degToRad(80)*p,w=m.pitch,offset=.045;let x=m.rest.x-(m.index+.5)*w,z=m.rest.z-offset;for(let i=0;i<m.index;i++){const theta=(i%2===0?1:-1)*angle,dz=i%2===0?2*offset:-2*offset;x+=w*Math.cos(theta)+dz*Math.sin(theta);z+=-w*Math.sin(theta)+dz*Math.cos(theta);}const theta=(m.index%2===0?1:-1)*angle,leftZ=m.index%2===0?-offset:offset;m.node.position.set(x+w*Math.cos(theta)/2-leftZ*Math.sin(theta),m.rest.y,z-w*Math.sin(theta)/2-leftZ*Math.cos(theta));m.node.rotation.y=theta;if(m.carriage)m.carriage.rotation.y=-theta;}
  else if(m.kind==='recovered'){m.node.rotation.y=(m.left?1:-1)*T.MathUtils.degToRad(70)*Math.max(0,(p-.25)/.75);m.handle.rotation.z=(m.left?-1:1)*Math.PI/2*Math.min(1,p/.25);}
+ updateFrictionStay(m);
 }
 export function disposeGroup(group){const geometries=new Set(),materials=new Set();group?.traverse(n=>{if(n.geometry)geometries.add(n.geometry);if(n.userData.originalMaterial)materials.add(n.userData.originalMaterial);if(n.material)(Array.isArray(n.material)?n.material:[n.material]).forEach(m=>materials.add(m));});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}
