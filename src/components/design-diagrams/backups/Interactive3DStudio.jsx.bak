@@ -1,0 +1,757 @@
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+
+/**
+ * Interactive3DStudio Component
+ * Premium photorealistic interactive 3D Window & Door Studio
+ * Supports direct mouse/touch interaction, realistic kinematics,
+ * dynamic PBR material swaps with 100% hardware isolation,
+ * glass transmission, and architectural outdoor scenery views.
+ */
+export const Interactive3DStudio = ({
+  product = "upvc",
+  windowType = "casement",
+  design,
+  finish,
+  glass,
+  state = "closed",
+  onStateChange,
+  viewMode = "interior", // "interior" | "exterior" | "front" | "side" | "hardware"
+  outdoorView = "ooty"   // "ooty" | "city" | "garden" | "hills"
+}) => {
+  const mountRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [activeCameraPreset, setActiveCameraPreset] = useState(viewMode);
+  const [hoveredPart, setHoveredPart] = useState(null);
+  const [isDraggingPart, setIsDraggingPart] = useState(false);
+  const [demoPlaying, setDemoPlaying] = useState(false);
+
+  // Three.js internal references
+  const refs = useRef({
+    scene: null,
+    camera: null,
+    renderer: null,
+    controls: null,
+    model: null,
+    mixer: null,
+    actions: [],
+    clock: new THREE.Clock(),
+    raycaster: new THREE.Raycaster(),
+    mouse: new THREE.Vector2(),
+    operableParts: [],
+    profileMeshes: [],
+    glassMeshes: [],
+    hardwareMeshes: [],
+    sceneryMesh: null,
+    draggedObject: null,
+    dragStart: { x: 0, y: 0 },
+    initialTransform: null,
+  });
+
+  // Resolve correct GLB file based on product and windowType
+  const resolveModelUrl = useCallback(() => {
+    if (product === "aluminium" && windowType === "casement") {
+      return "/models/FSQ_Aluminium_Casement_v01.glb";
+    }
+    if (windowType === "sliding") {
+      return "/models/FSQ_UPVC_Sliding_2Track_v01.glb";
+    }
+    if (windowType === "tilt-turn") {
+      return "/models/FSQ_UPVC_TiltTurn_v01.glb";
+    }
+    // Default: Double Open Casement
+    return "/models/FSQ_UPVC_Casement_2Open_v01.glb";
+  }, [product, windowType]);
+
+  // Outdoor Scenery Texture Generator (Procedural Canvas Gradients/Textures)
+  const createSceneryTexture = useCallback((viewType) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1024;
+    canvas.height = 1024;
+    const ctx = canvas.getContext("2d");
+
+    if (viewType === "city") {
+      // Modern architectural city skyline
+      const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+      grad.addColorStop(0, "#4a7bb0");
+      grad.addColorStop(0.5, "#9cbcd9");
+      grad.addColorStop(0.7, "#d4e2ee");
+      grad.addColorStop(1, "#657582");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Distant towers
+      ctx.fillStyle = "rgba(100, 120, 140, 0.7)";
+      for (let i = 0; i < 20; i++) {
+        const x = i * 55;
+        const h = 250 + Math.sin(i * 1.5) * 120;
+        ctx.fillRect(x, 1024 - h, 48, h);
+      }
+    } else if (viewType === "garden") {
+      // Lush tropical garden foliage
+      const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+      grad.addColorStop(0, "#73a5d0");
+      grad.addColorStop(0.4, "#bcdbe8");
+      grad.addColorStop(0.6, "#2e5c2a");
+      grad.addColorStop(1, "#1c3819");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Foliage layers
+      ctx.fillStyle = "rgba(45, 95, 40, 0.85)";
+      for (let i = 0; i < 30; i++) {
+        const x = (i * 70) % 1024;
+        const r = 80 + (i % 5) * 20;
+        ctx.beginPath();
+        ctx.arc(x, 750 + Math.sin(i) * 60, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    } else if (viewType === "hills") {
+      // Rolling misty hills landscape
+      const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+      grad.addColorStop(0, "#5b86b8");
+      grad.addColorStop(0.45, "#e8d2b5");
+      grad.addColorStop(0.7, "#4a6b47");
+      grad.addColorStop(1, "#263b25");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1024, 1024);
+    } else {
+      // Default: Ooty Tea Estate with mountain mist & terraces
+      const grad = ctx.createLinearGradient(0, 0, 0, 1024);
+      grad.addColorStop(0, "#4878a8");
+      grad.addColorStop(0.35, "#a8cce4");
+      grad.addColorStop(0.55, "#d0e4c8");
+      grad.addColorStop(0.7, "#3b6d36");
+      grad.addColorStop(1, "#1c4217");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Terraced hill waves
+      ctx.fillStyle = "rgba(40, 85, 35, 0.75)";
+      ctx.beginPath();
+      ctx.moveTo(0, 600);
+      for (let x = 0; x <= 1024; x += 32) {
+        ctx.lineTo(x, 600 + Math.sin(x * 0.01) * 70);
+      }
+      ctx.lineTo(1024, 1024);
+      ctx.lineTo(0, 1024);
+      ctx.fill();
+    }
+
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.colorSpace = THREE.SRGBColorSpace;
+    return texture;
+  }, []);
+
+  // Initialize Three.js Scene
+  useEffect(() => {
+    const container = mountRef.current;
+    if (!container) return;
+
+    const width = container.clientWidth || 800;
+    const height = container.clientHeight || 550;
+
+    // 1. Scene
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color("#0c1117");
+    refs.current.scene = scene;
+
+    // 2. Camera
+    const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 50);
+    camera.position.set(0, -2.1, 0.65);
+    refs.current.camera = camera;
+
+    // 3. Renderer
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    container.appendChild(renderer.domElement);
+    refs.current.renderer = renderer;
+
+    // 4. Orbit Controls
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.06;
+    controls.target.set(0, 0, 0.6);
+    controls.maxDistance = 6.0;
+    controls.minDistance = 0.6;
+    refs.current.controls = controls;
+
+    // 5. Lighting Setup (Photorealistic Architectural Showroom)
+    const hemiLight = new THREE.HemisphereLight("#f0f5fa", "#1a2228", 0.85);
+    scene.add(hemiLight);
+
+    const sunLight = new THREE.DirectionalLight("#fffaf0", 1.8);
+    sunLight.position.set(2.5, 4.0, 3.5);
+    sunLight.castShadow = true;
+    sunLight.shadow.mapSize.width = 1024;
+    sunLight.shadow.mapSize.height = 1024;
+    sunLight.shadow.bias = -0.0001;
+    scene.add(sunLight);
+
+    const interiorFill = new THREE.DirectionalLight("#e6eff8", 0.9);
+    interiorFill.position.set(-2.0, -3.0, 2.0);
+    scene.add(interiorFill);
+
+    const rimLight = new THREE.DirectionalLight("#cce0ff", 0.6);
+    rimLight.position.set(0, 3.5, 1.2);
+    scene.add(rimLight);
+
+    // 6. Architectural Room & Aperture Context
+    // Outdoor Scenery Backdrop plane (Placed behind the window opening at Y = +2.5m)
+    const sceneryGeo = new THREE.PlaneGeometry(7.0, 4.5);
+    const sceneryMat = new THREE.MeshBasicMaterial({
+      map: createSceneryTexture(outdoorView),
+      side: THREE.DoubleSide
+    });
+    const sceneryMesh = new THREE.Mesh(sceneryGeo, sceneryMat);
+    sceneryMesh.position.set(0, 2.2, 0.8);
+    sceneryMesh.rotation.x = Math.PI / 2;
+    scene.add(sceneryMesh);
+    refs.current.sceneryMesh = sceneryMesh;
+
+    // Architectural Wall Aperture (Surrounds the 1200x1200mm window)
+    const wallMat = new THREE.MeshStandardMaterial({
+      color: "#161d26",
+      roughness: 0.85,
+      metalness: 0.05
+    });
+
+    // Left Wall
+    const wallL = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.25, 2.4), wallMat);
+    wallL.position.set(-1.22, 0.0, 0.6);
+    scene.add(wallL);
+
+    // Right Wall
+    const wallR = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.25, 2.4), wallMat);
+    wallR.position.set(1.22, 0.0, 0.6);
+    scene.add(wallR);
+
+    // Top Header Wall
+    const wallT = new THREE.Mesh(new THREE.BoxGeometry(1.24, 0.25, 0.8), wallMat);
+    wallT.position.set(0.0, 0.0, 1.62);
+    scene.add(wallT);
+
+    // Window Sill (Architectural stone sill on interior side)
+    const sillMat = new THREE.MeshStandardMaterial({
+      color: "#283442",
+      roughness: 0.4,
+      metalness: 0.1
+    });
+    const sill = new THREE.Mesh(new THREE.BoxGeometry(1.36, 0.35, 0.06), sillMat);
+    sill.position.set(0.0, -0.06, -0.02);
+    scene.add(sill);
+
+    // 7. Animation Loop
+    let animId;
+    const animate = () => {
+      animId = requestAnimationFrame(animate);
+      const delta = refs.current.clock.getDelta();
+
+      if (refs.current.mixer) {
+        refs.current.mixer.update(delta);
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    };
+    animate();
+
+    // 8. Handle Resize
+    const handleResize = () => {
+      if (!container || !renderer || !camera) return;
+      const w = container.clientWidth;
+      const h = container.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener("resize", handleResize);
+      if (renderer.domElement && container.contains(renderer.domElement)) {
+        container.removeChild(renderer.domElement);
+      }
+      renderer.dispose();
+    };
+  }, [createSceneryTexture, outdoorView]);
+
+  // Update Scenery Backdrop when outdoorView changes
+  useEffect(() => {
+    if (refs.current.sceneryMesh) {
+      refs.current.sceneryMesh.material.map = createSceneryTexture(outdoorView);
+      refs.current.sceneryMesh.material.needsUpdate = true;
+    }
+  }, [outdoorView, createSceneryTexture]);
+
+  // Load Model based on active selection
+  useEffect(() => {
+    const scene = refs.current.scene;
+    if (!scene) return;
+
+    setLoading(true);
+    setError(null);
+
+    // Clean previous model and animation mixer
+    if (refs.current.model) {
+      scene.remove(refs.current.model);
+      refs.current.model = null;
+    }
+    if (refs.current.mixer) {
+      refs.current.mixer.stopAllAction();
+      refs.current.mixer = null;
+      refs.current.actions = [];
+    }
+    refs.current.operableParts = [];
+    refs.current.profileMeshes = [];
+    refs.current.glassMeshes = [];
+    refs.current.hardwareMeshes = [];
+
+    const modelUrl = resolveModelUrl();
+    const loader = new GLTFLoader();
+
+    loader.load(
+      modelUrl,
+      (gltf) => {
+        const root = gltf.scene;
+        scene.add(root);
+        refs.current.model = root;
+
+        // Categorize meshes for live material swapping & interaction
+        root.traverse((node) => {
+          if (node.isMesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+
+            const name = node.name.toLowerCase();
+
+            if (name.includes("glass")) {
+              refs.current.glassMeshes.push(node);
+            } else if (
+              name.includes("handle") ||
+              name.includes("lever") ||
+              name.includes("touchlock") ||
+              name.includes("actuator") ||
+              name.includes("latch") ||
+              name.includes("keeper") ||
+              name.includes("hinge") ||
+              name.includes("stay")
+            ) {
+              refs.current.hardwareMeshes.push(node);
+              refs.current.operableParts.push(node);
+            } else if (
+              name.includes("frame") ||
+              name.includes("sash") ||
+              name.includes("bead") ||
+              name.includes("interlock") ||
+              name.includes("mullion")
+            ) {
+              refs.current.profileMeshes.push(node);
+            }
+          } else if (node.type === "Group" || node.type === "Object3D") {
+            const name = node.name.toLowerCase();
+            if (name.includes("sash") || name.includes("controller") || name.includes("handle")) {
+              refs.current.operableParts.push(node);
+            }
+          }
+        });
+
+        // Setup Animation Mixer
+        if (gltf.animations && gltf.animations.length > 0) {
+          const mixer = new THREE.AnimationMixer(root);
+          refs.current.mixer = mixer;
+          refs.current.actions = gltf.animations.map((clip) => {
+            const action = mixer.clipAction(clip);
+            action.clampWhenFinished = true;
+            return action;
+          });
+        }
+
+        setLoading(false);
+      },
+      undefined,
+      (err) => {
+        console.error("Error loading window GLB:", err);
+        setError("3D Model load error. Switching to interactive technical preview.");
+        setLoading(false);
+      }
+    );
+  }, [resolveModelUrl]);
+
+  // Live PBR Material Swapper (with 100% Hardware & Glass Isolation)
+  useEffect(() => {
+    if (!refs.current.model) return;
+
+    // 1. Frame Profile Color & Finish
+    const isAlu = product === "aluminium";
+    const profileColor = finish?.baseColor || (isAlu ? "#2e343b" : "#f4f5f2");
+    const profileRoughness = isAlu ? 0.38 : (finish?.family === "Woodgrain Laminate" ? 0.45 : 0.28);
+    const profileMetallic = isAlu ? 0.88 : 0.0;
+
+    refs.current.profileMeshes.forEach((mesh) => {
+      if (mesh.material) {
+        mesh.material = new THREE.MeshStandardMaterial({
+          color: new THREE.Color(profileColor),
+          roughness: profileRoughness,
+          metalness: profileMetallic,
+          envMapIntensity: 1.0
+        });
+        mesh.material.needsUpdate = true;
+      }
+    });
+
+    // 2. Glass Transmission & Optical Properties (100% Isolated from frame color)
+    const glassType = glass?.id || "clear";
+    const glassTint = glass?.visualTint || "rgba(225, 245, 255, 0.4)";
+    const isFrosted = glassType.includes("frosted");
+
+    refs.current.glassMeshes.forEach((mesh) => {
+      mesh.material = new THREE.MeshPhysicalMaterial({
+        color: new THREE.Color(isFrosted ? "#e6eff5" : "#f5fbff"),
+        transmission: isFrosted ? 0.45 : 0.94,
+        opacity: 1.0,
+        transparent: true,
+        roughness: isFrosted ? 0.82 : 0.02,
+        ior: 1.52,
+        thickness: 0.015,
+        reflectivity: 0.7,
+        specularIntensity: 1.0
+      });
+      mesh.material.needsUpdate = true;
+    });
+
+    // 3. Hardware Isolation Protection
+    // Ensure handles, keepers, screws, and touch locks keep satin metal/white materials
+    refs.current.hardwareMeshes.forEach((mesh) => {
+      const name = mesh.name.toLowerCase();
+      const isTouchLockWhite = name.includes("touchlock") && (name.includes("body") || name.includes("actuator"));
+
+      if (isTouchLockWhite) {
+        mesh.material = new THREE.MeshStandardMaterial({
+          color: new THREE.Color("#f0f1ed"),
+          roughness: 0.26,
+          metalness: 0.02
+        });
+      } else {
+        mesh.material = new THREE.MeshStandardMaterial({
+          color: new THREE.Color("#d2d6dc"),
+          roughness: 0.22,
+          metalness: 0.95
+        });
+      }
+      mesh.material.needsUpdate = true;
+    });
+  }, [finish, glass, product]);
+
+  // Handle Camera Presets
+  const setCameraPreset = (preset) => {
+    setActiveCameraPreset(preset);
+    const cam = refs.current.camera;
+    const controls = refs.current.controls;
+    if (!cam || !controls) return;
+
+    if (preset === "interior") {
+      cam.position.set(0, -2.1, 0.65);
+      controls.target.set(0, 0, 0.6);
+    } else if (preset === "exterior") {
+      cam.position.set(0, 2.2, 0.65);
+      controls.target.set(0, 0, 0.6);
+    } else if (preset === "front") {
+      cam.position.set(0, -2.4, 0.6);
+      controls.target.set(0, 0, 0.6);
+    } else if (preset === "side") {
+      cam.position.set(-2.0, 0, 0.6);
+      controls.target.set(0, 0, 0.6);
+    } else if (preset === "hardware") {
+      cam.position.set(0.55, -0.65, 0.62);
+      controls.target.set(0.5, 0, 0.6);
+    }
+  };
+
+  // Direct Pointer & Drag Interaction Handling
+  const handlePointerDown = (e) => {
+    const rect = mountRef.current.getBoundingClientRect();
+    refs.current.mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    refs.current.mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+    refs.current.raycaster.setFromCamera(refs.current.mouse, refs.current.camera);
+    const intersects = refs.current.raycaster.intersectObjects(refs.current.operableParts, true);
+
+    if (intersects.length > 0) {
+      const hit = intersects[0].object;
+      refs.current.draggedObject = hit;
+      refs.current.dragStart = { x: e.clientX, y: e.clientY };
+      refs.current.controls.enabled = false; // Disable orbit while manipulating sash
+      setIsDraggingPart(true);
+    }
+  };
+
+  const handlePointerMove = (e) => {
+    const rect = mountRef.current.getBoundingClientRect();
+    refs.current.mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    refs.current.mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+
+    // Check hover
+    if (!isDraggingPart) {
+      refs.current.raycaster.setFromCamera(refs.current.mouse, refs.current.camera);
+      const intersects = refs.current.raycaster.intersectObjects(refs.current.operableParts, true);
+      if (intersects.length > 0) {
+        setHoveredPart(intersects[0].object.name);
+      } else {
+        setHoveredPart(null);
+      }
+    } else if (refs.current.draggedObject) {
+      // Direct drag interaction
+      const deltaX = (e.clientX - refs.current.dragStart.x) * 0.005;
+      const obj = refs.current.draggedObject;
+
+      // Find controller parent
+      let ctrl = obj;
+      while (ctrl.parent && !ctrl.name.toLowerCase().includes("controller") && ctrl.parent !== refs.current.model) {
+        ctrl = ctrl.parent;
+      }
+
+      if (windowType === "sliding") {
+        // Slide sash along X axis within valid limits [0 to 0.53m]
+        if (ctrl.position) {
+          const newX = Math.max(0, Math.min(0.53, ctrl.position.x + deltaX));
+          ctrl.position.x = newX;
+        }
+      } else if (windowType === "casement") {
+        // Rotate sash around hinge axis [0 to 75 deg]
+        if (ctrl.rotation) {
+          const newRot = Math.max(0, Math.min(1.3, ctrl.rotation.z + deltaX));
+          ctrl.rotation.z = newRot;
+        }
+      }
+      refs.current.dragStart = { x: e.clientX, y: e.clientY };
+    }
+  };
+
+  const handlePointerUp = () => {
+    if (isDraggingPart) {
+      refs.current.draggedObject = null;
+      refs.current.controls.enabled = true; // Re-enable orbit
+      setIsDraggingPart(false);
+    }
+  };
+
+  // Demo Animation Playback
+  const togglePlayDemo = () => {
+    if (!refs.current.mixer || refs.current.actions.length === 0) return;
+
+    if (!demoPlaying) {
+      refs.current.actions.forEach((act) => {
+        act.reset();
+        act.setLoop(THREE.LoopRepeat, 1);
+        act.play();
+      });
+      setDemoPlaying(true);
+      if (onStateChange) onStateChange("demo");
+    } else {
+      refs.current.actions.forEach((act) => act.paused = !act.paused);
+      setDemoPlaying(!refs.current.actions[0]?.paused);
+    }
+  };
+
+  const handleReset = () => {
+    if (refs.current.mixer) {
+      refs.current.mixer.stopAllAction();
+    }
+    if (refs.current.model) {
+      refs.current.model.traverse((node) => {
+        if (node.position) node.position.set(0, 0, 0);
+        if (node.rotation) node.rotation.set(0, 0, 0);
+      });
+    }
+    setDemoPlaying(false);
+    if (onStateChange) onStateChange("closed");
+  };
+
+  return (
+    <div
+      className="fsq-3d-studio-viewport-root"
+      style={{
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        minHeight: "480px",
+        borderRadius: "12px",
+        overflow: "hidden",
+        backgroundColor: "#0c1117",
+        cursor: isDraggingPart ? "grabbing" : hoveredPart ? "grab" : "default"
+      }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+    >
+      {/* 3D Canvas Mount Point */}
+      <div ref={mountRef} style={{ width: "100%", height: "100%" }} />
+
+      {/* Loading Overlay */}
+      {loading && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            background: "rgba(12, 17, 23, 0.88)",
+            color: "#e2e8f0",
+            zIndex: 10,
+            backdropFilter: "blur(6px)"
+          }}
+        >
+          <div className="studio-spinner" style={{ width: 44, height: 44, border: "3px solid #334155", borderTopColor: "#38bdf8", borderRadius: "50%", animation: "spin 0.8s linear infinite" }} />
+          <p style={{ marginTop: 14, fontSize: "0.95rem", fontWeight: 500, letterSpacing: "0.02em" }}>
+            Loading High-Precision 3D Geometry...
+          </p>
+        </div>
+      )}
+
+      {/* Error Badge */}
+      {error && (
+        <div
+          style={{
+            position: "absolute",
+            top: 16,
+            left: 16,
+            right: 16,
+            background: "rgba(239, 68, 68, 0.15)",
+            border: "1px solid #ef4444",
+            color: "#fca5a5",
+            padding: "10px 14px",
+            borderRadius: "8px",
+            fontSize: "0.85rem",
+            zIndex: 10
+          }}
+        >
+          {error}
+        </div>
+      )}
+
+      {/* Floating Viewport Overlay Controls */}
+      <div
+        style={{
+          position: "absolute",
+          top: 14,
+          left: 14,
+          display: "flex",
+          gap: 6,
+          zIndex: 5
+        }}
+      >
+        {[
+          { id: "interior", label: "Interior View" },
+          { id: "exterior", label: "Exterior View" },
+          { id: "front", label: "Elevation" },
+          { id: "hardware", label: "Hardware Close-up" }
+        ].map((btn) => (
+          <button
+            key={btn.id}
+            onClick={() => setCameraPreset(btn.id)}
+            style={{
+              padding: "6px 12px",
+              fontSize: "0.78rem",
+              fontWeight: 500,
+              background: activeCameraPreset === btn.id ? "rgba(56, 189, 248, 0.25)" : "rgba(30, 41, 59, 0.75)",
+              border: activeCameraPreset === btn.id ? "1px solid #38bdf8" : "1px solid rgba(255, 255, 255, 0.12)",
+              color: activeCameraPreset === btn.id ? "#38bdf8" : "#cbd5e1",
+              borderRadius: "6px",
+              cursor: "pointer",
+              backdropFilter: "blur(8px)",
+              transition: "all 0.15s ease"
+            }}
+          >
+            {btn.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Floating Status & Interaction Hint */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 14,
+          left: 14,
+          background: "rgba(15, 23, 42, 0.8)",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          padding: "6px 12px",
+          borderRadius: "6px",
+          fontSize: "0.76rem",
+          color: "#94a3b8",
+          backdropFilter: "blur(6px)",
+          zIndex: 5,
+          pointerEvents: "none"
+        }}
+      >
+        {hoveredPart ? (
+          <span style={{ color: "#38bdf8" }}>✨ Drag to interact: {hoveredPart.replace(/_/g, " ")}</span>
+        ) : (
+          <span>🖱️ Left-click drag to orbit | Scroll to zoom | Click/drag sashes to operate</span>
+        )}
+      </div>
+
+      {/* Play Demo & Reset Action Buttons */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 14,
+          right: 14,
+          display: "flex",
+          gap: 8,
+          zIndex: 5
+        }}
+      >
+        <button
+          onClick={togglePlayDemo}
+          style={{
+            padding: "8px 14px",
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            background: demoPlaying ? "#f59e0b" : "#0284c7",
+            border: "none",
+            color: "#ffffff",
+            borderRadius: "6px",
+            cursor: "pointer",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.35)",
+            transition: "background 0.2s"
+          }}
+        >
+          {demoPlaying ? "⏸ Pause Demo" : "▶ Play Showroom Demo"}
+        </button>
+
+        <button
+          onClick={handleReset}
+          style={{
+            padding: "8px 12px",
+            fontSize: "0.82rem",
+            fontWeight: 500,
+            background: "rgba(30, 41, 59, 0.85)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            color: "#e2e8f0",
+            borderRadius: "6px",
+            cursor: "pointer",
+            backdropFilter: "blur(6px)"
+          }}
+        >
+          ↺ Reset
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default Interactive3DStudio;

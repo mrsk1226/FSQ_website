@@ -1,0 +1,12 @@
+const fs=require('fs'); const crypto=require('crypto');
+const qa='D:/Blender_UPVC/07_Web_3D_Studio/06_QA_Reports/Complete_Studio_Recovery';
+const snapshot=JSON.parse(fs.readFileSync('D:/Blender_UPVC/07_Web_3D_Studio/06_QA_Reports/Colour_Recovery/live_after.json'));
+const textureData=JSON.parse(fs.readFileSync('D:/Blender_UPVC/07_Web_3D_Studio/06_QA_Reports/Colour_Recovery/texture_provenance.json'));
+const names=['Mahogany','Dark_Oak','Anthracite_Grey','Golden_Oak','Silver_Brush','Anthracite_Smooth','Walnut','Black','Turner_Oak_Malt','Sheffield_Oak_Concrete'];
+const finishes=names.map(n=>{const name=`M_Renolit_${n}`,m=snapshot.materials[name],node=m.nodes.find(n=>n.type==='BSDF_PRINCIPLED'),t=textureData.find(t=>t.material===name);return {id:n.toLowerCase().replaceAll('_','-'),name:n.replaceAll('_',' '),family:t?'Woodgrain Laminate':'Solid',type:t?'wood':'solid',baseColor:'#ffffff',linearColor:node.inputs['Base Color'].slice(0,3),roughness:node.inputs.Roughness,metalness:node.inputs.Metallic,texture:t?`/textures/finishes/${t.image}`:null,textureSha256:t?.sha256,sourceMaterial:name,availability:'Recovered visual reference; manufacturer colour calibration unverified'};});
+const srgb=x=>x<=.0031308?12.92*x:1.055*Math.pow(x,1/2.4)-.055;
+finishes.forEach(f=>{f.baseColor='#'+f.linearColor.map(x=>Math.round(srgb(x)*255).toString(16).padStart(2,'0')).join('');});
+finishes.unshift({id:'white-base',name:'Original White',isWhite:true,type:'white',baseColor:'#f5f6f2',linearColor:[.9,.92,.9],roughness:.42,metalness:0,sourceMaterial:'Original recovery white materials',availability:'Provisional original white'});
+fs.writeFileSync('src/data/designs/studioFinishes.json',JSON.stringify(finishes,null,2));
+const paths=['01_Blender_Working/Studio_Recovery/FSQ_UPVC_Casement_2Open_Recovery_v02.blend','01_Blender_Working/Studio_Recovery/FSQ_UPVC_Casement_2Open_Material_Validation_v03.blend','02_Validated_GLB/FSQ_UPVC_Casement_2Open_Recovery_v02_r02.glb'];
+fs.writeFileSync(`${qa}/protected-assets-sha256.json`,JSON.stringify(paths.map(p=>({path:p,sha256:crypto.createHash('sha256').update(fs.readFileSync('D:/Blender_UPVC/07_Web_3D_Studio/'+p)).digest('hex')})),null,2));

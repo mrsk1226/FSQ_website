@@ -1,0 +1,72 @@
+{
+  "studioVersion": "3.6.0",
+  "buildDate": "2026-10-09",
+  "blenderVersion": "5.2.2 LTS",
+  "framework": "React 18 + Vite + Three.js",
+  "models": [
+    {
+      "id": "demo-a-casement",
+      "name": "Double Open Casement Window",
+      "category": "uPVC Casement",
+      "brand": "Prominance",
+      "series": "Optima 60",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_Casement_2Open_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_Casement_2Open_v01.glb",
+      "webPath": "/models/FSQ_UPVC_Casement_2Open_v01.glb",
+      "fileSizeBytes": 46576,
+      "mechanism": "Dual Outward Side-Hung Casement (0° to 70°)",
+      "hardware": "Two Die-Cast Ergonomic Lever Handles (90° latch uncoupling) & Stainless Friction Stays",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "qaStatus": "PASS - Milestone A Verified"
+    },
+    {
+      "id": "demo-b-tilt-turn",
+      "name": "uPVC Tilt & Turn Window",
+      "category": "uPVC Tilt & Turn",
+      "brand": "Prominance",
+      "series": "Optima 70 TT",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_TiltTurn_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_TiltTurn_v01.glb",
+      "webPath": "/models/FSQ_UPVC_TiltTurn_v01.glb",
+      "fileSizeBytes": 33840,
+      "mechanism": "Dual European Action: Inward Swing Turn (-75°) & Inward Ventilation Tilt (12°)",
+      "hardware": "Multi-Position T&T Espag Handle (0° Closed, 90° Turn, 180° Tilt) & Scissor Stay",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "qaStatus": "PASS - Milestone B Verified"
+    },
+    {
+      "id": "demo-c-aluminium",
+      "name": "Aluminium Architectural Casement Window",
+      "category": "Aluminium Casement",
+      "brand": "Uniframe",
+      "series": "Architectural 45",
+      "blendSource": "01_Blender_Working/FSQ_Aluminium_Casement_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_Aluminium_Casement_v01.glb",
+      "webPath": "/models/FSQ_Aluminium_Casement_v01.glb",
+      "fileSizeBytes": 22752,
+      "mechanism": "Slim Architectural Outward Swing (-75°)",
+      "hardware": "Architectural Matte Black Slimline Lever Handle & Heavy-Duty Friction Stays",
+      "materialFamily": "Uniframe Powder Coat / Anodized Metallic",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "qaStatus": "PASS - Milestone C Verified"
+    },
+    {
+      "id": "demo-d-sliding",
+      "name": "Prominance Optima 2-Track Sliding Window",
+      "category": "uPVC Sliding",
+      "brand": "Prominance",
+      "series": "Optima 2-Track",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_Sliding_2Track_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_Sliding_2Track_v01.glb",
+      "webPath": "/models/FSQ_UPVC_Sliding_2Track_v01.glb",
+      "fileSizeBytes": 766292,
+      "mechanism": "Dual Independent Sliding Sashes (0 to 530mm travel) with Track Bypass",
+      "hardware": "Dual Recessed Stadium Touch Locks matching Owner Reference Photo, Stationary Keepers & Stainless Rails",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "qaStatus": "PASS - Milestone D Verified"
+    }
+  ]
+}

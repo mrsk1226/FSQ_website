@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { aluminiumFinishes } from "../../data/designs/windowSystems.js";
-import {studioSystems as windowSystems,studioRecords} from "../../data/designs/studioRegistry.js";
-import upvcFinishes from "../../data/designs/studioFinishes.json";
-import StudioDesignExplorer from './StudioDesignExplorer.jsx';
+import { windowSystems, upvcFinishes, aluminiumFinishes } from "../../data/designs/windowSystems.js";
 import { glassOptions } from "../../data/designs/glassData.js";
 import StudioWindowAdapter from "./StudioWindowAdapter.jsx";
 
@@ -52,7 +49,6 @@ export const WindowExperienceConfigurator = ({
 
   // 2. Window Type State: "casement" | "sliding" | "tilt-turn" (Default: casement)
   const [windowType, setWindowType] = useState(() => {
-    if (['door-casement','door-sliding','door-fold','bay-concepts'].includes(initialParams.type) && initialParams.product !== 'aluminium') return initialParams.type;
     if (initialParams.type === "sliding") return "sliding";
     if (initialParams.type === "tilt-turn" && initialParams.product !== "aluminium") return "tilt-turn";
     return "casement";
@@ -60,8 +56,6 @@ export const WindowExperienceConfigurator = ({
 
   // Resolve current system from product & windowType
   const resolveSystemId = (prod, type) => {
-    if (type.startsWith('door-')) return `upvc-${type}`;
-    if (type === 'bay-concepts') return 'upvc-bay-concepts';
     if (prod === "aluminium") {
       return type === "sliding" ? "aluminium-sliding" : "aluminium-casement";
     }
@@ -127,9 +121,6 @@ export const WindowExperienceConfigurator = ({
   // 8. Architectural Outdoor Scenery View: "ooty" | "city" | "garden" | "hills"
   const [outdoorView, setOutdoorView] = useState("ooty");
 
-  // 9. Architectural Interior Room Environment: "smart" | "ooty-bay" | "hillside-living" | "city-bedroom" | ...
-  const [roomPreset, setRoomPreset] = useState("smart");
-
   // Quotation Modal State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [quoteSubmitted, setQuoteSubmitted] = useState(false);
@@ -156,7 +147,7 @@ export const WindowExperienceConfigurator = ({
     }
 
     let nextType = windowType;
-    if (qParams.type && windowSystems.some(s=>s.material===nextProduct && s.mechanismType===qParams.type)) {
+    if (qParams.type && (qParams.type === "casement" || qParams.type === "sliding" || (qParams.type === "tilt-turn" && nextProduct !== "aluminium"))) {
       nextType = qParams.type;
       setWindowType(nextType);
     }
@@ -193,7 +184,7 @@ export const WindowExperienceConfigurator = ({
   const handleProductChange = (newProduct) => {
     setProduct(newProduct);
     let nextType = windowType;
-    if (newProduct === "aluminium" && !['casement','sliding'].includes(windowType)) {
+    if (newProduct === "aluminium" && windowType === "tilt-turn") {
       nextType = "casement";
       setWindowType("casement");
     }
@@ -305,8 +296,6 @@ export const WindowExperienceConfigurator = ({
           </p>
         </div>
 
-        <StudioDesignExplorer selectedId={`${activeSystemId}:${selectedDesignIdx}`} onSelect={r=>{if(r.product!==product)setSelectedFinish(r.product==='aluminium'?aluminiumFinishes[0]:upvcFinishes[0]);setProduct(r.product);setWindowType(r.type);setSelectedDesignIdx(r.index);setMechanismState('closed');}}/>
-
         {/* ============================================================
            STUDIO CONTROLS BAR: Dropdowns (Product, Type, Design, Glass)
            ============================================================ */}
@@ -402,7 +391,6 @@ export const WindowExperienceConfigurator = ({
                 <option value="casement">Casement</option>
                 <option value="sliding">Sliding</option>
                 {!isAluminium && <option value="tilt-turn">Tilt &amp; Turn</option>}
-                {!isAluminium && <><option value="door-casement">Casement Doors</option><option value="door-sliding">Sliding Doors</option><option value="door-fold">Slide &amp; Fold Doors</option><option value="bay-concepts">Bay / Bow Concepts</option></>}
               </select>
             </div>
 
@@ -484,7 +472,7 @@ export const WindowExperienceConfigurator = ({
                 }}
               >
                 {glassOptions.map((g) => (
-                  <option key={g.id} value={g.id} disabled={g.isDgu}>
+                  <option key={g.id} value={g.id}>
                     {g.name}
                   </option>
                 ))}
@@ -528,51 +516,6 @@ export const WindowExperienceConfigurator = ({
                 <option value="city">Modern City Skyline</option>
                 <option value="garden">Private Lush Garden</option>
                 <option value="hills">Golden Hour Nature</option>
-              </select>
-            </div>
-
-            {/* 6. ROOM ENVIRONMENT SELECTOR */}
-            <div>
-              <label
-                htmlFor="fsq-studio-room"
-                style={{
-                  display: "block",
-                  fontSize: "0.72rem",
-                  fontWeight: "700",
-                  color: "#0d6eaa",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  marginBottom: "6px"
-                }}
-              >
-                6. ROOM ENVIRONMENT
-              </label>
-              <select
-                id="fsq-studio-room"
-                value={roomPreset}
-                onChange={(e) => setRoomPreset(e.target.value)}
-                style={{
-                  width: "100%",
-                  padding: "10px 12px",
-                  borderRadius: "8px",
-                  border: "1.5px solid #cbd5e1",
-                  background: "#ffffff",
-                  fontSize: "0.88rem",
-                  fontWeight: "600",
-                  color: "#1e293b",
-                  cursor: "pointer",
-                  outline: "none"
-                }}
-              >
-                <option value="smart">✨ Auto Smart-Matched</option>
-                <option value="ooty-bay">Bay Seating (Curved Window Seat)</option>
-                <option value="hillside-living">Hillside Living Room (Five-Panel)</option>
-                <option value="city-bedroom">City View Bedroom (Three-Panel)</option>
-                <option value="modern-bedroom">Modern Bedroom</option>
-                <option value="luxury-living">Luxury Living Room</option>
-                <option value="apartment-living">Apartment Living Room</option>
-                <option value="home-office">Contemporary Office</option>
-                <option value="garden-living">Garden Living Sunroom</option>
               </select>
             </div>
           </div>
@@ -678,7 +621,6 @@ export const WindowExperienceConfigurator = ({
                   onStateChange={(nextState) => setMechanismState(nextState)}
                   viewMode={viewMode}
                   outdoorView={outdoorView}
-                  roomPreset={roomPreset}
                 />
               ) : (
                 <div style={{ padding: "40px 20px", textAlign: "center", background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "10px", color: "#991b1b" }}>
@@ -750,7 +692,7 @@ export const WindowExperienceConfigurator = ({
                         transition: "all 0.2s"
                       }}
                     >
-                      Tilt Ventilation (10° · provisional)
+                      Tilt Ventilation (15°)
                     </button>
                     <button
                       type="button"
@@ -768,7 +710,7 @@ export const WindowExperienceConfigurator = ({
                         transition: "all 0.2s"
                       }}
                     >
-                      Turn Inward (65° · provisional)
+                      Turn Inward (75°)
                     </button>
                     <button
                       type="button"
@@ -786,7 +728,7 @@ export const WindowExperienceConfigurator = ({
                         transition: "all 0.2s"
                       }}
                     >
-                      Close
+                      Close &amp; Lock
                     </button>
                   </>
                 ) : (
@@ -952,7 +894,6 @@ export const WindowExperienceConfigurator = ({
                 } else {
                   swatchStyle.background = fin.baseColor || "#525960";
                 }
-                if (fin.texture) {swatchStyle.backgroundImage=`url(${fin.texture})`;swatchStyle.backgroundSize='auto 140%';swatchStyle.backgroundPosition='center';}
 
                 return (
                   <button
@@ -999,7 +940,7 @@ export const WindowExperienceConfigurator = ({
                           textOverflow: "ellipsis"
                         }}
                       >
-                        {isAluminium ? (fin.type==='wood'?'Texture unavailable — reference colour only':'Reference colour approximation') : fin.family || fin.category || 'Original recovery white'}
+                        {fin.family || fin.category}
                       </span>
                     </div>
 
@@ -1261,5 +1202,3 @@ export const WindowExperienceConfigurator = ({
 };
 
 export default WindowExperienceConfigurator;
-
-

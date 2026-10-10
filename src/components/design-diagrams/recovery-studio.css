@@ -1,0 +1,14 @@
+.recovery-studio button {border:1px solid #c5d0d6;border-radius:6px;background:#f8fafb;color:#193343;padding:5px 8px;font-size:11px;font-weight:600;cursor:pointer;}
+.recovery-studio button[aria-pressed="true"] {background:#126b98;color:white;border-color:#126b98;}
+.recovery-studio input[type="range"] {width:72px;vertical-align:middle;accent-color:#126b98;}
+.recovery-studio input[type="color"] {width:24px;height:22px;border:0;padding:0;vertical-align:middle;}
+.recovery-studio select {font-size:11px;padding:3px;border:1px solid #cbd5df;border-radius:4px;background:white;}
+.recovery-studio label {white-space:nowrap;}
+.recovery-studio canvas {display:block;}
+.studio-workspace-grid {grid-template-columns:minmax(0,1fr) 280px!important;}
+.studio-workspace-grid > * {min-width:0;box-sizing:border-box;}
+.studio-workspace-grid div {box-sizing:border-box;}
+.studio-window-adapter-container {min-width:0;}
+.recovery-studio details {color:#556779;}
+@media(max-width:800px){.studio-workspace-grid {grid-template-columns:minmax(0,1fr)!important;gap:16px!important;}.studio-workspace-grid > div {padding-left:12px!important;padding-right:12px!important;}}
+@media(max-width:600px){.recovery-studio button{padding:5px;font-size:10px;}.recovery-studio input[type="range"]{width:55px;}.studio-window-adapter-container > div:first-child button{font-size:9px!important;padding:5px 8px!important;}}

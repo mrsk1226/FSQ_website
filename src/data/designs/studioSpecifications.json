@@ -1,0 +1,30 @@
+{
+  "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+  "catalogueAssignment": "The 78 catalogue layouts do not identify which manufacturer profile series, glazing stack or hardware variant applies to each design.",
+  "availableReferences": [
+    {
+      "file": "/assets/upvc-windows-brochure.pdf",
+      "manufacturer": "Prominance",
+      "pdfPages": [9, 10],
+      "printedPages": [16, 17, 18, 19],
+      "content": "Dimensioned Optima and Inventa profile sections and assembly illustrations. These are technical references; they do not approve the current recovery geometry or establish individual design assignments.",
+      "examples": ["Optima casement PC50-UF-01 and PC50-US-01: 50 mm depth", "Inventa casement PC62-UF-01 and PC62-US-01: 62 mm depth", "Inventa sliding PS62-UF-01: 62 mm two-track frame", "Inventa sliding PS62-UF-02: 112 mm three-track frame"]
+    },
+    {
+      "file": "Owner_TouchLock_Reference.png",
+      "content": "Owner supplied hardware photograph. No scale, manufacturer part number or approved machining dimensions. Phase 3F geometry explicitly uses provisional dimensions."
+    }
+  ],
+  "conflicts": ["Historical Phase 3F documentation calls its Optima sash 60 mm; the brochure identifies the illustrated Optima casement series as 50 mm. Preserve the existing models and resolve the intended series before claiming dimensional conformity."],
+  "requiredDocuments": [
+    "Approved mapping of all catalogue IDs to Prominance Optima/Inventa or Uniframe product series and profile part numbers",
+    "Uniframe Aluminium dimensioned frame, sash, interlock, mullion, glazing bead and gasket sections",
+    "Touch Lock manufacturer part number, dimensioned assembly, mortise, fastener and keeper installation drawings",
+    "Casement and Tilt & Turn hardware schedules, hinge offsets, load limits, restrictors and permitted opening travel",
+    "Sliding track, roller, anti-lift and interlock details including sash overlap and travel stops",
+    "Slide & Fold hinge/roller/carriage/pivot drawings, folding sequence, track alignment and finite clearance limits",
+    "Per-design glazing stacks, bead selections, glass thicknesses, seals and DGU spacer dimensions",
+    "Approved design dimensions and installation, drainage, reinforcement and wind-load requirements"
+  ],
+  "previewLimitations": "Procedural profile sections, dimensions and hardware are provisional visual demonstrations. The preserved double-casement is integrated with its existing recovery contract. No design is manufacturing verified."
+}

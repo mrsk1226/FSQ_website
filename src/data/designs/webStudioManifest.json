@@ -1,0 +1,3657 @@
+{
+  "studioVersion": "5.0.0-recovery-checkpoint",
+  "buildDate": "2026-10-10",
+  "framework": "React 18 + Vite + Three.js",
+  "coordinateConvention": "Standard Three.js (Y is UP, X is RIGHT, +Z is ROOM INTERIOR, -Z is OUTDOORS)",
+  "roomEnvironments": [
+    {
+      "id": "ooty-bay",
+      "name": "Ooty Bay Retreat",
+      "layout": "Curved / Bow Window Seating Area",
+      "features": "Deep timber seating bench with upholstered linen cushion, wall casing, warm ambient daylight",
+      "defaultOutdoor": "ooty"
+    },
+    {
+      "id": "hillside-living",
+      "name": "Hillside Living Room",
+      "layout": "Five-Panel Aperture",
+      "features": "Warm dark oak flooring, modern drywall reveals, skirting baseboards",
+      "defaultOutdoor": "hills"
+    },
+    {
+      "id": "city-bedroom",
+      "name": "City View Bedroom",
+      "layout": "Three-Panel Aperture",
+      "features": "Contemporary architectural plaster, tailored quartz sill, ambient room lighting",
+      "defaultOutdoor": "city"
+    },
+    {
+      "id": "modern-bedroom",
+      "name": "Modern Bedroom",
+      "layout": "Single Aperture",
+      "features": "Warm parquet flooring, architectural window reveal and sill",
+      "defaultOutdoor": "garden"
+    },
+    {
+      "id": "home-office",
+      "name": "Contemporary Office",
+      "layout": "Executive Aperture",
+      "features": "Dark slate flooring, architectural dark sill, clean executive lighting",
+      "defaultOutdoor": "city"
+    },
+    {
+      "id": "apartment-living",
+      "name": "Apartment Living Room",
+      "layout": "Panoramic Aperture",
+      "features": "Modern apartment flooring and clean lintel casing",
+      "defaultOutdoor": "city"
+    },
+    {
+      "id": "luxury-living",
+      "name": "Luxury Living Room",
+      "layout": "Expansive Aperture",
+      "features": "Polished interior stone flooring and tailored surrounds",
+      "defaultOutdoor": "hills"
+    }
+  ],
+  "outdoorSceneries": [
+    {
+      "id": "ooty",
+      "name": "Ooty Tea Estate",
+      "texture": "/textures/environments/ooty_tea_estate.jpg",
+      "type": "Photographic Panorama",
+      "description": "Lush emerald-green terraced tea plantations with rolling blue Nilgiri mountains and morning mist"
+    },
+    {
+      "id": "city",
+      "name": "Modern City Skyline",
+      "texture": "/textures/environments/modern_city_skyline.jpg",
+      "type": "Photographic Panorama",
+      "description": "Contemporary glass skyscrapers, metropolitan skyline and bright daylight"
+    },
+    {
+      "id": "garden",
+      "name": "Private Lush Garden",
+      "texture": "/textures/environments/green_garden.jpg",
+      "type": "Photographic Panorama",
+      "description": "Manicured tropical lawn, palms, and exotic flowering estate garden"
+    },
+    {
+      "id": "hills",
+      "name": "Rolling Hills & Nature",
+      "texture": "/textures/environments/hills_nature.jpg",
+      "type": "Photographic Panorama",
+      "description": "Peaceful morning mountain ridges, sunbeams, and alpine valley forest"
+    }
+  ],
+  "models": [
+    {
+      "id": "demo-a-casement",
+      "name": "Double Open Casement Window",
+      "category": "uPVC Casement",
+      "brand": "Prominance",
+      "series": "Optima 60",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_Casement_2Open_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_Casement_2Open_v01.glb",
+      "webPath": "/models/FSQ_UPVC_Casement_2Open_v01.glb",
+      "mechanism": "Dual Outward Side-Hung Casement (0° to 70° Y-rotation)",
+      "hardware": "Two Die-Cast Ergonomic Lever Handles (90° latch uncoupling) & Stainless Friction Stays",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "status": "PARTIAL_3D",
+      "validationNotes": "Historical standalone asset; catalogue compatibility and current website acceptance have not been individually verified."
+    },
+    {
+      "id": "demo-b-tilt-turn",
+      "name": "uPVC Tilt & Turn Window",
+      "category": "uPVC Tilt & Turn",
+      "brand": "Prominance",
+      "series": "Optima 70 TT",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_TiltTurn_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_TiltTurn_v01.glb",
+      "webPath": "/models/FSQ_UPVC_TiltTurn_v01.glb",
+      "mechanism": "Dual Action: Inward Swing Turn (68° Y-rotation) & Inward Ventilation Tilt (12° X-rotation)",
+      "hardware": "Multi-Position T&T Espag Handle (0° Closed, 90° Turn, 180° Tilt) & Scissor Stay",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "status": "PARTIAL_3D",
+      "validationNotes": "Historical standalone asset; catalogue compatibility and current website acceptance have not been individually verified."
+    },
+    {
+      "id": "demo-c-aluminium",
+      "name": "Aluminium Architectural Casement Window",
+      "category": "Aluminium Casement",
+      "brand": "Uniframe",
+      "series": "Architectural 45",
+      "blendSource": "01_Blender_Working/FSQ_Aluminium_Casement_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_Aluminium_Casement_v01.glb",
+      "webPath": "/models/FSQ_Aluminium_Casement_v01.glb",
+      "mechanism": "Slim Architectural Outward Swing (68° Y-rotation)",
+      "hardware": "Architectural Matte Black Slimline Lever Handle & Heavy-Duty Friction Stays",
+      "materialFamily": "Uniframe Powder Coat / Anodized Metallic",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "status": "PARTIAL_3D",
+      "validationNotes": "Historical standalone asset; catalogue compatibility and current website acceptance have not been individually verified."
+    },
+    {
+      "id": "demo-d-sliding",
+      "name": "Prominance Optima 2-Track Sliding Window",
+      "category": "uPVC Sliding",
+      "brand": "Prominance",
+      "series": "Optima 2-Track",
+      "blendSource": "01_Blender_Working/FSQ_UPVC_Sliding_2Track_v01.blend",
+      "glbPath": "02_Validated_GLB/FSQ_UPVC_Sliding_2Track_v01.glb",
+      "webPath": "/models/FSQ_UPVC_Sliding_2Track_v01.glb",
+      "mechanism": "Dual Independent Sliding Sashes (0 to 480mm X-travel) with Track Bypass",
+      "hardware": "Dual Recessed Stadium Touch Locks matching Owner Reference Photo, Stationary Keepers & Stainless Rails",
+      "materialFamily": "11 Renolit Exterior Finishes",
+      "glass": "Clear, Grey, Bronze, Frosted, Reflective",
+      "status": "PARTIAL_3D",
+      "validationNotes": "Historical standalone asset; catalogue compatibility and current website acceptance have not been individually verified."
+    }
+  ],
+  "catalogueSummary": {
+    "totalConfigurations": 78,
+    "concepts": 3,
+    "verified": 0,
+    "partial": 78,
+    "individuallyBrowserLayoutTested": 81,
+    "status": "Historical blanket VERIFIED claims withdrawn. Browser layout evidence is not manufacturing or complete visual verification."
+  },
+  "designs": [
+    {
+      "id": "upvc-casement:0",
+      "systemId": "upvc-casement",
+      "index": 0,
+      "name": "3-Pane Side Hung",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:1",
+      "systemId": "upvc-casement",
+      "index": 1,
+      "name": "Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:2",
+      "systemId": "upvc-casement",
+      "index": 2,
+      "name": "Single Right",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:3",
+      "systemId": "upvc-casement",
+      "index": 3,
+      "name": "Single Left",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:4",
+      "systemId": "upvc-casement",
+      "index": 4,
+      "name": "Double Side Hung",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "recovered-glb",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "EXISTING_BLENDER_CONVEX_QA_NOT_FULL_BROWSER_REVALIDATION",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": null,
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:5",
+      "systemId": "upvc-casement",
+      "index": 5,
+      "name": "Fixed & Right",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:6",
+      "systemId": "upvc-casement",
+      "index": 6,
+      "name": "Twin Left",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:7",
+      "systemId": "upvc-casement",
+      "index": 7,
+      "name": "Double French",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:8",
+      "systemId": "upvc-casement",
+      "index": 8,
+      "name": "Left & Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:9",
+      "systemId": "upvc-casement",
+      "index": 9,
+      "name": "Triple Open",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:10",
+      "systemId": "upvc-casement",
+      "index": 10,
+      "name": "Triple with Top Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:11",
+      "systemId": "upvc-casement",
+      "index": 11,
+      "name": "Left, Fixed, Right",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:12",
+      "systemId": "upvc-casement",
+      "index": 12,
+      "name": "Triple Left",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:13",
+      "systemId": "upvc-casement",
+      "index": 13,
+      "name": "Triple Alternate",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:14",
+      "systemId": "upvc-casement",
+      "index": 14,
+      "name": "Large 3-Pane",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:15",
+      "systemId": "upvc-casement",
+      "index": 15,
+      "name": "Top Hung & Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:16",
+      "systemId": "upvc-casement",
+      "index": 16,
+      "name": "4-Pane Center Open",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:17",
+      "systemId": "upvc-casement",
+      "index": 17,
+      "name": "5-Pane Wide",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:18",
+      "systemId": "upvc-casement",
+      "index": 18,
+      "name": "6-Pane Extrawide",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:19",
+      "systemId": "upvc-casement",
+      "index": 19,
+      "name": "Door & Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:20",
+      "systemId": "upvc-casement",
+      "index": 20,
+      "name": "4-Pane Top Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:21",
+      "systemId": "upvc-casement",
+      "index": 21,
+      "name": "3-Pane Bottom Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:22",
+      "systemId": "upvc-casement",
+      "index": 22,
+      "name": "2-Pane Bottom Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:23",
+      "systemId": "upvc-casement",
+      "index": 23,
+      "name": "Top Hung Combinations",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:24",
+      "systemId": "upvc-casement",
+      "index": 24,
+      "name": "Triple Combination",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-casement:25",
+      "systemId": "upvc-casement",
+      "index": 25,
+      "name": "Single Bottom Fixed",
+      "product": "upvc",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-sliding:0",
+      "systemId": "upvc-sliding",
+      "index": 0,
+      "name": "2-Track 2-Panel",
+      "product": "upvc",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-sliding:1",
+      "systemId": "upvc-sliding",
+      "index": 1,
+      "name": "2-Track 3-Panel",
+      "product": "upvc",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-sliding:2",
+      "systemId": "upvc-sliding",
+      "index": 2,
+      "name": "2-Track 4-Panel",
+      "product": "upvc",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "right"
+          },
+          {
+            "type": "slide",
+            "direction": "right",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-sliding:3",
+      "systemId": "upvc-sliding",
+      "index": 3,
+      "name": "3-Track 3-Panel",
+      "product": "upvc",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-sliding:4",
+      "systemId": "upvc-sliding",
+      "index": 4,
+      "name": "Sliding with Top Fixed",
+      "product": "upvc",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-tilt-turn:0",
+      "systemId": "upvc-tilt-turn",
+      "index": 0,
+      "name": "Single Tilt & Turn",
+      "product": "upvc",
+      "type": "tilt-turn",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "tilt",
+            "hinge": "bottom",
+            "subType": "tilt-left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-tilt-turn:1",
+      "systemId": "upvc-tilt-turn",
+      "index": 1,
+      "name": "Double Tilt & Turn",
+      "product": "upvc",
+      "type": "tilt-turn",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "tilt",
+            "hinge": "bottom",
+            "subType": "tilt-left"
+          },
+          {
+            "type": "tilt",
+            "hinge": "right",
+            "subType": "tilt-right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-tilt-turn:2",
+      "systemId": "upvc-tilt-turn",
+      "index": 2,
+      "name": "Tilt & Turn + Fixed",
+      "product": "upvc",
+      "type": "tilt-turn",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "tilt",
+            "hinge": "bottom",
+            "subType": "tilt-left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-tilt-turn:3",
+      "systemId": "upvc-tilt-turn",
+      "index": 3,
+      "name": "Tilt & Turn with Bottom Fixed",
+      "product": "upvc",
+      "type": "tilt-turn",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "tilt",
+            "hinge": "bottom",
+            "subType": "tilt-left"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-tilt-turn:4",
+      "systemId": "upvc-tilt-turn",
+      "index": 4,
+      "name": "Tilt & Turn with Top Fixed",
+      "product": "upvc",
+      "type": "tilt-turn",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "tilt",
+            "hinge": "bottom",
+            "subType": "tilt-left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:0",
+      "systemId": "aluminium-casement",
+      "index": 0,
+      "name": "3-Pane Side Hung",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:1",
+      "systemId": "aluminium-casement",
+      "index": 1,
+      "name": "Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:2",
+      "systemId": "aluminium-casement",
+      "index": 2,
+      "name": "Single Right",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:3",
+      "systemId": "aluminium-casement",
+      "index": 3,
+      "name": "Single Left",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:4",
+      "systemId": "aluminium-casement",
+      "index": 4,
+      "name": "Double Side Hung",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:5",
+      "systemId": "aluminium-casement",
+      "index": 5,
+      "name": "Fixed & Right",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:6",
+      "systemId": "aluminium-casement",
+      "index": 6,
+      "name": "Twin Left",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:7",
+      "systemId": "aluminium-casement",
+      "index": 7,
+      "name": "Double French",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:8",
+      "systemId": "aluminium-casement",
+      "index": 8,
+      "name": "Left & Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:9",
+      "systemId": "aluminium-casement",
+      "index": 9,
+      "name": "Triple Open",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:10",
+      "systemId": "aluminium-casement",
+      "index": 10,
+      "name": "Triple with Top Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:11",
+      "systemId": "aluminium-casement",
+      "index": 11,
+      "name": "Left, Fixed, Right",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:12",
+      "systemId": "aluminium-casement",
+      "index": 12,
+      "name": "Triple Left",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:13",
+      "systemId": "aluminium-casement",
+      "index": 13,
+      "name": "Triple Alternate",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:14",
+      "systemId": "aluminium-casement",
+      "index": 14,
+      "name": "Large 3-Pane",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:15",
+      "systemId": "aluminium-casement",
+      "index": 15,
+      "name": "Top Hung & Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:16",
+      "systemId": "aluminium-casement",
+      "index": 16,
+      "name": "4-Pane Center Open",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:17",
+      "systemId": "aluminium-casement",
+      "index": 17,
+      "name": "5-Pane Wide",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:18",
+      "systemId": "aluminium-casement",
+      "index": 18,
+      "name": "6-Pane Extrawide",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:19",
+      "systemId": "aluminium-casement",
+      "index": 19,
+      "name": "Door & Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:20",
+      "systemId": "aluminium-casement",
+      "index": 20,
+      "name": "4-Pane Top Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:21",
+      "systemId": "aluminium-casement",
+      "index": 21,
+      "name": "3-Pane Bottom Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:22",
+      "systemId": "aluminium-casement",
+      "index": 22,
+      "name": "2-Pane Bottom Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:23",
+      "systemId": "aluminium-casement",
+      "index": 23,
+      "name": "Top Hung Combinations",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:24",
+      "systemId": "aluminium-casement",
+      "index": 24,
+      "name": "Triple Combination",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          },
+          {
+            "type": "open",
+            "hinge": "top"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-casement:25",
+      "systemId": "aluminium-casement",
+      "index": 25,
+      "name": "Single Bottom Fixed",
+      "product": "aluminium",
+      "type": "casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": [
+          {
+            "type": "fixed"
+          }
+        ]
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-sliding:0",
+      "systemId": "aluminium-sliding",
+      "index": 0,
+      "name": "2-Track 2-Panel",
+      "product": "aluminium",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-sliding:1",
+      "systemId": "aluminium-sliding",
+      "index": 1,
+      "name": "2-Track 3-Panel",
+      "product": "aluminium",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-sliding:2",
+      "systemId": "aluminium-sliding",
+      "index": 2,
+      "name": "2-Track 4-Panel",
+      "product": "aluminium",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "right"
+          },
+          {
+            "type": "slide",
+            "direction": "right",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-sliding:3",
+      "systemId": "aluminium-sliding",
+      "index": 3,
+      "name": "3-Track 3-Panel",
+      "product": "aluminium",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "aluminium-sliding:4",
+      "systemId": "aluminium-sliding",
+      "index": 4,
+      "name": "Sliding with Top Fixed",
+      "product": "aluminium",
+      "type": "sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-casement:0",
+      "systemId": "upvc-door-casement",
+      "index": 0,
+      "name": "SINGLE LEFT OPEN",
+      "product": "upvc",
+      "type": "door-casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-casement:1",
+      "systemId": "upvc-door-casement",
+      "index": 1,
+      "name": "SINGLE RIGHT OPEN",
+      "product": "upvc",
+      "type": "door-casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-casement:2",
+      "systemId": "upvc-door-casement",
+      "index": 2,
+      "name": "DOUBLE FRENCH DOOR",
+      "product": "upvc",
+      "type": "door-casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-casement:3",
+      "systemId": "upvc-door-casement",
+      "index": 3,
+      "name": "FRENCH DOOR WITH SIDE FIXED",
+      "product": "upvc",
+      "type": "door-casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-casement:4",
+      "systemId": "upvc-door-casement",
+      "index": 4,
+      "name": "FRENCH DOOR WITH TOP ARCH/FIXED",
+      "product": "upvc",
+      "type": "door-casement",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "main": [
+          {
+            "type": "open",
+            "hinge": "left"
+          },
+          {
+            "type": "open",
+            "hinge": "right"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-sliding:0",
+      "systemId": "upvc-door-sliding",
+      "index": 0,
+      "name": "2-TRACK 2-PANEL (LEFT SLIDE)",
+      "product": "upvc",
+      "type": "door-sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "slide",
+            "direction": "right",
+            "handlePos": "right"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-sliding:1",
+      "systemId": "upvc-door-sliding",
+      "index": 1,
+      "name": "2-TRACK 2-PANEL (RIGHT SLIDE)",
+      "product": "upvc",
+      "type": "door-sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-sliding:2",
+      "systemId": "upvc-door-sliding",
+      "index": 2,
+      "name": "3-PANEL SLIDING (CENTER SLIDE)",
+      "product": "upvc",
+      "type": "door-sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-sliding:3",
+      "systemId": "upvc-door-sliding",
+      "index": 3,
+      "name": "2-TRACK 4-PANEL (CENTER OPENING)",
+      "product": "upvc",
+      "type": "door-sliding",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "slide",
+            "direction": "left",
+            "handlePos": "right"
+          },
+          {
+            "type": "slide",
+            "direction": "right",
+            "handlePos": "left"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-fold:0",
+      "systemId": "upvc-door-fold",
+      "index": 0,
+      "name": "3-PANEL SLIDE & FOLD",
+      "product": "upvc",
+      "type": "door-fold",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fold",
+            "foldIndex": 1,
+            "hinge": "left"
+          },
+          {
+            "type": "fold",
+            "foldIndex": 2,
+            "hinge": "left"
+          },
+          {
+            "type": "fold",
+            "foldIndex": 3,
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-door-fold:1",
+      "systemId": "upvc-door-fold",
+      "index": 1,
+      "name": "4-PANEL SLIDE & FOLD",
+      "product": "upvc",
+      "type": "door-fold",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": false,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fold",
+            "foldIndex": 1,
+            "hinge": "left"
+          },
+          {
+            "type": "fold",
+            "foldIndex": 2,
+            "hinge": "left"
+          },
+          {
+            "type": "fold",
+            "foldIndex": 3,
+            "hinge": "left"
+          },
+          {
+            "type": "fold",
+            "foldIndex": 4,
+            "hinge": "left"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-bay-concepts:0",
+      "systemId": "upvc-bay-concepts",
+      "index": 0,
+      "name": "3-Panel Angled Bay",
+      "product": "upvc",
+      "type": "bay-concepts",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": true,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-bay-concepts:1",
+      "systemId": "upvc-bay-concepts",
+      "index": 1,
+      "name": "5-Panel Bay",
+      "product": "upvc",
+      "type": "bay-concepts",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": true,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    },
+    {
+      "id": "upvc-bay-concepts:2",
+      "systemId": "upvc-bay-concepts",
+      "index": 2,
+      "name": "Curved / Bow Style",
+      "product": "upvc",
+      "type": "bay-concepts",
+      "status": "PARTIAL_3D",
+      "source": "procedural",
+      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "concept": true,
+      "panelLayout": {
+        "top": [],
+        "main": [
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          },
+          {
+            "type": "fixed"
+          }
+        ],
+        "bottom": []
+      },
+      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "validation": {
+        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "stationaryFrame": "BROWSER_PASS",
+        "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
+        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "visual": "OWNER_ACCEPTANCE_PENDING"
+      },
+      "evidence": {
+        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
+        "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
+      }
+    }
+  ],
+  "recoveryAssets": {
+    "casement": "/models/FSQ_UPVC_Casement_2Open_Material_v03_Web_r01.glb",
+    "touchLock": "/models/FSQ_TouchLock_Visual_Recovery_v02.glb",
+    "profileFinishes": "studioFinishes.json",
+    "specifications": "studioSpecifications.json"
+  }
+}

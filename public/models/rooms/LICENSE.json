@@ -1,0 +1,15 @@
+{
+  "license": "CC0 1.0 Universal (Public Domain Dedication)",
+  "creator": "Four Square Fenestration 3D Studio Architecture",
+  "description": "Procedural realistic architectural furniture and decor asset library for 7 interior rooms",
+  "coordinateSystem": "Three.js (+X right, +Y up, +Z into room)",
+  "rooms": [
+    "room_bay_seating.glb",
+    "room_hillside_living.glb",
+    "room_modern_bedroom.glb",
+    "room_luxury_living.glb",
+    "room_apartment_living.glb",
+    "room_home_office.glb",
+    "room_garden_living.glb"
+  ]
+}

@@ -1,0 +1,195 @@
+[
+  {
+    "id": "white-base",
+    "name": "Original White",
+    "isWhite": true,
+    "type": "white",
+    "baseColor": "#f5f6f2",
+    "linearColor": [
+      0.9,
+      0.92,
+      0.9
+    ],
+    "roughness": 0.42,
+    "metalness": 0,
+    "sourceMaterial": "Original recovery white materials",
+    "availability": "Provisional original white"
+  },
+  {
+    "id": "mahogany",
+    "name": "Mahogany",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.36000001430511475,
+    "metalness": 0,
+    "texture": "/textures/finishes/Tex_Renolit_Mahogany_Phase3D.png",
+    "textureSha256": "9ba3eab3efe229d953901d2297735f2aaafa33549223801e309b8a1872c411f3",
+    "sourceMaterial": "M_Renolit_Mahogany",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "dark-oak",
+    "name": "Dark Oak",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.41999998688697815,
+    "metalness": 0,
+    "texture": "/textures/finishes/Tex_Renolit_Dark_Oak_Phase3D.png",
+    "textureSha256": "9ed0a7a9e9a50eb4ac864750b32f2c6869249a34deb6213e94ba7912172cd60f",
+    "sourceMaterial": "M_Renolit_Dark_Oak",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "anthracite-grey",
+    "name": "Anthracite Grey",
+    "family": "Solid",
+    "type": "solid",
+    "baseColor": "#2c3035",
+    "linearColor": [
+      0.02500000037252903,
+      0.029999999329447746,
+      0.035999998450279236
+    ],
+    "roughness": 0.4399999976158142,
+    "metalness": 0,
+    "texture": null,
+    "sourceMaterial": "M_Renolit_Anthracite_Grey",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "golden-oak",
+    "name": "Golden Oak",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.36000001430511475,
+    "metalness": 0,
+    "texture": "/textures/finishes/Tex_Renolit_Golden_Oak_Phase3D.png",
+    "textureSha256": "8f68e370b879254e9f9b75d777257bcbb48ba024058ad25a42f891ddb2a3fc90",
+    "sourceMaterial": "M_Renolit_Golden_Oak",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "silver-brush",
+    "name": "Silver Brush",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.3199999928474426,
+    "metalness": 0.05000000074505806,
+    "texture": "/textures/finishes/Tex_Renolit_Silver_Brush_Phase3D.png",
+    "textureSha256": "4aa6bbd4ca80a1d625b020b1e4d63e89c93384ac82893c067ef80c6882b8e4db",
+    "sourceMaterial": "M_Renolit_Silver_Brush",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "anthracite-smooth",
+    "name": "Anthracite Smooth",
+    "family": "Solid",
+    "type": "solid",
+    "baseColor": "#2b3035",
+    "linearColor": [
+      0.024000000208616257,
+      0.028999999165534973,
+      0.03500000014901161
+    ],
+    "roughness": 0.36000001430511475,
+    "metalness": 0,
+    "texture": null,
+    "sourceMaterial": "M_Renolit_Anthracite_Smooth",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "walnut",
+    "name": "Walnut",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.3799999952316284,
+    "metalness": 0,
+    "texture": "/textures/finishes/Tex_Renolit_Walnut_Phase3D.png",
+    "textureSha256": "a3f46e3f88066bf4d4b8f96d392b70c3e7bd223e95384bf171f5b37b880d8a63",
+    "sourceMaterial": "M_Renolit_Walnut",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "black",
+    "name": "Black",
+    "family": "Solid",
+    "type": "solid",
+    "baseColor": "#1d1d1e",
+    "linearColor": [
+      0.012000000104308128,
+      0.012000000104308128,
+      0.013000000268220901
+    ],
+    "roughness": 0.4000000059604645,
+    "metalness": 0,
+    "texture": null,
+    "sourceMaterial": "M_Renolit_Black",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "turner-oak-malt",
+    "name": "Turner Oak Malt",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.46000000834465027,
+    "metalness": 0,
+    "texture": "/textures/finishes/Ref_Turner_Oak_malt.png",
+    "textureSha256": "451d62d96ace2854a654a88eab48d00270d56f0953ba7c8f67ca93617db819f7",
+    "sourceMaterial": "M_Renolit_Turner_Oak_Malt",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  },
+  {
+    "id": "sheffield-oak-concrete",
+    "name": "Sheffield Oak Concrete",
+    "family": "Woodgrain Laminate",
+    "type": "wood",
+    "baseColor": "#e7e7e7",
+    "linearColor": [
+      0.800000011920929,
+      0.800000011920929,
+      0.800000011920929
+    ],
+    "roughness": 0.44999998807907104,
+    "metalness": 0,
+    "texture": "/textures/finishes/Ref_Sheffield_Oak_concrete.png",
+    "textureSha256": "cebf8bc6af830a7601f6d8fa67c34720b52bf438615b4a2281e3f2b5b999b3cc",
+    "sourceMaterial": "M_Renolit_Sheffield_Oak_Concrete",
+    "availability": "Recovered visual reference; manufacturer colour calibration unverified"
+  }
+]

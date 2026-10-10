@@ -1,0 +1,1 @@
+import fs from 'node:fs';const b=fs.readFileSync('public/models/FSQ_TouchLock_Visual_Reference_v01.glb'),j=JSON.parse(b.subarray(20,20+b.readUInt32LE(12)).toString());console.log(JSON.stringify({nodes:j.nodes,meshes:j.meshes.map(m=>({name:m.name,primitives:m.primitives.map(p=>({material:p.material,mode:p.mode}))})),materials:j.materials},null,2));
