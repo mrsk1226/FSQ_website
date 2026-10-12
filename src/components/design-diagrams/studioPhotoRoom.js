@@ -38,7 +38,7 @@ export function createPhotoRoom(config,map){
 }
 
 const patchVertex=`varying vec2 vWorldPos;varying vec2 vUv;void main(){vUv=uv;vec4 worldPos=modelMatrix*vec4(position,1.0);vWorldPos=worldPos.xy;gl_Position=projectionMatrix*viewMatrix*worldPos;}`;
-const patchFragment=`uniform sampler2D roomMap;uniform vec4 winRect;uniform vec4 patchBounds;uniform vec4 wallUvRect;varying vec2 vWorldPos;varying vec2 vUv;
+const patchFragment=`uniform sampler2D roomMap;uniform vec4 winRect;uniform vec4 patchBounds;uniform vec4 wallUvRect;uniform float isDoorRoom;varying vec2 vWorldPos;varying vec2 vUv;
 void main(){
  vec2 p=vWorldPos;vec2 winLo=winRect.xy,winHi=winRect.xy+winRect.zw;
  if(p.x>=winLo.x&&p.x<=winHi.x&&p.y>=winLo.y&&p.y<=winHi.y) discard;
@@ -49,7 +49,8 @@ void main(){
  float tx=clamp((p.x-pLo.x)/(pHi.x-pLo.x),0.0,1.0),ty=clamp((pHi.y-p.y)/(pHi.y-pLo.y),0.0,1.0);
  vec2 uvL=vec2(wallUvRect.x,mix(wallUvRect.y,wallUvRect.w,ty)),uvR=vec2(wallUvRect.z,mix(wallUvRect.y,wallUvRect.w,ty));
  vec2 uvT=vec2(mix(wallUvRect.x,wallUvRect.z,tx),wallUvRect.y),uvB=vec2(mix(wallUvRect.x,wallUvRect.z,tx),wallUvRect.w);
- vec3 cL=texture2D(roomMap,uvL).rgb,cR=texture2D(roomMap,uvR).rgb,cT=texture2D(roomMap,uvT).rgb,cB=texture2D(roomMap,uvB).rgb;
+ vec3 cL=texture2D(roomMap,uvL).rgb,cR=texture2D(roomMap,uvR).rgb,cT=texture2D(roomMap,uvT).rgb;
+ vec3 cB=(isDoorRoom>0.5)?mix(cL,cR,tx):texture2D(roomMap,uvB).rgb;
  vec3 cTL=texture2D(roomMap,vec2(wallUvRect.x,wallUvRect.y)).rgb,cTR=texture2D(roomMap,vec2(wallUvRect.z,wallUvRect.y)).rgb;
  vec3 cBL=texture2D(roomMap,vec2(wallUvRect.x,wallUvRect.w)).rgb,cBR=texture2D(roomMap,vec2(wallUvRect.z,wallUvRect.w)).rgb;
  vec3 cHoriz=mix(cL,cR,tx),cVert=mix(cT,cB,ty),cCorners=mix(mix(cTL,cTR,tx),mix(cBL,cBR,tx),ty);
@@ -64,7 +65,7 @@ void main(){
  float sideShadowR=(dRight>0.0&&dRight<0.05)?smoothstep(0.05,0.0,dRight)*inSpanY:0.0;
  float innerRevealShadow=1.0-0.20*headShadow-0.12*max(sideShadowL,sideShadowR);
  float sillContactShadow=1.0;
- if(dBottom>0.0&&dBottom<0.07){float sillFactor=smoothstep(0.07,0.0,dBottom)*inSpanX;sillContactShadow=1.0-0.24*sillFactor;}
+ if(dBottom>0.0&&dBottom<0.07&&isDoorRoom<0.5){float sillFactor=smoothstep(0.07,0.0,dBottom)*inSpanX;sillContactShadow=1.0-0.24*sillFactor;}
  wallColor*=innerRevealShadow*sillContactShadow;
  gl_FragColor=vec4(wallColor,outerAlpha);
  #include <colorspace_fragment>
@@ -74,19 +75,27 @@ export function updatePhotoRoom(room,config,map,a,naturalScale=true){
  room.config=config;room.texture=map;room.plane.material.uniforms.roomMap.value=map;
  room.plane.material.uniforms.opening.value.set(config.opening.x,config.opening.y,config.opening.w,config.opening.h);
  const fw=a.width,fh=a.height;
+ const isDoor=a.record?.type?.startsWith('door')||a.record?.category==='door'||config.category==='door'||(a.base!==undefined&&a.base<0.1);
  const baseOpenW=config.opening.w*8.0;
  const baseOpenH=config.opening.h*(8.0*config.height/config.width);
  const fitRatio=Math.max(fw/baseOpenW,fh/baseOpenH);
- const roomScale=(naturalScale&&fitRatio<0.92)?Math.min(1.0,Math.max(0.42,fitRatio*1.22)):1.0;
+ const realRatio=config.openingReal?Math.max(config.openingReal.w/baseOpenW,config.openingReal.h/baseOpenH):0.68;
+ const roomScale=naturalScale?Math.min(1.0,Math.max(fitRatio*1.04,realRatio)):1.0;
  room.scale=roomScale;
  room.width=8.0*roomScale;
  room.height=(8.0*config.height/config.width)*roomScale;
  room.plane.scale.set(roomScale,roomScale,1.0);
  const rect=config.opening,w=rect.w*room.width,h=rect.h*room.height,cx=(rect.x+rect.w/2-.5)*room.width,cy=(.5-rect.y-rect.h/2)*room.height;
+ const openBottomY=(.5-rect.y-rect.h)*room.height;
  if(!a.photoRest)a.photoRest={position:a.root.position.clone(),scale:a.root.scale.clone()};
  a.root.scale.copy(a.photoRest.scale);
- const localCenterY=a.base+a.height/2-(a.photoRest?.position?.y||0);
- a.root.position.set(cx,cy-localCenterY,-.075);
+ if(isDoor){
+  const localBottomOffset=a.base-(a.photoRest?.position?.y||0);
+  a.root.position.set(cx,openBottomY-localBottomOffset,-.075);
+ }else{
+  const localCenterY=a.base+a.height/2-(a.photoRest?.position?.y||0);
+  a.root.position.set(cx,cy-localCenterY,-.075);
+ }
  a.root.updateMatrixWorld(true);
  const frameDepth=(a.record?.type?.includes('sliding')||a.tracks)?.17:.07;
  const zWindowFront=-.075-.04+frameDepth/2;
@@ -95,9 +104,19 @@ export function updatePhotoRoom(room,config,map,a,naturalScale=true){
  const cx_patch=cx*projScale,cy_patch=cy*projScale;
  const w_patch=fw*projScale,h_patch=fh*projScale;
  const overlap=.018;
- const holeW=Math.max(.08,w_patch-2*overlap),holeH=Math.max(.08,h_patch-2*overlap);
- const winLoX=cx_patch-holeW/2,winLoY=cy_patch-holeH/2;
- room.fit={x:winLoX,y:winLoY,w:holeW,h:holeH,scale:roomScale,infill:true,status:'PROVISIONAL'};
+ const holeW=Math.max(.08,w_patch-2*overlap);
+ const winLoX=cx_patch-holeW/2;
+ let holeH,winLoY;
+ if(isDoor){
+  winLoY=openBottomY+overlap;
+  const doorCenterY=openBottomY+fh/2;
+  const doorTopPatch=doorCenterY+(fh/2)*projScale;
+  holeH=Math.max(.08,(doorTopPatch-overlap)-winLoY);
+ }else{
+  holeH=Math.max(.08,h_patch-2*overlap);
+  winLoY=cy_patch-holeH/2;
+ }
+ room.fit={x:winLoX,y:winLoY,w:holeW,h:holeH,scale:roomScale,infill:true,isDoor,status:'PROVISIONAL'};
  for(const n of [...room.infill.children]){room.infill.remove(n);disposeGroup(n);}
  room.matte.material.uniforms.hole.value.set(winLoX,winLoY,holeW,holeH);
  if(config.wallColor){const [wr,wg,wb]=config.wallColor.map(v=>v/255);room.matte.material.uniforms.colour.value.setRGB(wr,wg,wb);}
@@ -113,13 +132,14 @@ export function updatePhotoRoom(room,config,map,a,naturalScale=true){
  const uL=Math.max(.005,(minX-45)/config.width);
  const uR=Math.min(.995,(maxX+45)/config.width);
  const vT=Math.min(.995,1.0-(minY-35)/config.height);
- const vB=Math.max(.005,1.0-(maxY+40)/config.height);
+ const vB=isDoor?Math.max(.005,1.0-(maxY-30)/config.height):Math.max(.005,1.0-(maxY+40)/config.height);
  const patchMat=new T.ShaderMaterial({
   uniforms:{
    roomMap:{value:map},
    winRect:{value:new T.Vector4(winLoX,winLoY,holeW,holeH)},
    patchBounds:{value:new T.Vector4(pLoX,pLoY,patchW,patchH)},
-   wallUvRect:{value:new T.Vector4(uL,vT,uR,vB)}
+   wallUvRect:{value:new T.Vector4(uL,vT,uR,vB)},
+   isDoorRoom:{value:isDoor?1.0:0.0}
   },
   vertexShader:patchVertex,
   fragmentShader:patchFragment,
@@ -134,20 +154,78 @@ export function updatePhotoRoom(room,config,map,a,naturalScale=true){
  patchMesh.userData.role='photo-infill';
  patchMesh.raycast=()=>{};
  room.infill.add(patchMesh);
- const shadow=new T.Mesh(new T.PlaneGeometry(w_patch,.055),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:'varying vec2 vUv;void main(){gl_FragColor=vec4(.12,.085,.055,.20*(1.0-vUv.y)*(1.0-vUv.y));}',transparent:true,depthWrite:false,toneMapped:false}));
- shadow.position.set(cx_patch,winLoY+.0275,-.045);shadow.name='Soft_Sill_Contact_Shadow';shadow.renderOrder=40;shadow.raycast=()=>{};room.infill.add(shadow);
+ const shadow=new T.Mesh(new T.PlaneGeometry(w_patch,isDoor?.045:.055),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:'varying vec2 vUv;void main(){gl_FragColor=vec4(.12,.085,.055,.24*(1.0-vUv.y)*(1.0-vUv.y));}',transparent:true,depthWrite:false,toneMapped:false}));
+ shadow.position.set(cx_patch,isDoor?openBottomY+.015:winLoY+.0275,-.045);shadow.name='Soft_Sill_Contact_Shadow';shadow.renderOrder=40;shadow.raycast=()=>{};room.infill.add(shadow);
 }
 
 export function restorePhotoAssembly(a){if(a?.photoRest){a.root.position.copy(a.photoRest.position);a.root.scale.copy(a.photoRest.scale);}}
-export function configurePhotoCamera(ctx,entering=false){
- if(entering){ctx.camera.position.set(0,0,6);ctx.controls.target.set(0,0,0);ctx.controls.enableZoom=false;ctx.controls.enablePan=false;ctx.controls.minDistance=6;ctx.controls.maxDistance=6;ctx.controls.minAzimuthAngle=-Math.PI/60;ctx.controls.maxAzimuthAngle=Math.PI/60;ctx.controls.minPolarAngle=Math.PI/2-Math.PI/60;ctx.controls.maxPolarAngle=Math.PI/2+Math.PI/60;ctx.controls.update();}
+export function configurePhotoCamera(ctx,entering=false,viewFraming){
+ if(viewFraming) ctx.viewFraming=viewFraming;
+ const mode=ctx.viewFraming||'focus';
  const room=ctx.photo;if(!room)return;
- const visibleHeight=Math.max(room.height,room.width/ctx.camera.aspect)*1.025;
- ctx.camera.fov=T.MathUtils.radToDeg(2*Math.atan(visibleHeight/12));ctx.camera.updateProjectionMatrix();
+ const aspect=Math.max(0.1,ctx.camera.aspect||1);
+ if(entering){
+  ctx.controls.enableZoom=true;
+  ctx.controls.enablePan=true;
+  ctx.controls.panSpeed=0.5;
+  ctx.controls.minDistance=3.2;
+  ctx.controls.maxDistance=6.8;
+  ctx.controls.minAzimuthAngle=-Math.PI/45;
+  ctx.controls.maxAzimuthAngle=Math.PI/45;
+  ctx.controls.minPolarAngle=Math.PI/2-Math.PI/45;
+  ctx.controls.maxPolarAngle=Math.PI/2+Math.PI/45;
+ }
+ if(mode==='focus'){
+  const isDoor=room.fit?.isDoor;
+  const winH=room.fit?.h||1.25;
+  const winCenterY=(room.fit?.y!==undefined?room.fit.y+room.fit.h/2:1.47);
+  const winCenterX=(room.fit?.x!==undefined?room.fit.x+room.fit.w/2:0);
+  const fillRatio=isDoor?0.65:0.58; // Door fills 65% of visible canvas height (60-70% requirement)
+  const visibleHeight=winH/fillRatio;
+  ctx.camera.fov=T.MathUtils.radToDeg(2*Math.atan(visibleHeight/12));
+  if(entering||!ctx.cameraFramed){
+   ctx.camera.position.set(winCenterX,winCenterY,6);
+   ctx.controls.target.set(winCenterX,winCenterY,0);
+   ctx.cameraFramed=true;
+  }
+ }else{
+  const visibleHeight=Math.min(room.height,room.width/aspect);
+  ctx.camera.fov=T.MathUtils.radToDeg(2*Math.atan(visibleHeight/12));
+  if(entering||!ctx.cameraFramed){
+   ctx.camera.position.set(0,0,6);
+   ctx.controls.target.set(0,0,0);
+   ctx.cameraFramed=true;
+  }
+ }
+ ctx.camera.updateProjectionMatrix();
+ ctx.controls.update();
  ctx.exterior=false;
+}
+export function getCompatibleRoomPreset(targetRoom,typeOrCategory){
+ const type=typeOrCategory||'';
+ const isCasementOrSlidingDoor=type==='door-casement'||type==='door-sliding'||type.includes('door-casement')||type.includes('door-sliding');
+ const isWideOrFold=type==='door-fold'||type==='bay-concepts'||type.includes('door-fold')||type.includes('bay-concepts');
+ if(isCasementOrSlidingDoor){
+  if(targetRoom==='photo-door-living'||(!targetRoom?.startsWith('photo-')&&targetRoom)){
+   return targetRoom;
+  }
+  return 'photo-door-living';
+ }
+ if(isWideOrFold){
+  if(targetRoom==='photo-wide-living'||(!targetRoom?.startsWith('photo-')&&targetRoom)){
+   return targetRoom;
+  }
+  return 'photo-wide-living';
+ }
+ if(targetRoom==='photo-door-living'||targetRoom==='photo-wide-living'){
+  return 'photo-living';
+ }
+ return targetRoom||'photo-living';
 }
 export function photoHitAllowed(ctx,ray){
  if(!ctx.photo)return true;
  const p=ray.intersectPlane(new T.Plane(new T.Vector3(0,0,1),-.12),new T.Vector3());if(!p)return false;
- const f=ctx.photo.fit;return p.x>=f.x&&p.x<=f.x+f.w&&p.y>=f.y&&p.y<=f.y+f.h;
+ const f=ctx.photo.fit;
+ const pad=0.35;
+ return p.x>=f.x-pad&&p.x<=f.x+f.w+pad&&p.y>=f.y-pad&&p.y<=f.y+f.h+pad;
 }

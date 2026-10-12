@@ -1,0 +1,17 @@
+{
+  "status": "VERIFIED",
+  "errors": [],
+  "screenshots": [
+    "01_casement_single_closed.png",
+    "02_casement_single_open.png",
+    "03_casement_double_closed.png",
+    "04_casement_double_open.png",
+    "05_sliding_door_closed.png",
+    "06_sliding_door_half_open.png",
+    "07_fold_door_closed.png",
+    "08_fold_door_folded.png",
+    "09_bay_3panel.png",
+    "10_bow_style.png",
+    "11_colour_change_mahogany.png"
+  ]
+}

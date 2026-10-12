@@ -1,0 +1,3383 @@
+[
+  {
+    "id": "upvc-sliding:0",
+    "name": "2-Track 2-Panel (uPVC)",
+    "meta": {
+      "id": "upvc-sliding:0",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6489999999999999,
+          "height": 1.0899999999999999,
+          "x": -0.30949999999999994,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6489999999999999,
+          "height": 1.0899999999999999,
+          "x": 0.30949999999999994,
+          "y": 1.4749999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 0,
+          "current": 0,
+          "track": 1,
+          "travel": -0.6189999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.30949999999999994,
+              "localZ": -0.025,
+              "worldX": 0.30949999999999994,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.15474999999999997,
+              "localZ": -0.025,
+              "worldX": 0.15474999999999997,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15475,
+              "localZ": -0.025,
+              "worldX": -0.15475,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.30949999999999994,
+              "localZ": -0.025,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-sliding:1",
+    "name": "2-Track 3-Panel (uPVC)",
+    "meta": {
+      "id": "upvc-sliding:1",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6356666666666666,
+          "height": 1.0899999999999999,
+          "x": -0.6161666666666668,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6566666666666666,
+          "height": 1.0899999999999999,
+          "x": 0,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_2",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6356666666666666,
+          "height": 1.0899999999999999,
+          "x": 0.6161666666666665,
+          "y": 1.4749999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6086666666666667,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6161666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15216666666666667,
+              "localZ": -0.025,
+              "worldX": -0.15216666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6161666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.30433333333333334,
+              "localZ": -0.025,
+              "worldX": -0.30433333333333334,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6161666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.4565,
+              "localZ": -0.025,
+              "worldX": -0.4565,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6161666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.6086666666666667,
+              "localZ": -0.025,
+              "worldX": -0.6086666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6161666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-sliding:2",
+    "name": "2-Track 4-Panel (uPVC)",
+    "meta": {
+      "id": "upvc-sliding:2",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.579,
+          "height": 1.0899999999999999,
+          "x": -0.8445,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.5845,
+          "height": 1.0899999999999999,
+          "x": -0.2927499999999999,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_2",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.5845,
+          "height": 1.0899999999999999,
+          "x": 0.2927499999999999,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_3",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.579,
+          "height": 1.0899999999999999,
+          "x": 0.8445,
+          "y": 1.4749999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.5517500000000002,
+          "mode": "turn",
+          "locked": false
+        },
+        {
+          "id": "main_2",
+          "kind": "slide",
+          "target": 0,
+          "current": 0,
+          "track": 1,
+          "travel": 0.5517500000000002,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.8445,
+              "localZ": -0.08,
+              "worldX": -0.8445,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.2927499999999999,
+              "localZ": -0.025,
+              "worldX": -0.2927499999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.2927499999999999,
+              "localZ": -0.025,
+              "worldX": 0.2927499999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8445,
+              "localZ": -0.08,
+              "worldX": 0.8445,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.8445,
+              "localZ": -0.08,
+              "worldX": -0.8445,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.43068749999999995,
+              "localZ": -0.025,
+              "worldX": -0.43068749999999995,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.43068749999999995,
+              "localZ": -0.025,
+              "worldX": 0.43068749999999995,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8445,
+              "localZ": -0.08,
+              "worldX": 0.8445,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.8445,
+              "localZ": -0.08,
+              "worldX": -0.8445,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.5686249999999999,
+              "localZ": -0.025,
+              "worldX": -0.5686249999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.5686249999999999,
+              "localZ": -0.025,
+              "worldX": 0.5686249999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8445,
+              "localZ": -0.08,
+              "worldX": 0.8445,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.8445,
+              "localZ": -0.08,
+              "worldX": -0.8445,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.7065625,
+              "localZ": -0.025,
+              "worldX": -0.7065625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.7065625,
+              "localZ": -0.025,
+              "worldX": 0.7065625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8445,
+              "localZ": -0.08,
+              "worldX": 0.8445,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.8445,
+              "localZ": -0.08,
+              "worldX": -0.8445,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.8445,
+              "localZ": -0.025,
+              "worldX": -0.8445,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.8445,
+              "localZ": -0.025,
+              "worldX": 0.8445,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8445,
+              "localZ": -0.08,
+              "worldX": 0.8445,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-sliding:3",
+    "name": "3-Track 3-Panel (uPVC)",
+    "meta": {
+      "id": "upvc-sliding:3",
+      "tracks": 3,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6356666666666666,
+          "height": 1.0899999999999999,
+          "x": -0.6161666666666668,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6566666666666666,
+          "height": 1.0899999999999999,
+          "x": 0,
+          "y": 1.4749999999999999
+        },
+        {
+          "id": "main_2",
+          "type": "slide",
+          "hinge": null,
+          "track": 2,
+          "width": 0.6356666666666666,
+          "height": 1.0899999999999999,
+          "x": 0.6161666666666665,
+          "y": 1.4749999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6086666666666667,
+          "mode": "turn",
+          "locked": false
+        },
+        {
+          "id": "main_2",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 2,
+          "travel": -1.2323333333333333,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": 0.6161666666666665,
+              "localZ": 0.03,
+              "worldX": 0.6161666666666665,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15216666666666667,
+              "localZ": -0.025,
+              "worldX": -0.15216666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": 0.3080833333333332,
+              "localZ": 0.03,
+              "worldX": 0.3080833333333332,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.30433333333333334,
+              "localZ": -0.025,
+              "worldX": -0.30433333333333334,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -1.1102230246251565e-16,
+              "localZ": 0.03,
+              "worldX": -1.1102230246251565e-16,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.4565,
+              "localZ": -0.025,
+              "worldX": -0.4565,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -0.3080833333333335,
+              "localZ": 0.03,
+              "worldX": -0.3080833333333335,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6161666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.6086666666666667,
+              "localZ": -0.025,
+              "worldX": -0.6086666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -0.6161666666666668,
+              "localZ": 0.03,
+              "worldX": -0.6161666666666668,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-sliding:4",
+    "name": "Sliding with Top Fixed (uPVC)",
+    "meta": {
+      "id": "upvc-sliding:4",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6489999999999999,
+          "height": 0.675,
+          "x": -0.30949999999999994,
+          "y": 1.2675
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6489999999999999,
+          "height": 0.675,
+          "x": 0.30949999999999994,
+          "y": 1.2675
+        },
+        {
+          "id": "top_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6335,
+          "height": 0.675,
+          "x": -0.31725,
+          "y": 1.9825
+        },
+        {
+          "id": "top_1",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6335,
+          "height": 0.675,
+          "x": 0.31725,
+          "y": 1.9825
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6189999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.30949999999999994,
+              "localZ": -0.025,
+              "worldX": 0.30949999999999994,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31725,
+              "localZ": -0.08,
+              "worldX": -0.31725,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.31725,
+              "localZ": -0.08,
+              "worldX": 0.31725,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.15474999999999997,
+              "localZ": -0.025,
+              "worldX": 0.15474999999999997,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31725,
+              "localZ": -0.08,
+              "worldX": -0.31725,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.31725,
+              "localZ": -0.08,
+              "worldX": 0.31725,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31725,
+              "localZ": -0.08,
+              "worldX": -0.31725,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.31725,
+              "localZ": -0.08,
+              "worldX": 0.31725,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15475,
+              "localZ": -0.025,
+              "worldX": -0.15475,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31725,
+              "localZ": -0.08,
+              "worldX": -0.31725,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.31725,
+              "localZ": -0.08,
+              "worldX": 0.31725,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.30949999999999994,
+              "localZ": -0.08,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.30949999999999994,
+              "localZ": -0.025,
+              "worldX": -0.30949999999999994,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31725,
+              "localZ": -0.08,
+              "worldX": -0.31725,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.31725,
+              "localZ": -0.08,
+              "worldX": 0.31725,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "aluminium-sliding:0",
+    "name": "2-Track 2-Panel (Aluminium)",
+    "meta": {
+      "id": "aluminium-sliding:0",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6669999999999999,
+          "height": 1.126,
+          "x": -0.31849999999999995,
+          "y": 1.475
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6669999999999999,
+          "height": 1.126,
+          "x": 0.31849999999999995,
+          "y": 1.475
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6369999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.31849999999999995,
+              "localZ": -0.025,
+              "worldX": 0.31849999999999995,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.15924999999999997,
+              "localZ": -0.025,
+              "worldX": 0.15924999999999997,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15924999999999995,
+              "localZ": -0.025,
+              "worldX": -0.15924999999999995,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.31849999999999995,
+              "localZ": -0.025,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "aluminium-sliding:1",
+    "name": "2-Track 3-Panel (Aluminium)",
+    "meta": {
+      "id": "aluminium-sliding:1",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6476666666666666,
+          "height": 1.126,
+          "x": -0.6281666666666668,
+          "y": 1.475
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6686666666666666,
+          "height": 1.126,
+          "x": 0,
+          "y": 1.475
+        },
+        {
+          "id": "main_2",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6476666666666666,
+          "height": 1.126,
+          "x": 0.6281666666666665,
+          "y": 1.475
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6206666666666667,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6281666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15516666666666667,
+              "localZ": -0.025,
+              "worldX": -0.15516666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6281666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.31033333333333335,
+              "localZ": -0.025,
+              "worldX": -0.31033333333333335,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6281666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.4655,
+              "localZ": -0.025,
+              "worldX": -0.4655,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6281666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.6206666666666667,
+              "localZ": -0.025,
+              "worldX": -0.6206666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.6281666666666665,
+              "localZ": -0.08,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "aluminium-sliding:2",
+    "name": "2-Track 4-Panel (Aluminium)",
+    "meta": {
+      "id": "aluminium-sliding:2",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.588,
+          "height": 1.126,
+          "x": -0.858,
+          "y": 1.475
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.5935,
+          "height": 1.126,
+          "x": -0.29724999999999996,
+          "y": 1.475
+        },
+        {
+          "id": "main_2",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.5935,
+          "height": 1.126,
+          "x": 0.29724999999999985,
+          "y": 1.475
+        },
+        {
+          "id": "main_3",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.588,
+          "height": 1.126,
+          "x": 0.8580000000000001,
+          "y": 1.475
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.5607500000000001,
+          "mode": "turn",
+          "locked": false
+        },
+        {
+          "id": "main_2",
+          "kind": "slide",
+          "target": 0,
+          "current": 0,
+          "track": 1,
+          "travel": 0.5607500000000003,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.858,
+              "localZ": -0.08,
+              "worldX": -0.858,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.29724999999999996,
+              "localZ": -0.025,
+              "worldX": -0.29724999999999996,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.29724999999999985,
+              "localZ": -0.025,
+              "worldX": 0.29724999999999985,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8580000000000001,
+              "localZ": -0.08,
+              "worldX": 0.8580000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.858,
+              "localZ": -0.08,
+              "worldX": -0.858,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.4374375,
+              "localZ": -0.025,
+              "worldX": -0.4374375,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.4374374999999999,
+              "localZ": -0.025,
+              "worldX": 0.4374374999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8580000000000001,
+              "localZ": -0.08,
+              "worldX": 0.8580000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.858,
+              "localZ": -0.08,
+              "worldX": -0.858,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.577625,
+              "localZ": -0.025,
+              "worldX": -0.577625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.577625,
+              "localZ": -0.025,
+              "worldX": 0.577625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8580000000000001,
+              "localZ": -0.08,
+              "worldX": 0.8580000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.858,
+              "localZ": -0.08,
+              "worldX": -0.858,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.577625,
+              "localZ": -0.025,
+              "worldX": -0.577625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.577625,
+              "localZ": -0.025,
+              "worldX": 0.577625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8580000000000001,
+              "localZ": -0.08,
+              "worldX": 0.8580000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.858,
+              "localZ": -0.08,
+              "worldX": -0.858,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.7178125,
+              "localZ": -0.025,
+              "worldX": -0.7178125,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.7178125000000001,
+              "localZ": -0.025,
+              "worldX": 0.7178125000000001,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.8580000000000001,
+              "localZ": -0.08,
+              "worldX": 0.8580000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "aluminium-sliding:3",
+    "name": "3-Track 3-Panel (Aluminium)",
+    "meta": {
+      "id": "aluminium-sliding:3",
+      "tracks": 3,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6476666666666666,
+          "height": 1.126,
+          "x": -0.6281666666666668,
+          "y": 1.475
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6686666666666666,
+          "height": 1.126,
+          "x": 0,
+          "y": 1.475
+        },
+        {
+          "id": "main_2",
+          "type": "slide",
+          "hinge": null,
+          "track": 2,
+          "width": 0.6476666666666666,
+          "height": 1.126,
+          "x": 0.6281666666666665,
+          "y": 1.475
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6206666666666667,
+          "mode": "turn",
+          "locked": false
+        },
+        {
+          "id": "main_2",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 2,
+          "travel": -1.2563333333333333,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": 0.6281666666666665,
+              "localZ": 0.03,
+              "worldX": 0.6281666666666665,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15516666666666667,
+              "localZ": -0.025,
+              "worldX": -0.15516666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": 0.3140833333333332,
+              "localZ": 0.03,
+              "worldX": 0.3140833333333332,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.31033333333333335,
+              "localZ": -0.025,
+              "worldX": -0.31033333333333335,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -1.1102230246251565e-16,
+              "localZ": 0.03,
+              "worldX": -1.1102230246251565e-16,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.4655,
+              "localZ": -0.025,
+              "worldX": -0.4655,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -0.3140833333333335,
+              "localZ": 0.03,
+              "worldX": -0.3140833333333335,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.6281666666666668,
+              "localZ": -0.08,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.6206666666666667,
+              "localZ": -0.025,
+              "worldX": -0.6206666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 2,
+              "localX": -0.6281666666666668,
+              "localZ": 0.03,
+              "worldX": -0.6281666666666668,
+              "worldZ": -0.045
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "aluminium-sliding:4",
+    "name": "Sliding with Top Fixed (Aluminium)",
+    "meta": {
+      "id": "aluminium-sliding:4",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6669999999999999,
+          "height": 0.693,
+          "x": -0.31849999999999995,
+          "y": 1.2585
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.6669999999999999,
+          "height": 0.693,
+          "x": 0.31849999999999995,
+          "y": 1.2585
+        },
+        {
+          "id": "top_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6515,
+          "height": 0.693,
+          "x": -0.32625,
+          "y": 1.9915
+        },
+        {
+          "id": "top_1",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.6515,
+          "height": 0.693,
+          "x": 0.32625,
+          "y": 1.9915
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.6369999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.31849999999999995,
+              "localZ": -0.025,
+              "worldX": 0.31849999999999995,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.32625,
+              "localZ": -0.08,
+              "worldX": -0.32625,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.32625,
+              "localZ": -0.08,
+              "worldX": 0.32625,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.15924999999999997,
+              "localZ": -0.025,
+              "worldX": 0.15924999999999997,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.32625,
+              "localZ": -0.08,
+              "worldX": -0.32625,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.32625,
+              "localZ": -0.08,
+              "worldX": 0.32625,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.15924999999999997,
+              "localZ": -0.025,
+              "worldX": 0.15924999999999997,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.32625,
+              "localZ": -0.08,
+              "worldX": -0.32625,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.32625,
+              "localZ": -0.08,
+              "worldX": 0.32625,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.32625,
+              "localZ": -0.08,
+              "worldX": -0.32625,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.32625,
+              "localZ": -0.08,
+              "worldX": 0.32625,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.31849999999999995,
+              "localZ": -0.08,
+              "worldX": -0.31849999999999995,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.15924999999999995,
+              "localZ": -0.025,
+              "worldX": -0.15924999999999995,
+              "worldZ": -0.1
+            },
+            {
+              "id": "top_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.32625,
+              "localZ": -0.08,
+              "worldX": -0.32625,
+              "worldZ": -0.155
+            },
+            {
+              "id": "top_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.32625,
+              "localZ": -0.08,
+              "worldX": 0.32625,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-door-sliding:0",
+    "name": "2-Track 2-Panel Left (uPVC Door)",
+    "meta": {
+      "id": "upvc-door-sliding:0",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.824,
+          "height": 1.7399999999999998,
+          "x": -0.39699999999999996,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.824,
+          "height": 1.7399999999999998,
+          "x": 0.39699999999999996,
+          "y": 0.9799999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_0",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": 0.7939999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.39699999999999996,
+              "localZ": -0.025,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.19849999999999998,
+              "localZ": -0.025,
+              "worldX": -0.19849999999999998,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.19849999999999998,
+              "localZ": -0.025,
+              "worldX": -0.19849999999999998,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.19849999999999995,
+              "localZ": -0.025,
+              "worldX": 0.19849999999999995,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_1",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_0_Glass"
+    }
+  },
+  {
+    "id": "upvc-door-sliding:1",
+    "name": "2-Track 2-Panel Right (uPVC Door)",
+    "meta": {
+      "id": "upvc-door-sliding:1",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.824,
+          "height": 1.7399999999999998,
+          "x": -0.39699999999999996,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.824,
+          "height": 1.7399999999999998,
+          "x": 0.39699999999999996,
+          "y": 0.9799999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.7939999999999999,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.39699999999999996,
+              "localZ": -0.025,
+              "worldX": 0.39699999999999996,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.19849999999999998,
+              "localZ": -0.025,
+              "worldX": 0.19849999999999998,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.19849999999999995,
+              "localZ": -0.025,
+              "worldX": -0.19849999999999995,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.39699999999999996,
+              "localZ": -0.08,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.39699999999999996,
+              "localZ": -0.025,
+              "worldX": -0.39699999999999996,
+              "worldZ": -0.1
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-door-sliding:2",
+    "name": "3-Panel Center Slide (uPVC Door)",
+    "meta": {
+      "id": "upvc-door-sliding:2",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.7856666666666667,
+          "height": 1.7399999999999998,
+          "x": -0.7661666666666667,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.8066666666666668,
+          "height": 1.7399999999999998,
+          "x": 0,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_2",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.7856666666666667,
+          "height": 1.7399999999999998,
+          "x": 0.7661666666666669,
+          "y": 0.9799999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.7586666666666668,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.7661666666666667,
+              "localZ": -0.08,
+              "worldX": -0.7661666666666667,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": 0,
+              "localZ": -0.025,
+              "worldX": 0,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.7661666666666669,
+              "localZ": -0.08,
+              "worldX": 0.7661666666666669,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.7661666666666667,
+              "localZ": -0.08,
+              "worldX": -0.7661666666666667,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.1896666666666667,
+              "localZ": -0.025,
+              "worldX": -0.1896666666666667,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.7661666666666669,
+              "localZ": -0.08,
+              "worldX": 0.7661666666666669,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.7661666666666667,
+              "localZ": -0.08,
+              "worldX": -0.7661666666666667,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.3793333333333334,
+              "localZ": -0.025,
+              "worldX": -0.3793333333333334,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.7661666666666669,
+              "localZ": -0.08,
+              "worldX": 0.7661666666666669,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.7661666666666667,
+              "localZ": -0.08,
+              "worldX": -0.7661666666666667,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.5690000000000002,
+              "localZ": -0.025,
+              "worldX": -0.5690000000000002,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.7661666666666669,
+              "localZ": -0.08,
+              "worldX": 0.7661666666666669,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -0.7661666666666667,
+              "localZ": -0.08,
+              "worldX": -0.7661666666666667,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.7586666666666668,
+              "localZ": -0.025,
+              "worldX": -0.7586666666666668,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "fixed",
+              "track": 0,
+              "localX": 0.7661666666666669,
+              "localZ": -0.08,
+              "worldX": 0.7661666666666669,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  },
+  {
+    "id": "upvc-door-sliding:3",
+    "name": "4-Panel Center Open (uPVC Door)",
+    "meta": {
+      "id": "upvc-door-sliding:3",
+      "tracks": 2,
+      "panels": [
+        {
+          "id": "main_0",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.729,
+          "height": 1.7399999999999998,
+          "x": -1.0695000000000001,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_1",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.7345,
+          "height": 1.7399999999999998,
+          "x": -0.36774999999999985,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_2",
+          "type": "slide",
+          "hinge": null,
+          "track": 1,
+          "width": 0.7345,
+          "height": 1.7399999999999998,
+          "x": 0.36774999999999985,
+          "y": 0.9799999999999999
+        },
+        {
+          "id": "main_3",
+          "type": "fixed",
+          "hinge": null,
+          "track": 0,
+          "width": 0.729,
+          "height": 1.7399999999999998,
+          "x": 1.0695000000000001,
+          "y": 0.9799999999999999
+        }
+      ],
+      "motions": [
+        {
+          "id": "main_1",
+          "kind": "slide",
+          "target": 1,
+          "current": 1,
+          "track": 1,
+          "travel": -0.7017500000000003,
+          "mode": "turn",
+          "locked": false
+        },
+        {
+          "id": "main_2",
+          "kind": "slide",
+          "target": 0,
+          "current": 0,
+          "track": 1,
+          "travel": 0.7017500000000003,
+          "mode": "turn",
+          "locked": false
+        }
+      ]
+    },
+    "frames": [
+      {
+        "step": 0,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": -1.0695000000000001,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.36774999999999985,
+              "localZ": -0.025,
+              "worldX": -0.36774999999999985,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.36774999999999985,
+              "localZ": -0.025,
+              "worldX": 0.36774999999999985,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": 1.0695000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.25,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": -1.0695000000000001,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.36774999999999985,
+              "localZ": -0.025,
+              "worldX": -0.36774999999999985,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.36774999999999985,
+              "localZ": -0.025,
+              "worldX": 0.36774999999999985,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": 1.0695000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.5,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": -1.0695000000000001,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.5431874999999999,
+              "localZ": -0.025,
+              "worldX": -0.5431874999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.5431874999999999,
+              "localZ": -0.025,
+              "worldX": 0.5431874999999999,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": 1.0695000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 0.75,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": -1.0695000000000001,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.7186250000000001,
+              "localZ": -0.025,
+              "worldX": -0.7186250000000001,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.7186250000000001,
+              "localZ": -0.025,
+              "worldX": 0.7186250000000001,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": 1.0695000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      },
+      {
+        "step": 1,
+        "panelPos": {
+          "panels": [
+            {
+              "id": "main_0",
+              "type": "fixed",
+              "track": 0,
+              "localX": -1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": -1.0695000000000001,
+              "worldZ": -0.155
+            },
+            {
+              "id": "main_1",
+              "type": "slide",
+              "track": 1,
+              "localX": -0.8940625,
+              "localZ": -0.025,
+              "worldX": -0.8940625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_2",
+              "type": "slide",
+              "track": 1,
+              "localX": 0.8940625,
+              "localZ": -0.025,
+              "worldX": 0.8940625,
+              "worldZ": -0.1
+            },
+            {
+              "id": "main_3",
+              "type": "fixed",
+              "track": 0,
+              "localX": 1.0695000000000001,
+              "localZ": -0.08,
+              "worldX": 1.0695000000000001,
+              "worldZ": -0.155
+            }
+          ],
+          "collisions": []
+        }
+      }
+    ],
+    "clickTest": {
+      "glassHasMotionId": true,
+      "handleHasMotionId": false,
+      "glassName": "main_1_Glass"
+    }
+  }
+]

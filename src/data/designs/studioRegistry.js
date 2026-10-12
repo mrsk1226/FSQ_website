@@ -16,8 +16,10 @@ export const studioSystems=[...windowSystems,
 ];
 export const studioRecords=studioSystems.flatMap(system=>system.designs.map((design,index)=>({
  id:design.id || `${system.id}:${index}`,systemId:system.id,index,name:design.name,product:system.material,type:system.mechanismType,design,
- status:system.material==='aluminium'?'BLOCKED_BY_UNVERIFIED_SPEC':'PARTIAL_3D',source:system.id==='upvc-casement'&&index===4?'recovered-glb':'procedural',
- notes:'Individually browser-tested catalogue layout, mitres, hardware presence, sampled motion and finish isolation. Dimensions and hardware remain provisional; photo perimeter defects remain. Aluminium uses generic slim sections pending Uniframe drawings.'
+ status:'PARTIAL_3D',source:system.id==='upvc-casement'&&index===4?'recovered-glb':'procedural',
+ notes:system.material==='aluminium'
+  ?'Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).'
+  :'Individually browser-tested catalogue layout, mitres, hardware presence, sampled motion and finish isolation. Dimensions and hardware remain provisional; photo perimeter defects remain.'
 })));
 export function resolveStudioRecord(product,type,design){
  return studioRecords.find(r=>r.product===product&&r.type===type&&r.design===design) ||

@@ -25,10 +25,11 @@ setTimeout(()=>{console.error('Catalogue audit timeout');process.exit(1);},90000
  if(records.length!==81||records.filter(r=>!r.design.concept).length!==78)throw Error('Unexpected catalogue inventory');
  const results=[];
  for(const r of records.filter(r=>capture>=0?process.argv[capture+1].split(',').includes(r.id):!selected||selected.includes(r.id))){
-  const before=errors.length;let result={id:r.id,systemId:r.systemId,name:r.name,expected:r.design,status:r.product==='aluminium'?'BLOCKED_BY_UNVERIFIED_SPEC':'PARTIAL_3D'};
+  const before=errors.length;let result={id:r.id,systemId:r.systemId,name:r.name,expected:r.design,status:'PARTIAL_3D'};
   try{
-   await page.goto(`http://127.0.0.1:5173/#/products/window-studio?product=${r.product}&type=${r.type}&design=${encodeURIComponent(r.design.id||r.index)}&room=photo-living&glass=clear&finish=${r.product==='aluminium'?'alu-slate':'white-base'}`);
-   await page.waitForFunction(id=>{const s=window.__FSQ_STUDIO__?.snapshot();return s?.id===id&&s.photo?.ready&&s.photo.room==='photo-living';},r.id);
+   const reqRoom = (r.type === 'door-fold' || r.type === 'bay-concepts') ? 'photo-wide-living' : r.type.startsWith('door') ? 'photo-door-living' : 'photo-living';
+   await page.goto(`http://127.0.0.1:5173/#/products/window-studio?product=${r.product}&type=${r.type}&design=${encodeURIComponent(r.design.id||r.index)}&room=${reqRoom}&glass=clear&finish=${r.product==='aluminium'?'alu-slate':'white-base'}`);
+   await page.waitForFunction(({id, reqRoom})=>{const s=window.__FSQ_STUDIO__?.snapshot();return s?.id===id&&s.photo?.ready&&s.photo.room===reqRoom;},{id:r.id, reqRoom});
    await page.locator('[data-load-status="ready"]').waitFor();
    await page.evaluate(async()=>{const {applyMotion}=await import('/src/components/design-diagrams/studioAssembly.js');const ctx=window.__FSQ_STUDIO__.ctx;ctx.assembly.motions.forEach(m=>{m.current=m.target=0;m.mode='turn';m.locked=false;applyMotion(m);});ctx.controls.target.set(0,0,0);ctx.camera.position.set(0,0,6);ctx.controls.update();ctx.dirty=true;});
    if(capture>=0){await page.locator('.recovery-studio').scrollIntoViewIfNeeded();await page.waitForTimeout(600);const path=`${qa}/${r.id.replace(':','-')}-closed.png`;await page.locator('.recovery-studio').screenshot({path,timeout:60000});console.log(JSON.stringify({screenshot:path,id:r.id}));continue;}
@@ -54,7 +55,7 @@ setTimeout(()=>{console.error('Catalogue audit timeout');process.exit(1);},90000
     check.hinges=panelDetails.every(p=>p.kindPass&&p.hingePass&&(p.type==='fixed'||p.type==='slide'||p.hinges.length>0));
     check.hardware=panelDetails.every(p=>p.type==='fixed'||p.handle);
     check.stays=panelDetails.every(p=>p.stay===p.stayRequired);
-    check.aluminium=r.product!=='aluminium'||Math.abs(a.profile-.042)<1e-6&&Math.abs(a.mats.profile.metalness-.75)<1e-6&&!a.mats.profile.map;
+    check.aluminium=r.product!=='aluminium'||(!!a.system&&Math.abs(a.profile-a.system.frameFace)<1e-6&&Math.abs(a.mats.profile.metalness-.75)<1e-6&&!a.mats.profile.map);
     check.rails=!tracks||Array.from({length:tracks},(_,i)=>meshList.some(n=>n.name===`Track_${i}_Sill_Rail`)&&meshList.some(n=>n.name===`Track_${i}_Head_Rail`)).every(Boolean);
     // Check rendered triangle edges for a genuine diagonal bevel, not seam labels.
     function tapered(n){let reference=a.root;if(d.concept){reference=n;while(reference.parent&&reference.parent!==a.root)reference=reference.parent;}const matrix=new T.Matrix4().copy(reference.matrixWorld).invert().multiply(n.matrixWorld);const p=n.geometry.attributes.position,ix=n.geometry.index;for(let j=0;j<(ix?.count||p.count);j+=3){const tri=[0,1,2].map(k=>new T.Vector3().fromBufferAttribute(p,ix?ix.getX(j+k):j+k).applyMatrix4(matrix));const normal=tri[1].clone().sub(tri[0]).cross(tri[2].clone().sub(tri[0])).normalize();if(Math.abs(normal.z)<1e-4&&Math.abs(normal.x)>.4&&Math.abs(Math.abs(normal.x)-Math.abs(normal.y))<1e-4)return true;for(let k=0;k<3;k++){const delta=tri[k].clone().sub(tri[(k+1)%3]);if(Math.abs(delta.z)<1e-5&&Math.abs(delta.x)>.0004&&Math.abs(Math.abs(delta.x)-Math.abs(delta.y))<1e-4)return true;}}return false;}
@@ -89,7 +90,7 @@ setTimeout(()=>{console.error('Catalogue audit timeout');process.exit(1);},90000
    result.consoleErrors=errors.slice(before);result.pass=Object.values(result.geometry.checks).every(Boolean)&&!result.consoleErrors.length;
   }catch(e){result.error=e.message;result.consoleErrors=errors.slice(before);result.pass=false;}
   results.push(result);const stem=selected?'targeted':'catalogue';fs.writeFileSync(`${qa}/${stem}.json`,JSON.stringify({inventory:records,renderer:'Chromium SwiftShader software GPU',results},null,2));
-  fs.writeFileSync(`${qa}/${stem}.md`,'# Individual catalogue audit\n\nNo manufacturer certification. Aluminium sections: generic slim profiles, BLOCKED_BY_UNVERIFIED_SPEC until Uniframe extrusion drawings. Other assemblies remain PARTIAL_3D: provisional dimensions/hardware and photo perimeter defects.\n\n| ID | Name | Panels | Tracks | Checks | Status | Failures |\n|---|---|---:|---:|---|---|---|\n'+results.map(x=>`| ${x.id} | ${x.name} | ${x.geometry?.panels.length??'-'} | ${x.geometry?.tracks??'-'} | ${x.pass?'PASS':'FAIL'} | ${x.status} | ${x.error||Object.entries(x.geometry?.checks||{}).filter(([,v])=>!v).map(([k])=>k).join(', ')||x.consoleErrors?.join('; ')||'none'} |`).join('\n')+'\n');
+  fs.writeFileSync(`${qa}/${stem}.md`,'# Individual catalogue audit\n\nNo manufacturer certification. Aluminium sections: Uniframe brochure specifications (Pages 14-22), simplified section, PARTIAL_3D. Other assemblies remain PARTIAL_3D: provisional dimensions/hardware and photo perimeter defects.\n\n| ID | Name | Panels | Tracks | Checks | Status | Failures |\n|---|---|---:|---:|---|---|---|\n'+results.map(x=>`| ${x.id} | ${x.name} | ${x.geometry?.panels.length??'-'} | ${x.geometry?.tracks??'-'} | ${x.pass?'PASS':'FAIL'} | ${x.status} | ${x.error||Object.entries(x.geometry?.checks||{}).filter(([,v])=>!v).map(([k])=>k).join(', ')||x.consoleErrors?.join('; ')||'none'} |`).join('\n')+'\n');
   console.log(JSON.stringify({id:r.id,pass:result.pass,failures:result.error||Object.entries(result.geometry?.checks||{}).filter(([,v])=>!v).map(([k])=>k)}));
  }
  if(capture<0){console.log(JSON.stringify({audited:results.length,passed:results.filter(r=>r.pass).length,failed:results.filter(r=>!r.pass).length}));if(results.some(r=>!r.pass))process.exitCode=1;}

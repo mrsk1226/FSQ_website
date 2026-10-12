@@ -154,8 +154,8 @@
     "totalConfigurations": 78,
     "concepts": 3,
     "verified": 0,
-    "partial": 47,
-    "blocked": 31,
+    "partial": 78,
+    "blocked": 0,
     "partialConcepts": 3,
     "individuallyBrowserLayoutTested": 81,
     "status": "Historical blanket VERIFIED claims withdrawn. Browser layout evidence is not manufacturing or complete visual verification."
@@ -1745,9 +1745,9 @@
       "name": "3-Pane Side Hung",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1766,7 +1766,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1788,9 +1788,9 @@
       "name": "Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1801,7 +1801,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1823,9 +1823,9 @@
       "name": "Single Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1837,7 +1837,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1859,9 +1859,9 @@
       "name": "Single Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1873,7 +1873,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1895,9 +1895,9 @@
       "name": "Double Side Hung",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1913,7 +1913,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1935,9 +1935,9 @@
       "name": "Fixed & Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1952,7 +1952,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -1974,9 +1974,9 @@
       "name": "Twin Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1992,7 +1992,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2014,9 +2014,9 @@
       "name": "Double French",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2032,7 +2032,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2054,9 +2054,9 @@
       "name": "Left & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2071,7 +2071,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2093,9 +2093,9 @@
       "name": "Triple Open",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2115,7 +2115,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2137,9 +2137,9 @@
       "name": "Triple with Top Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2169,7 +2169,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2191,9 +2191,9 @@
       "name": "Left, Fixed, Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2212,7 +2212,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2234,9 +2234,9 @@
       "name": "Triple Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2256,7 +2256,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2278,9 +2278,9 @@
       "name": "Triple Alternate",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2300,7 +2300,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2322,9 +2322,9 @@
       "name": "Large 3-Pane",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2343,7 +2343,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2365,9 +2365,9 @@
       "name": "Top Hung & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2383,7 +2383,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2405,9 +2405,9 @@
       "name": "4-Pane Center Open",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2429,7 +2429,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2451,9 +2451,9 @@
       "name": "5-Pane Wide",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2479,7 +2479,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2501,9 +2501,9 @@
       "name": "6-Pane Extrawide",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2533,7 +2533,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2555,9 +2555,9 @@
       "name": "Door & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2572,7 +2572,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2594,9 +2594,9 @@
       "name": "4-Pane Top Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2633,7 +2633,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2655,9 +2655,9 @@
       "name": "3-Pane Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2686,7 +2686,7 @@
           }
         ]
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2708,9 +2708,9 @@
       "name": "2-Pane Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2733,7 +2733,7 @@
           }
         ]
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2755,9 +2755,9 @@
       "name": "Top Hung Combinations",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2780,7 +2780,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2802,9 +2802,9 @@
       "name": "Triple Combination",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2836,7 +2836,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2858,9 +2858,9 @@
       "name": "Single Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2876,7 +2876,7 @@
           }
         ]
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2898,9 +2898,9 @@
       "name": "2-Track 2-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2916,7 +2916,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2938,9 +2938,9 @@
       "name": "2-Track 3-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2959,7 +2959,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -2981,9 +2981,9 @@
       "name": "2-Track 4-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3007,7 +3007,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -3029,9 +3029,9 @@
       "name": "3-Track 3-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3052,7 +3052,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
@@ -3074,9 +3074,9 @@
       "name": "Sliding with Top Fixed",
       "product": "aluminium",
       "type": "sliding",
-      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
+      "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
+      "notes": "Dimensions from Uniframe brochure (Pages 14-22); exact extrusion cross-sections not supplied. Simplified section with mitred corners, per-system frame/sash face & depth, authentic hardware, and 15 brochure swatch finishes (Page 29).",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -3099,7 +3099,7 @@
         ],
         "bottom": []
       },
-      "dimensionSource": "2D catalogue proportions; metre conversion provisional",
+      "dimensionSource": "Uniframe brochure dimension tables (Pages 14-22); simplified extrusion section",
       "validation": {
         "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
         "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",

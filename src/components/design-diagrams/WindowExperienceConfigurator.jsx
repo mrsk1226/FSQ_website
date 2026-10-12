@@ -5,6 +5,7 @@ import upvcFinishes from "../../data/designs/studioFinishes.json";
 import StudioDesignExplorer from './StudioDesignExplorer.jsx';
 import { glassOptions } from "../../data/designs/glassData.js";
 import StudioWindowAdapter from "./StudioWindowAdapter.jsx";
+import { getCompatibleRoomPreset } from "./studioPhotoRoom.js";
 
 /**
  * WindowExperienceConfigurator Component
@@ -129,7 +130,12 @@ export const WindowExperienceConfigurator = ({
   const [outdoorView, setOutdoorView] = useState("ooty");
 
   // 9. Architectural Interior Room Environment: "smart" | "ooty-bay" | "hillside-living" | "city-bedroom" | ...
-  const [roomPreset, setRoomPreset] = useState(initialParams.room || "photo-living");
+  const [roomPreset, setRoomPreset] = useState(() => {
+    const initialType = (['door-casement','door-sliding','door-fold','bay-concepts'].includes(initialParams.type) && initialParams.product !== 'aluminium')
+      ? initialParams.type
+      : (initialParams.type === "sliding" ? "sliding" : (initialParams.type === "tilt-turn" && initialParams.product !== "aluminium" ? "tilt-turn" : "casement"));
+    return getCompatibleRoomPreset(initialParams.room, initialType);
+  });
 
   // Quotation Modal State
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -184,7 +190,11 @@ export const WindowExperienceConfigurator = ({
       if (matchFin) setSelectedFinish(matchFin);
     }
 
-    if (qParams.room) setRoomPreset(qParams.room === "smart" ? "photo-living" : qParams.room);
+    if (qParams.room) {
+      setRoomPreset(getCompatibleRoomPreset(qParams.room === "smart" ? null : qParams.room, nextType));
+    } else {
+      setRoomPreset(prev => getCompatibleRoomPreset(prev, nextType));
+    }
 
     if (qParams.glass) {
       const matchG = glassOptions.find((g) => g.id === qParams.glass);
@@ -217,6 +227,7 @@ export const WindowExperienceConfigurator = ({
     setWindowType(newType);
     setSelectedDesignIdx(0);
     setMechanismState("closed");
+    setRoomPreset(prev => getCompatibleRoomPreset(prev, newType));
   };
 
   // Handle Design Change
@@ -579,13 +590,26 @@ export const WindowExperienceConfigurator = ({
                 }}
               >
                 <optgroup label="Photo rooms">
-                  <option value="photo-living">Photo Living Room</option>
-                  <option value="photo-bedroom">Photo Bedroom</option>
-                  <option value="photo-garden-sitting">Photo Garden Sitting Room</option>
+                  {(windowType === 'door-casement' || windowType === 'door-sliding') && (
+                    <option value="photo-door-living">Photo Door Living Room</option>
+                  )}
+                  {(windowType === 'door-fold' || windowType === 'bay-concepts') && (
+                    <>
+                      <option value="photo-wide-living">Photo Wide Living Room</option>
+                      <option value="photo-door-living">Photo Door Living Room</option>
+                    </>
+                  )}
+                  {(!windowType?.startsWith('door') && windowType !== 'bay-concepts') && (
+                    <>
+                      <option value="photo-living">Photo Living Room</option>
+                      <option value="photo-bedroom">Photo Bedroom</option>
+                      <option value="photo-garden-sitting">Photo Garden Sitting Room</option>
+                    </>
+                  )}
                 </optgroup>
                 <optgroup label="Procedural fallback rooms">
-                  <option value="ooty-bay">Fallback - Bay Seating</option>
                   <option value="hillside-living">Fallback - Hillside Living Room</option>
+                  <option value="ooty-bay">Fallback - Bay Seating</option>
                   <option value="city-bedroom">Fallback - City Bedroom</option>
                   <option value="modern-bedroom">Fallback - Modern Bedroom</option>
                   <option value="luxury-living">Fallback - Luxury Living Room</option>

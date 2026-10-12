@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { aluminiumShades } from "../../data/designs/aluminiumColours.js";
 
-// Partition shades: 15 architectural + 3 wood sublimation (Alumination)
-const architecturalShades = aluminiumShades.filter((s) => s.category !== "wood");
-const aluminationShades = aluminiumShades.filter((s) => s.category === "wood");
+// Partition shades according to UNIFRAME brochure: 5 Natural, 7 Solid, 3 Premium
+const naturalShades = aluminiumShades.filter((s) => s.category === "natural");
+const solidShades = aluminiumShades.filter((s) => s.category === "solid");
+const premiumShades = aluminiumShades.filter((s) => s.category === "premium");
 
 export const AluminiumColoursSection = ({ onNavigate }) => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [selectedShade, setSelectedShade] = useState(architecturalShades[0]); // Slate
+  const [selectedShade, setSelectedShade] = useState(aluminiumShades[0]); // Mystic Dark or Slate
 
-  const getFilteredArchitectural = () => {
-    if (activeCategory === "all") return architecturalShades;
-    if (activeCategory === "solids") return architecturalShades.filter((s) => s.category === "architectural");
-    if (activeCategory === "warm") return architecturalShades.filter((s) => s.category === "warm");
-    return architecturalShades;
+  const getFilteredShades = () => {
+    if (activeCategory === "all") return aluminiumShades;
+    if (activeCategory === "natural") return naturalShades;
+    if (activeCategory === "solid") return solidShades;
+    if (activeCategory === "premium") return premiumShades;
+    return aluminiumShades;
   };
 
   const handleStudioNavigate = (shade) => {
@@ -23,7 +25,7 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
     }
   };
 
-  const filteredArchitectural = getFilteredArchitectural();
+  const filteredShades = getFilteredShades();
 
   return (
     <div style={{ background: "#f8fafc", padding: "60px 0 90px" }}>
@@ -92,9 +94,10 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
           }}
         >
           {[
-            { id: "all", label: `ALL ARCHITECTURAL (${architecturalShades.length})` },
-            { id: "solids", label: "MONOCHROME & METALLIC" },
-            { id: "warm", label: "WARM BRONZE & EARTH" }
+            { id: "all", label: `ALL FINISHES (${aluminiumShades.length})` },
+            { id: "natural", label: `NATURAL TIMBER (${naturalShades.length})` },
+            { id: "solid", label: `SOLID ARCHITECTURAL (${solidShades.length})` },
+            { id: "premium", label: `PREMIUM METALLIC (${premiumShades.length})` }
           ].map((tab) => {
             const isActive = activeCategory === tab.id;
             return (
@@ -122,7 +125,7 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
           })}
         </div>
 
-        {/* 3. Architectural Powder-Coat & Satin Swatches Grid */}
+        {/* 3. Architectural Powder-Coat, Anodized & Timber Swatches Grid */}
         <div
           style={{
             display: "grid",
@@ -131,7 +134,7 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
             marginBottom: "48px"
           }}
         >
-          {filteredArchitectural.map((shade, idx) => {
+          {filteredShades.map((shade, idx) => {
             const isSelected = selectedShade.name === shade.name;
 
             return (
@@ -249,10 +252,10 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
                 marginBottom: "8px"
               }}
             >
-              ALUMINATION SERIES
+              NATURAL SERIES
             </span>
             <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.6rem", color: "#1a2a3a", margin: "0 0 8px" }}>
-              Aluminium Timber Sublimation
+              Natural Timber Sublimation
             </h3>
             <p style={{ color: "#64748b", fontSize: "0.92rem", margin: 0, maxWidth: "720px" }}>
               High-temperature vacuum thermal sublimation transfers high-definition wood grain pigments into the powder-coat matrix, delivering the warmth of natural timber with the structural stiffness of 6063-T6 alloy.
@@ -262,11 +265,11 @@ export const AluminiumColoursSection = ({ onNavigate }) => {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
               gap: "20px"
             }}
           >
-            {aluminationShades.map((shade, idx) => {
+            {naturalShades.map((shade, idx) => {
               const isSelected = selectedShade.name === shade.name;
 
               return (

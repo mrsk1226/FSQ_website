@@ -54,11 +54,186 @@ function ring(parent,name,x,y,z,w,h,p,d,mat,role='profile',seamMat=null){
   const sg=new T.BufferGeometry();sg.setAttribute('position',new T.Float32BufferAttribute(sc,3));const sl=new T.LineSegments(sg,seamMat);sl.name=`${name}_Mitre_Seams`;parent.add(sl);
  }
 }
+export const UNIFRAME_SYSTEMS = {
+ 'robus-40-casement': {
+  id: 'robus-40-casement',
+  name: 'Robus 40 Casement Window',
+  pdfPage: 20,
+  frameFace: 0.0485,
+  sashFace: 0.0705,
+  frameDepth: 0.040,
+  sashDepth: 0.048,
+  fixedFace: 0.032,
+  interlockFace: null,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ },
+ 'livio-minimal': {
+  id: 'livio-minimal',
+  name: 'Livio Minimal Casement Window',
+  pdfPage: 19,
+  frameFace: 0.054,
+  sashFace: 0.052,
+  frameDepth: 0.067,
+  sashDepth: 0.068,
+  fixedFace: 0.030,
+  interlockFace: null,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ },
+ 'graf-26-window': {
+  id: 'graf-26-window',
+  name: 'Graf 26 Sliding Window',
+  pdfPage: 14,
+  frameFace: 0.044,
+  sashFace: 0.053,
+  frameDepth: 0.048,
+  frameDepth3Track: 0.074,
+  sashDepth: 0.026,
+  interlockFace: 0.032,
+  fixedFace: 0.032,
+  lockType: 'single',
+  concealedHardware: false,
+  sectionLabel: 'simplified section'
+ },
+ 'graf-32-window': {
+  id: 'graf-32-window',
+  name: 'Graf 32 Sliding Window',
+  pdfPage: 16,
+  frameFace: 0.044,
+  sashFace: 0.055,
+  frameDepth: 0.0835,
+  frameDepth3Track: 0.131,
+  sashDepth: 0.032,
+  interlockFace: 0.020,
+  fixedFace: 0.032,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ },
+ 'graf-26-door': {
+  id: 'graf-26-door',
+  name: 'Graf 26 Sliding Door',
+  pdfPage: 15,
+  frameFace: 0.044,
+  sashFace: 0.063,
+  frameDepth: 0.048,
+  frameDepth3Track: 0.074,
+  sashDepth: 0.026,
+  interlockFace: 0.032,
+  fixedFace: 0.038,
+  lockType: 'multipoint',
+  concealedHardware: false,
+  sectionLabel: 'simplified section'
+ },
+ 'graf-32-door': {
+  id: 'graf-32-door',
+  name: 'Graf 32 Sliding Door',
+  pdfPage: 17,
+  frameFace: 0.044,
+  sashFace: 0.065,
+  frameDepth: 0.0835,
+  frameDepth3Track: 0.131,
+  sashDepth: 0.032,
+  interlockFace: 0.020,
+  fixedFace: 0.038,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ },
+ 'graf-45-door': {
+  id: 'graf-45-door',
+  name: 'Graf 45 Sliding Door',
+  pdfPage: 18,
+  frameFace: 0.025,
+  sashFace: 0.085,
+  frameDepth: 0.132,
+  frameDepth3Track: 0.195,
+  sashDepth: 0.045,
+  interlockFace: 0.020,
+  fixedFace: 0.042,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ },
+ 'robus-40-door': {
+  id: 'robus-40-door',
+  name: 'Robus 40 Casement Door',
+  pdfPage: 21,
+  frameFace: 0.065,
+  sashFace: 0.096,
+  frameDepth: 0.040,
+  sashDepth: 0.048,
+  fixedFace: 0.042,
+  interlockFace: null,
+  lockType: 'multipoint',
+  concealedHardware: false,
+  sectionLabel: 'simplified section'
+ },
+ 'robus-40-fold': {
+  id: 'robus-40-fold',
+  name: 'Robus 40 Fold and Slide',
+  pdfPage: 22,
+  frameFace: 0.065,
+  sashFace: 0.096,
+  frameDepth: 0.040,
+  sashDepth: 0.048,
+  fixedFace: 0.042,
+  interlockFace: null,
+  lockType: 'multipoint',
+  concealedHardware: true,
+  sectionLabel: 'simplified section'
+ }
+};
+
+export function resolveAluminiumSystem(record) {
+ if (!record) return UNIFRAME_SYSTEMS['robus-40-casement'];
+ if (record.uniframeSystem && UNIFRAME_SYSTEMS[record.uniframeSystem]) return UNIFRAME_SYSTEMS[record.uniframeSystem];
+ if (record.systemId && UNIFRAME_SYSTEMS[record.systemId]) return UNIFRAME_SYSTEMS[record.systemId];
+ if (record.design?.system && UNIFRAME_SYSTEMS[record.design.system]) return UNIFRAME_SYSTEMS[record.design.system];
+
+ const type = record.type || '';
+ const name = record.design?.name || record.name || '';
+ const isDoor = type.startsWith('door');
+
+ if (type === 'door-fold' || /fold/i.test(name)) {
+  return UNIFRAME_SYSTEMS['robus-40-fold'];
+ }
+ if (isDoor && (type === 'door-sliding' || type.includes('sliding'))) {
+  if (/graf[\s_-]?45|panoramic/i.test(name)) return UNIFRAME_SYSTEMS['graf-45-door'];
+  if (/graf[\s_-]?26/i.test(name)) return UNIFRAME_SYSTEMS['graf-26-door'];
+  return UNIFRAME_SYSTEMS['graf-32-door'];
+ }
+ if (isDoor || type === 'door-casement') {
+  return UNIFRAME_SYSTEMS['robus-40-door'];
+ }
+ if (type === 'sliding' || type.includes('sliding')) {
+  if (/graf[\s_-]?32|3-track|4-panel|top fixed/i.test(name) || (record.index !== undefined && record.index >= 2)) {
+   return UNIFRAME_SYSTEMS['graf-32-window'];
+  }
+  return UNIFRAME_SYSTEMS['graf-26-window'];
+ }
+ if (/livio|minimal/i.test(name) || record.design?.minimal) {
+  return UNIFRAME_SYSTEMS['livio-minimal'];
+ }
+ return UNIFRAME_SYSTEMS['robus-40-casement'];
+}
+
 export function buildAssembly(record){
  const {design,product,type}=record;const root=new T.Group();root.name=record.id;const mats=createMaterials(product==='aluminium');
+ const isAlu=product==='aluminium';
+ const aluSys=isAlu?resolveAluminiumSystem(record):null;
  const width=parseInt(design.width)/100,height=parseInt(design.height)/100,door=type.startsWith('door'),base=door?.03:.85;
- const profile=product==='aluminium'?.042:.06,depth=type.includes('sliding')?.17:.07;
- const motions=[],panels=[];let tracks=type.includes('sliding')?(design.name.includes('3-Track')?3:2):0;
+ const profile=isAlu?aluSys.frameFace:.06;
+ const sashProfile=isAlu?aluSys.sashFace:.06;
+ let tracks=type.includes('sliding')?(design.name.includes('3-Track')?3:2):0;
+ const depth=isAlu?(tracks===3&&aluSys.frameDepth3Track?aluSys.frameDepth3Track:aluSys.frameDepth):(type.includes('sliding')?.17:.07);
+ const sashDepth=isAlu?aluSys.sashDepth:(tracks?.032:depth*.5);
+ const motions=[],panels=[];
+ root.userData.section='simplified section';
+ if(aluSys){root.userData.uniframeSystem=aluSys.name;root.userData.pdfPage=aluSys.pdfPage;}
  const rows=[design.bottomPanes?.length&&{key:'bottom',panes:design.bottomPanes,fraction:.22},{key:'main',panes:design.panes,fraction:1-(design.topPanes?.length?.22:0)-(design.bottomPanes?.length?.22:0)},design.topPanes?.length&&{key:'top',panes:design.topPanes,fraction:.22}].filter(Boolean);
  rows.forEach(row=>{row.fraction=1/rows.length;}); // The authoritative 2D renderer uses equal-height flex rows.
  const pane=(parent,p,x,y,w,h,z,key,index,groupPanels)=>{
@@ -70,17 +245,29 @@ export function buildAssembly(record){
   if(!fixed&&!slide&&!fold)sash.position.z+=tt?.05:-.05;
   const surface=new T.Group();surface.name=`${key}_Attached_Components`;surface.position.z=z-sash.position.z;sash.add(surface);
   const sx=x-sash.position.x,sy=y-sash.position.y;
-  const pw=fixed?.025:profile;
-  ring(surface,key,sx,sy,0,w-.006,h-.006,pw,tracks?.032:depth*.5,mats.profile,'profile',mats.seam);
+  const pw=fixed?(isAlu?aluSys.fixedFace:.025):sashProfile;
+  ring(surface,key,sx,sy,0,w-.006,h-.006,pw,tracks?sashDepth:depth*.5,mats.profile,'profile',mats.seam);
   ring(surface,`${key}_Bead`,sx,sy,.027,w-2*pw,h-2*pw,.012,.01,mats.profile,'profile',mats.seam);
   ring(surface,`${key}_Seal`,sx,sy,.018,w-2*pw-.015,h-2*pw-.015,.006,.008,mats.gasket,'gasket');
   box(surface,`${key}_Glass`,sx,sy,0,w-2*pw-.025,h-2*pw-.025,.005,mats.glass,'glass');
   let handle=null;
   if(!fixed){const hx=sx+(p.handlePos==='left'?-1:p.handlePos==='right'?1:left?1:-1)*(w/2-pw/2);
-   if(slide)handle=box(surface,`${key}_TouchLock`,hx,sy,.045,.014,.09,.025,mats.hardware,'hardware');
+   if(slide){
+    if(isAlu&&aluSys.lockType==='single'){
+     handle=box(surface,`${key}_TouchLock`,hx,sy,.045,.014,.09,.025,mats.hardware,'hardware');
+    }else if(door){
+     handle=new T.Group();handle.name=`${key}_Handle`;handle.position.set(hx,sy,.022);surface.add(handle);
+     const baseMesh=new T.Mesh(new RoundedBoxGeometry(.026,.15,.006,2,.003),mats.hardware);baseMesh.name=`${key}_Handle_Rosette`;baseMesh.userData.role='hardware';handle.add(baseMesh);
+     const stem=new T.Mesh(new T.CylinderGeometry(.008,.008,.027,12),mats.hardware);stem.rotation.x=Math.PI/2;stem.position.z=.016;stem.name=`${key}_Handle_Spindle`;stem.userData.role='hardware';handle.add(stem);
+     const lever=new T.Mesh(new RoundedBoxGeometry(.018,.12,.016,2,.005),mats.hardware);lever.position.set(0,-.053,.034);lever.name=`${key}_Handle_Lever`;lever.userData.role='hardware';handle.add(lever);
+     for(const y of [-.033,.033]){const screw=new T.Mesh(new T.CylinderGeometry(.0025,.0025,.002,8),mats.hardware);screw.rotation.x=Math.PI/2;screw.position.set(0,y,.004);screw.userData.role='hardware';handle.add(screw);}
+    }else{
+     handle=box(surface,`${key}_TouchLock`,hx,sy,.045,.014,.10,.025,mats.hardware,'hardware');
+    }
+   }
    else {
     handle=new T.Group();handle.name=`${key}_Handle`;handle.position.set(hx,sy,.022);surface.add(handle);
-    const base=new T.Mesh(new RoundedBoxGeometry(.026,door?.15:.10,.006,2,.003),mats.hardware);base.name=`${key}_Handle_Rosette`;base.userData.role='hardware';handle.add(base);
+    const baseMesh=new T.Mesh(new RoundedBoxGeometry(.026,door?.15:.10,.006,2,.003),mats.hardware);baseMesh.name=`${key}_Handle_Rosette`;baseMesh.userData.role='hardware';handle.add(baseMesh);
     const stem=new T.Mesh(new T.CylinderGeometry(.008,.008,.027,12),mats.hardware);stem.rotation.x=Math.PI/2;stem.position.z=.016;stem.name=`${key}_Handle_Spindle`;stem.userData.role='hardware';handle.add(stem);
     const lever=new T.Mesh(new RoundedBoxGeometry(.018,door?.12:.085,.016,2,.005),mats.hardware);lever.position.set(0,-(door?.053:.037),.034);lever.name=`${key}_Handle_Lever`;lever.userData.role='hardware';handle.add(lever);
     for(const y of [-.033,.033]){const screw=new T.Mesh(new T.CylinderGeometry(.0025,.0025,.002,8),mats.hardware);screw.rotation.x=Math.PI/2;screw.position.set(0,y,.004);screw.userData.role='hardware';handle.add(screw);}
@@ -128,10 +315,10 @@ export function buildAssembly(record){
   if(tracks)for(let i=0;i<tracks;i++){const tz=i*.055-.08;box(root,`Track_${i}_Sill_Rail`,0,base+profile+.004,tz,width-2*profile,.008,.012,mats.hardware,'hardware');box(root,`Track_${i}_Head_Rail`,0,base+height-profile-.004,tz,width-2*profile,.008,.012,mats.hardware,'hardware');box(root,`Track_${i}_Sill_Baffle`,0,base+profile+.012,tz,width-2*profile,.016,.024,mats.gasket,'gasket');box(root,`Track_${i}_Head_Baffle`,0,base+height-profile-.012,tz,width-2*profile,.016,.024,mats.gasket,'gasket');}
   if(type==='door-fold')for(const y of [base+.022,base+height-.022]){for(const side of [-1,1])box(root,`Fold_Guide_${y}_${side}`,0,y,-.075+side*.013,width-.04,.024,.006,mats.hardware,'hardware');box(root,`Fold_Rail_Back_${y}`,0,y+(y>height/2?.015:-.015),-.075,width-.04,.006,.032,mats.hardware,'hardware');}
  }
- return {root,mats,motions,panels,width,height,base,profile,tracks,source:'procedural',record};
+ return {root,mats,motions,panels,width,height,base,profile,tracks,source:'procedural',record,system:aluSys};
 }
 export function applyMotion(m){const p=m.current;
- if(m.kind==='slide'){m.node.position.x=m.rest.x+m.travel*p;if(m.actuator){const locked=m.locked&&p<.001;m.actuator.position.y=m.actuatorRest+(locked?.008:0);m.latch.position.x=m.latchRest+(locked?m.latchDirection*.008:0);}}
+ if(m.kind==='slide'){m.node.position.x=m.rest.x+m.travel*p;if(m.actuator){const locked=m.locked||p<.001;m.actuator.position.y=m.actuatorRest+(locked?.008:0);m.latch.position.x=m.latchRest+(locked?m.latchDirection*.008:0);}}
  else if(m.kind==='casement') {m.node.rotation.y=(m.left?1:-1)*T.MathUtils.degToRad(70)*Math.max(0,(p-.25)/.75);if(m.handle)m.handle.rotation.z=(m.left?-1:1)*Math.PI/2*Math.min(1,p/.25);}
  else if(m.kind==='top'){m.node.rotation.x=T.MathUtils.degToRad(20)*Math.max(0,(p-.25)/.75);if(m.handle)m.handle.rotation.z=Math.PI/2*Math.min(1,p/.25);}
  else if(m.kind==='tilt'){m.node.position.copy(m.rest);m.node.rotation.set(0,0,0);const opening=Math.max(0,(p-.25)/.75);if(m.handle)m.handle.rotation.z=(m.left?-1:1)*(m.mode==='tilt'?Math.PI:Math.PI/2)*Math.min(1,p/.25);if(m.mode==='tilt')m.node.rotation.x=T.MathUtils.degToRad(10)*opening;else {m.node.rotation.y=(m.left?-1:1)*T.MathUtils.degToRad(65)*opening;}}

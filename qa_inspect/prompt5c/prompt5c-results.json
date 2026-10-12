@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "name": "casement-glass-click",
+      "status": "PASS",
+      "target": 1,
+      "current": 1
+    },
+    {
+      "name": "sliding-motion-and-track",
+      "status": "PASS",
+      "target": 1,
+      "current": 1,
+      "track": 1,
+      "panelX": -0.30949999999999994,
+      "panelZ": -0.025,
+      "collisions": []
+    },
+    {
+      "name": "drag-without-camera-orbit",
+      "status": "PASS"
+    },
+    {
+      "name": "sash-lock-and-toast",
+      "status": "PASS",
+      "toast": "🔒 Sash is locked. Click \"Unlock\" to operate."
+    },
+    {
+      "name": "fullscreen-finish-change",
+      "status": "PASS"
+    },
+    {
+      "name": "default-window-focus-rooms",
+      "status": "PASS"
+    },
+    {
+      "name": "mobile-390x844-responsive",
+      "status": "PASS",
+      "bodyOverflow": true,
+      "studioOverflow": true
+    }
+  ],
+  "errors": [],
+  "screenshots": [
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\casement-clicked-glass.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\sliding-0pct.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\sliding-50pct.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\sliding-100pct.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\fullscreen-palette-open.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\default-focus-bedroom.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\default-focus-living.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\default-focus-garden.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\mobile-normal-390x844.png",
+    "D:\\FSQ_website\\qa_inspect\\prompt5c\\mobile-fullscreen-390x844.png"
+  ]
+}

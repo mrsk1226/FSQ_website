@@ -1,25 +1,27 @@
 // Aluminium Colours & Finishes Master Data
-// Verified from PROJECT_MEMORY.md & reference sources
+// Verified from UNIFRAME Brochure (Page 29 - Aesthetics Swatch Fan)
+// 15 Authoritative Finishes: 5 Natural, 7 Solid, 3 Premium
 
 export const aluminiumShades = [
-  { name: "Slate", category: "architectural", bg: "#525960", border: "#3a3f45", sash: "#646d75", tag: "Architectural Satin" },
-  { name: "Noir", category: "architectural", bg: "#1f2226", border: "#111315", sash: "#2c3035", tag: "Ultra Matte" },
-  { name: "Urban Dusk", category: "architectural", bg: "#3e4249", border: "#282c31", sash: "#4f545c", tag: "Deep Textured" },
-  { name: "Urban Mist", category: "architectural", bg: "#8a939c", border: "#6c747c", sash: "#9fa7b0", tag: "Modern Grey" },
-  { name: "Frost", category: "architectural", bg: "#d6dde3", border: "#b2bcc4", sash: "#e8eff5", tag: "Cool Metallic" },
-  { name: "Dew", category: "architectural", bg: "#c4cbd1", border: "#9da6ad", sash: "#d9e1e7", tag: "Silvery Sheen" },
-  { name: "Mystic Dark", category: "architectural", bg: "#2d3339", border: "#1b1f23", sash: "#3b4249", tag: "Midnight Grey" },
+  // 1. Natural Shades (Timber Sublimation / Woodgrain Aesthetic)
+  { name: "Mystic Dark", category: "natural", bg: "#452313", border: "#2f170c", sash: "#582e1b", tag: "Natural Timber Grain", hasGrain: true },
+  { name: "Citrine", category: "natural", bg: "#804620", border: "#5e3013", sash: "#9b572a", tag: "Warm Teak Grain", hasGrain: true },
+  { name: "Royal Chestnut", category: "natural", bg: "#7f451e", border: "#582d12", sash: "#985627", tag: "Rich Chestnut Grain", hasGrain: true },
+  { name: "Rustic Charm", category: "natural", bg: "#caadac", border: "#9f8685", sash: "#d9c0bf", tag: "Weathered Oak Grain", hasGrain: true },
+  { name: "Duke", category: "natural", bg: "#481e11", border: "#2f1209", sash: "#5e2918", tag: "Espresso Walnut Grain", hasGrain: true },
 
-  { name: "Caramel", category: "warm", bg: "#a87850", border: "#805835", sash: "#bf8e65", tag: "Warm Satin" },
-  { name: "Cedar", category: "warm", bg: "#8f573c", border: "#6b3e27", sash: "#a6684b", tag: "Earthy Bronze" },
-  { name: "Citrine", category: "warm", bg: "#c79e65", border: "#9e7742", sash: "#deb57c", tag: "Champagne Gold" },
-  { name: "Duke", category: "warm", bg: "#6e4a3c", border: "#4f3126", sash: "#855d4d", tag: "Rich Bronze" },
-  { name: "Hazel", category: "warm", bg: "#966f54", border: "#73513b", sash: "#ad8366", tag: "Warm Nut" },
-  { name: "Mocha", category: "warm", bg: "#594035", border: "#3d2a21", sash: "#6e5144", tag: "Deep Coffee" },
-  { name: "Royal Chestnut", category: "warm", bg: "#613b2d", border: "#422419", sash: "#784b3a", tag: "Heritage Tone" },
-  { name: "Rustic Charm", category: "warm", bg: "#875338", border: "#613822", sash: "#9e6447", tag: "Copper Tint" },
+  // 2. Solid Shades (Architectural Powder-Coat Electrostatic Finishes)
+  { name: "Slate", category: "solid", bg: "#5c6477", border: "#444a59", sash: "#6e778d", tag: "Architectural Blue-Grey" },
+  { name: "Mocha", category: "solid", bg: "#ab7c6d", border: "#885f52", sash: "#bd8e7f", tag: "Warm Taupe Architectural" },
+  { name: "Urban Mist", category: "solid", bg: "#b9bdbc", border: "#959998", sash: "#cbcfce", tag: "Modern Architectural Grey" },
+  { name: "Noir", category: "solid", bg: "#25272b", border: "#161719", sash: "#35383e", tag: "Ultra Matte Architectural Black" },
+  { name: "Frost", category: "solid", bg: "#e6ebf1", border: "#bac1c9", sash: "#f4f7fb", tag: "Cool Pure Architectural White" },
+  { name: "Cedar", category: "solid", bg: "#52514d", border: "#3c3b38", sash: "#666560", tag: "Graphite Charcoal Satin" },
+  { name: "Dew", category: "solid", bg: "#e6edf8", border: "#bac4d1", sash: "#f2f7fd", tag: "Silvery Cool Mist" },
 
-  { name: "Golden Oak", category: "wood", bg: "#b78343", border: "#8f6027", sash: "#c99554", tag: "Wood Lamination" },
-  { name: "Mahogany", category: "wood", bg: "#6b2823", border: "#471511", sash: "#80352f", tag: "Wood Lamination" },
-  { name: "Black Cherry", category: "wood", bg: "#4a2726", border: "#2e1212", sash: "#5c3332", tag: "Wood Lamination" }
+  // 3. Premium Shades (Metallic Architectural Satin & Bronze)
+  { name: "Urban Dusk", category: "premium", bg: "#747150", border: "#545238", sash: "#8a8661", tag: "Deep Metallic Olive-Bronze" },
+  { name: "Caramel", category: "premium", bg: "#c28e6f", border: "#9c6e51", sash: "#d49f7e", tag: "Warm Satin Metallic Copper" },
+  { name: "Hazel", category: "premium", bg: "#b9b2a6", border: "#948d82", sash: "#cbC4b8", tag: "Champagne Metallic Satin" }
 ];
+

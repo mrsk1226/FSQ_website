@@ -121,7 +121,7 @@ export const StudioWindowAdapter = ({
 
       {/* Render Mode Content */}
       {renderMode === "3d" ? (
-        <div style={{ width: "100%", height: "520px", minHeight: "480px" }}>
+        <div style={{ width: "100%", height: "clamp(580px, 78vh, 880px)", minHeight: "520px" }}>
           <Suspense fallback={<p>Loading 3D Studio…</p>}><Interactive3DStudio
             product={product}
             windowType={windowType}

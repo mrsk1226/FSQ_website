@@ -91,17 +91,18 @@ export const upvcFinishes = prominanceFinishes.map((item) => ({
   sourceStatus: "verified-fsq"
 }));
 
-// Verified Uniframe Aluminium Finishes
+// Verified Uniframe Aluminium Finishes (15 Finishes: Natural, Solid, Premium)
 export const aluminiumFinishes = aluminiumShades.map((item, idx) => ({
   id: `alu-${item.name.toLowerCase().replace(/\s+/g, "-")}`,
   name: item.name,
-  category: item.category === "wood" ? "Wood Lamination" : "Architectural Satin",
+  category: item.category === "natural" ? "Natural Timber" : item.category === "premium" ? "Premium Metallic" : "Solid Architectural",
   type: item.category,
+  hasGrain: !!item.hasGrain,
   baseColor: item.bg,
   highlightColor: item.sash || lightenColor(item.bg, 16),
   shadowColor: item.border || darkenColor(item.bg, 20),
   tag: item.tag,
-  sourceStatus: "verified-fsq"
+  sourceStatus: "verified-uniframe-brochure-p29"
 }));
 
 // Utility colour shade calculators
