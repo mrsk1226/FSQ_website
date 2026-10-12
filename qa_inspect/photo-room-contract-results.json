@@ -1,0 +1,154 @@
+{
+  "status": "BROWSER_TESTED",
+  "errors": [],
+  "results": [
+    {
+      "room": "photo-bedroom",
+      "sameRenderer": true,
+      "samePlane": true,
+      "camera": [
+        0,
+        3.6739403974420594e-16,
+        6
+      ],
+      "target": 1,
+      "roomRotation": [
+        0,
+        0,
+        0,
+        "XYZ"
+      ],
+      "sceneryUnchanged": true
+    },
+    {
+      "room": "photo-garden-sitting",
+      "sameRenderer": true,
+      "samePlane": true,
+      "camera": [
+        0,
+        3.6739403974420594e-16,
+        6
+      ],
+      "target": 1,
+      "roomRotation": [
+        0,
+        0,
+        0,
+        "XYZ"
+      ],
+      "sceneryUnchanged": true
+    },
+    {
+      "room": "photo-living",
+      "sameRenderer": true,
+      "samePlane": true,
+      "camera": [
+        0,
+        3.6739403974420594e-16,
+        6
+      ],
+      "target": 1,
+      "roomRotation": [
+        0,
+        0,
+        0,
+        "XYZ"
+      ],
+      "sceneryUnchanged": true
+    },
+    {
+      "id": "upvc-casement:4",
+      "renderer": true,
+      "camera": [
+        0,
+        3.6739403974420594e-16,
+        6
+      ],
+      "motions": [
+        {
+          "id": "left",
+          "target": 0
+        },
+        {
+          "id": "right",
+          "target": 1
+        }
+      ],
+      "source": "/models/FSQ_UPVC_Casement_2Open_Material_v04_Web_r01.glb"
+    },
+    {
+      "root": true,
+      "roomMap": true,
+      "outdoor": true,
+      "poses": true,
+      "steel": true,
+      "profileMapped": true,
+      "tint": [
+        0.4019777798219466,
+        0.45641102317066595,
+        0.4969329950515914
+      ],
+      "glassSameMaterial": true
+    },
+    {
+      "drag": {
+        "camera": [
+          0,
+          3.6739403974420594e-16,
+          6
+        ],
+        "before": [
+          0,
+          3.6739403974420594e-16,
+          6
+        ],
+        "motions": [
+          {
+            "id": "left",
+            "kind": "recovered",
+            "target": 0.7500001907348632,
+            "current": 0.5448324470151693
+          },
+          {
+            "id": "right",
+            "kind": "recovered",
+            "target": 0,
+            "current": 0.00009144328438779029,
+            "mode": "turn",
+            "locked": false
+          }
+        ]
+      }
+    },
+    {
+      "roomMatrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0.12,
+        1
+      ],
+      "azimuth": 0.03334117697979331,
+      "polar": 1.5607961601207294
+    }
+  ],
+  "requestCounts": {
+    "http://127.0.0.1:5173/node_modules/.vite/deps/three_examples_jsm_environments_RoomEnvironment__js.js?v=72cf6e7a": 1,
+    "http://127.0.0.1:5173/textures/rooms-real/rooms.json": 1,
+    "http://127.0.0.1:5173/textures/environments/ooty_tea_estate.jpg": 1,
+    "http://127.0.0.1:5173/textures/rooms-real/living.webp": 1,
+    "http://127.0.0.1:5173/textures/rooms-real/bedroom.webp": 1,
+    "http://127.0.0.1:5173/textures/rooms-real/garden-sitting.webp": 1
+  }
+}

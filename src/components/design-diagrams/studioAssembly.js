@@ -85,7 +85,7 @@ export function buildAssembly(record){
     const lever=new T.Mesh(new RoundedBoxGeometry(.018,door?.12:.085,.016,2,.005),mats.hardware);lever.position.set(0,-(door?.053:.037),.034);lever.name=`${key}_Handle_Lever`;lever.userData.role='hardware';handle.add(lever);
     for(const y of [-.033,.033]){const screw=new T.Mesh(new T.CylinderGeometry(.0025,.0025,.002,8),mats.hardware);screw.rotation.x=Math.PI/2;screw.position.set(0,y,.004);screw.userData.role='hardware';handle.add(screw);}
    }
-   if(slide){box(surface,`${key}_Roller`,sx,sy-h/2+.015,0,.045,.025,.025,mats.hardware,'hardware');}
+   if(slide){box(surface,`${key}_Roller`,sx,sy-h/2+.015,0,.045,.025,.025,mats.hardware,'hardware');box(surface,`${key}_Bottom_Brush_Seal`,sx,sy-h/2+.002,0,w-.006,.016,.028,mats.gasket,'gasket');box(surface,`${key}_Top_Brush_Seal`,sx,sy+h/2-.002,0,w-.006,.016,.028,mats.gasket,'gasket');}
    else if(fold){const pitch=(width-2*profile)/groupPanels.length;for(const sign of [-1,1])for(const hy of [-h*.36,h*.36])box(surface,`${key}_Linked_Hinge_${sign}_${hy}`,sx+sign*pitch/2,sy+hy+sign*.016,(index%2===0?sign:-sign)*.045,.024,.025,.024,mats.hardware,'hardware');if(index<groupPanels.length-1)box(surface,`${key}_Joint_Seal`,sx+pitch/2,sy,0,.046,h,.006,mats.gasket,'gasket');}
    else for(const hy of [-h*.36,h*.36]) box(surface,`${key}_Hinge_${hy}`,sx+(left?-1:1)*(w/2-.005),sy+hy,0,.013,.06,.024,mats.hardware,'hardware');
   }
@@ -125,7 +125,7 @@ export function buildAssembly(record){
    }
    bottom+=h;if(ri<rows.length-1)box(root,`Transom_${ri}`,0,bottom,-.04,width-2*profile,.028,depth,mats.profile,'profile');
   });
-  if(tracks)for(let i=0;i<tracks;i++)for(const y of [base+.024,base+height-.024])box(root,`Track_${i}_${y}`,0,y,i*.055-.08,width-.04,.012,.01,mats.hardware,'hardware');
+  if(tracks)for(let i=0;i<tracks;i++){const tz=i*.055-.08;box(root,`Track_${i}_Sill_Rail`,0,base+profile+.004,tz,width-2*profile,.008,.012,mats.hardware,'hardware');box(root,`Track_${i}_Head_Rail`,0,base+height-profile-.004,tz,width-2*profile,.008,.012,mats.hardware,'hardware');box(root,`Track_${i}_Sill_Baffle`,0,base+profile+.012,tz,width-2*profile,.016,.024,mats.gasket,'gasket');box(root,`Track_${i}_Head_Baffle`,0,base+height-profile-.012,tz,width-2*profile,.016,.024,mats.gasket,'gasket');}
   if(type==='door-fold')for(const y of [base+.022,base+height-.022]){for(const side of [-1,1])box(root,`Fold_Guide_${y}_${side}`,0,y,-.075+side*.013,width-.04,.024,.006,mats.hardware,'hardware');box(root,`Fold_Rail_Back_${y}`,0,y+(y>height/2?.015:-.015),-.075,width-.04,.006,.032,mats.hardware,'hardware');}
  }
  return {root,mats,motions,panels,width,height,base,profile,tracks,source:'procedural',record};

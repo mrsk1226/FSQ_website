@@ -13,7 +13,6 @@ setTimeout(()=>{console.error('Evidence timeout');process.exit(1);},360000).unre
  const name=`${room}-${type}-${design}-${state}`;
  const result={errors,snapshot:await page.evaluate(()=>window.__FSQ_STUDIO__.snapshot())};if(result.snapshot.photo.room!==room)throw Error("Wrong room evidence");fs.writeFileSync(`${qa}/${name}.json`,JSON.stringify(result,null,2));
  await page.screenshot({clip:await page.locator('.recovery-studio').boundingBox(),path:`${qa}/${name}.png`,timeout:60000});console.log(JSON.stringify({image:`${qa}/${name}.png`,errors,photo:result.snapshot.photo,render:result.snapshot.renderer}));if(errors.length)process.exitCode=1;results.push({name,...result});
- if(all){console.log('PAUSED_FOR_IMAGE_REVIEW');await new Promise(resolve=>{process.stdin.resume();process.stdin.once('data',()=>{process.stdin.pause();resolve();});});}
  }
- fs.writeFileSync(`${qa}/photo-room-evidence-results.json`,JSON.stringify({status:'BROWSER_TESTED',results},null,2));process.stdin.pause();
+ fs.writeFileSync(`${qa}/photo-room-evidence-results.json`,JSON.stringify({status:'BROWSER_TESTED',results},null,2));
 }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

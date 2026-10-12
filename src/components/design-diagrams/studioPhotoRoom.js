@@ -37,28 +37,85 @@ export function createPhotoRoom(config,map){
  return room;
 }
 
+const patchVertex=`varying vec2 vWorldPos;varying vec2 vUv;void main(){vUv=uv;vec4 worldPos=modelMatrix*vec4(position,1.0);vWorldPos=worldPos.xy;gl_Position=projectionMatrix*viewMatrix*worldPos;}`;
+const patchFragment=`uniform sampler2D roomMap;uniform vec4 winRect;uniform vec4 patchBounds;uniform vec4 wallUvRect;varying vec2 vWorldPos;varying vec2 vUv;
+void main(){
+ vec2 p=vWorldPos;vec2 winLo=winRect.xy,winHi=winRect.xy+winRect.zw;
+ if(p.x>=winLo.x&&p.x<=winHi.x&&p.y>=winLo.y&&p.y<=winHi.y) discard;
+ vec2 pLo=patchBounds.xy,pHi=patchBounds.xy+patchBounds.zw;
+ float edgeDistX=min(p.x-pLo.x,pHi.x-p.x),edgeDistY=min(p.y-pLo.y,pHi.y-p.y);
+ float edgeDist=min(edgeDistX,edgeDistY),outerAlpha=smoothstep(0.0,0.08,edgeDist);
+ if(outerAlpha<=0.001) discard;
+ float tx=clamp((p.x-pLo.x)/(pHi.x-pLo.x),0.0,1.0),ty=clamp((pHi.y-p.y)/(pHi.y-pLo.y),0.0,1.0);
+ vec2 uvL=vec2(wallUvRect.x,mix(wallUvRect.y,wallUvRect.w,ty)),uvR=vec2(wallUvRect.z,mix(wallUvRect.y,wallUvRect.w,ty));
+ vec2 uvT=vec2(mix(wallUvRect.x,wallUvRect.z,tx),wallUvRect.y),uvB=vec2(mix(wallUvRect.x,wallUvRect.z,tx),wallUvRect.w);
+ vec3 cL=texture2D(roomMap,uvL).rgb,cR=texture2D(roomMap,uvR).rgb,cT=texture2D(roomMap,uvT).rgb,cB=texture2D(roomMap,uvB).rgb;
+ vec3 cTL=texture2D(roomMap,vec2(wallUvRect.x,wallUvRect.y)).rgb,cTR=texture2D(roomMap,vec2(wallUvRect.z,wallUvRect.y)).rgb;
+ vec3 cBL=texture2D(roomMap,vec2(wallUvRect.x,wallUvRect.w)).rgb,cBR=texture2D(roomMap,vec2(wallUvRect.z,wallUvRect.w)).rgb;
+ vec3 cHoriz=mix(cL,cR,tx),cVert=mix(cT,cB,ty),cCorners=mix(mix(cTL,cTR,tx),mix(cBL,cBR,tx),ty);
+ vec3 wallColor=clamp(cHoriz+cVert-cCorners,0.0,1.0);
+ float grain=(fract(sin(dot(p*260.0,vec2(12.9898,78.233)))*43758.5453)-0.5)*0.02;
+ wallColor=clamp(wallColor*(1.0+grain),0.0,1.0);
+ float dLeft=winLo.x-p.x,dRight=p.x-winHi.x,dBottom=winLo.y-p.y,dTop=p.y-winHi.y;
+ float inSpanX=smoothstep(winLo.x-0.005,winLo.x+0.02,p.x)*(1.0-smoothstep(winHi.x-0.02,winHi.x+0.005,p.x));
+ float inSpanY=smoothstep(winLo.y-0.005,winLo.y+0.02,p.y)*(1.0-smoothstep(winHi.y-0.02,winHi.y+0.005,p.y));
+ float headShadow=(dTop>0.0&&dTop<0.06)?smoothstep(0.06,0.0,dTop)*inSpanX:0.0;
+ float sideShadowL=(dLeft>0.0&&dLeft<0.05)?smoothstep(0.05,0.0,dLeft)*inSpanY:0.0;
+ float sideShadowR=(dRight>0.0&&dRight<0.05)?smoothstep(0.05,0.0,dRight)*inSpanY:0.0;
+ float innerRevealShadow=1.0-0.20*headShadow-0.12*max(sideShadowL,sideShadowR);
+ float sillContactShadow=1.0;
+ if(dBottom>0.0&&dBottom<0.07){float sillFactor=smoothstep(0.07,0.0,dBottom)*inSpanX;sillContactShadow=1.0-0.24*sillFactor;}
+ wallColor*=innerRevealShadow*sillContactShadow;
+ gl_FragColor=vec4(wallColor,outerAlpha);
+ #include <colorspace_fragment>
+}`;
+
 export function updatePhotoRoom(room,config,map,a){
  room.config=config;room.texture=map;room.plane.material.uniforms.roomMap.value=map;
  room.plane.material.uniforms.opening.value.set(config.opening.x,config.opening.y,config.opening.w,config.opening.h);
  const rect=config.opening,w=rect.w*room.width,h=rect.h*room.height,cx=(rect.x+rect.w/2-.5)*room.width,cy=(.5-rect.y-rect.h/2)*room.height;
- const fit=Math.min(w/a.width,h/a.height),fw=a.width*fit,fh=a.height*fit;
- // Match each deeper plane's perspective projection to the front wall image.
- const modelProjection=6.075/5.88,infillProjection=6.11/5.88;
+ const fw=a.width,fh=a.height;
  if(!a.photoRest)a.photoRest={position:a.root.position.clone(),scale:a.root.scale.clone()};
- a.root.scale.copy(a.photoRest.scale).multiplyScalar(fit*modelProjection*1.024);
- a.root.position.set(cx*modelProjection,cy*modelProjection-(a.base+a.height/2-a.photoRest.position.y)*fit*modelProjection*1.024,-.075);
- room.fit={x:cx-fw/2,y:cy-fh/2,w:fw,h:fh,scale:fit*modelProjection*1.024,infill:(w-fw)>.015||(h-fh)>.015,status:'PROVISIONAL'};
+ a.root.scale.copy(a.photoRest.scale);
+ const localCenterY=a.base+a.height/2-(a.photoRest?.position?.y||0);
+ a.root.position.set(cx,cy-localCenterY,-.075);
+ const needsInfill=(w-fw)>.015||(h-fh)>.015;
+ room.fit={x:cx-fw/2,y:cy-fh/2,w:fw,h:fh,scale:1.0,infill:needsInfill,status:'PROVISIONAL'};
  for(const n of [...room.infill.children]){room.infill.remove(n);disposeGroup(n);}
- const wall=new T.Color(`rgb(${config.wallColor.join(',')})`);
  room.matte.material.uniforms.hole.value.set(cx-w/2-.008,cy-h/2-.008,w+.016,h+.016);
- function panel(x,y,pw,ph){if(pw<.001||ph<.001)return;
-  const mat=new T.ShaderMaterial({uniforms:{wall:{value:wall.clone()}},vertexShader:vertex,fragmentShader:`uniform vec3 wall;varying vec2 vUv;void main(){float grain=fract(sin(dot(vUv,vec2(127.1,311.7)))*43758.5453)-.5;float contact=exp(-min(vUv.x,1.0-vUv.x)*40.0)*.05;gl_FragColor=vec4(wall*(1.0+grain*.02-contact),1.0);#include <colorspace_fragment>}`.replace(';#include',';\n#include'),toneMapped:false});
-  const n=new T.Mesh(new T.PlaneGeometry((pw+.012)*infillProjection,(ph+.022)*infillProjection),mat);n.position.set(x*infillProjection,y*infillProjection,-.11);n.name='Sampled_Plaster_Infill_PROVISIONAL';n.userData.role='photo-infill';room.infill.add(n);
+ if(needsInfill){
+  const padX = 0.22, padY = 0.25;
+  const patchW = Math.max(w + 2 * padX, fw + 0.04), patchH = Math.max(h + 2 * padY, fh + 0.04);
+  const minX = config.pixelRect ? config.pixelRect[0] : config.opening.x * config.width;
+  const minY = config.pixelRect ? config.pixelRect[1] : config.opening.y * config.height;
+  const pW = config.pixelRect ? config.pixelRect[2] : config.opening.w * config.width;
+  const pH = config.pixelRect ? config.pixelRect[3] : config.opening.h * config.height;
+  const maxX = minX + pW - 1, maxY = minY + pH - 1;
+  const uL = Math.max(0.005, (minX - 45) / config.width);
+  const uR = Math.min(0.995, (maxX + 45) / config.width);
+  const vT = Math.min(0.995, 1.0 - (minY - 35) / config.height);
+  const vB = Math.max(0.005, 1.0 - (maxY + 40) / config.height);
+  const patchMat=new T.ShaderMaterial({
+   uniforms:{
+    roomMap:{value:map},
+    winRect:{value:new T.Vector4(cx-fw/2,cy-fh/2,fw,fh)},
+    patchBounds:{value:new T.Vector4(cx-patchW/2,cy-patchH/2,patchW,patchH)},
+    wallUvRect:{value:new T.Vector4(uL,vT,uR,vB)}
+   },
+   vertexShader:patchVertex,
+   fragmentShader:patchFragment,
+   transparent:true,
+   depthWrite:true,
+   toneMapped:false
+  });
+  const patchMesh=new T.Mesh(new T.PlaneGeometry(patchW,patchH,16,16),patchMat);
+  patchMesh.position.set(cx,cy,.1205);
+  patchMesh.renderOrder=55;
+  patchMesh.name='Seamless_Sampled_Plaster_Patch';
+  patchMesh.userData.role='photo-infill';
+  patchMesh.raycast=()=>{};
+  room.infill.add(patchMesh);
  }
- const side=(w-fw)/2,band=(h-fh)/2;
- panel(cx-fw/2-side/2,cy,side,h);panel(cx+fw/2+side/2,cy,side,h);
- panel(cx,cy-fh/2-band/2,fw,band);panel(cx,cy+fh/2+band/2,fw,band);
- // Soft neutral contact veil on the lower inner reveal; no baked scenery.
  const shadow=new T.Mesh(new T.PlaneGeometry(fw,.055),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:'varying vec2 vUv;void main(){gl_FragColor=vec4(.12,.085,.055,.20*(1.0-vUv.y)*(1.0-vUv.y));}',transparent:true,depthWrite:false,toneMapped:false}));
  shadow.position.set(cx,cy-fh/2+.0275,-.045);shadow.name='Soft_Sill_Contact_Shadow';shadow.renderOrder=40;shadow.raycast=()=>{};room.infill.add(shadow);
  a.root.updateMatrixWorld(true);

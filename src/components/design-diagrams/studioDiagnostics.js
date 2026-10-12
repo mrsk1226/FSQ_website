@@ -1,9 +1,11 @@
 import * as T from 'three';
 import {inspectFrictionStays,frictionStayCollisions} from './studioFrictionStay.js';
+import {applyMotion} from './studioAssembly.js';
 import {OBB} from 'three/examples/jsm/math/OBB.js';
 // A conservative box test is evidence for the rectangular procedural bars only.
 // Recovered stepped profile boxes can yield false positives and require their Blender convex-part QA.
 export function inspectAssembly(a,installation){
+ a.motions?.forEach(m => applyMotion(m));
  a.root.updateMatrixWorld(true);const meshes=[],materials={};a.root.traverse(n=>{if(!n.isMesh)return;
  const slots=Array.isArray(n.material)?n.material:[n.material],m=slots[0];materials[n.name]={role:n.userData.role,name:m.name,color:m.color.toArray(),map:m.map?.image?.src||null,transmission:m.transmission,roughness:m.roughness,slots:slots.map(x=>({name:x.name,color:x.color.toArray(),roughness:x.roughness}))};
  meshes.push({name:n.name,role:n.userData.role,motion:n.userData.motionId||null,matrix:n.matrixWorld.toArray(),parent:n.parent.name});});
