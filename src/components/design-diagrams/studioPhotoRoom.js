@@ -31,7 +31,7 @@ export function createPhotoRoom(config,map){
  const plane=new T.Mesh(new T.PlaneGeometry(width,height),material);plane.name='Keyed_Photographic_Wall';plane.position.z=.12;plane.renderOrder=50;plane.raycast=()=>{};group.add(plane);
  const infill=new T.Group();infill.name='Photo_Aspect_Infill_PROVISIONAL';group.add(infill);
  // Contain the complete photo without allowing outdoor scenery into letterbox margins.
- const matte=new T.Mesh(new T.PlaneGeometry(40,30),new T.ShaderMaterial({uniforms:{hole:{value:new T.Vector4()},colour:{value:new T.Color('#c9bdaa')}},vertexShader:'varying vec2 point;void main(){point=position.xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying vec2 point;uniform vec4 hole;uniform vec3 colour;void main(){if(point.x>hole.x&&point.y>hole.y&&point.x<hole.x+hole.z&&point.y<hole.y+hole.w)discard;gl_FragColor=vec4(colour,1.0);\n#include <colorspace_fragment>\n}',toneMapped:false}));
+ const matte=new T.Mesh(new T.PlaneGeometry(40,30),new T.ShaderMaterial({uniforms:{hole:{value:new T.Vector4()},colour:{value:new T.Color('#c9bdaa')}},vertexShader:'varying vec2 point;void main(){point=(modelMatrix*vec4(position,1.0)).xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',fragmentShader:'varying vec2 point;uniform vec4 hole;uniform vec3 colour;void main(){if(point.x>hole.x&&point.y>hole.y&&point.x<hole.x+hole.z&&point.y<hole.y+hole.w)discard;gl_FragColor=vec4(colour,1.0);\n#include <colorspace_fragment>\n}',toneMapped:false}));
  matte.position.z=.119;matte.name='Stationary_Photo_Matte';matte.raycast=()=>{};group.add(matte);
  const room={group,plane,infill,matte,width,height,config,texture:map};
  return room;
@@ -70,55 +70,72 @@ void main(){
  #include <colorspace_fragment>
 }`;
 
-export function updatePhotoRoom(room,config,map,a){
+export function updatePhotoRoom(room,config,map,a,naturalScale=true){
  room.config=config;room.texture=map;room.plane.material.uniforms.roomMap.value=map;
  room.plane.material.uniforms.opening.value.set(config.opening.x,config.opening.y,config.opening.w,config.opening.h);
- const rect=config.opening,w=rect.w*room.width,h=rect.h*room.height,cx=(rect.x+rect.w/2-.5)*room.width,cy=(.5-rect.y-rect.h/2)*room.height;
  const fw=a.width,fh=a.height;
+ const baseOpenW=config.opening.w*8.0;
+ const baseOpenH=config.opening.h*(8.0*config.height/config.width);
+ const fitRatio=Math.max(fw/baseOpenW,fh/baseOpenH);
+ const roomScale=(naturalScale&&fitRatio<0.92)?Math.min(1.0,Math.max(0.42,fitRatio*1.22)):1.0;
+ room.scale=roomScale;
+ room.width=8.0*roomScale;
+ room.height=(8.0*config.height/config.width)*roomScale;
+ room.plane.scale.set(roomScale,roomScale,1.0);
+ const rect=config.opening,w=rect.w*room.width,h=rect.h*room.height,cx=(rect.x+rect.w/2-.5)*room.width,cy=(.5-rect.y-rect.h/2)*room.height;
  if(!a.photoRest)a.photoRest={position:a.root.position.clone(),scale:a.root.scale.clone()};
  a.root.scale.copy(a.photoRest.scale);
  const localCenterY=a.base+a.height/2-(a.photoRest?.position?.y||0);
  a.root.position.set(cx,cy-localCenterY,-.075);
- const needsInfill=(w-fw)>.015||(h-fh)>.015;
- room.fit={x:cx-fw/2,y:cy-fh/2,w:fw,h:fh,scale:1.0,infill:needsInfill,status:'PROVISIONAL'};
- for(const n of [...room.infill.children]){room.infill.remove(n);disposeGroup(n);}
- room.matte.material.uniforms.hole.value.set(cx-w/2-.008,cy-h/2-.008,w+.016,h+.016);
- if(needsInfill){
-  const padX = 0.22, padY = 0.25;
-  const patchW = Math.max(w + 2 * padX, fw + 0.04), patchH = Math.max(h + 2 * padY, fh + 0.04);
-  const minX = config.pixelRect ? config.pixelRect[0] : config.opening.x * config.width;
-  const minY = config.pixelRect ? config.pixelRect[1] : config.opening.y * config.height;
-  const pW = config.pixelRect ? config.pixelRect[2] : config.opening.w * config.width;
-  const pH = config.pixelRect ? config.pixelRect[3] : config.opening.h * config.height;
-  const maxX = minX + pW - 1, maxY = minY + pH - 1;
-  const uL = Math.max(0.005, (minX - 45) / config.width);
-  const uR = Math.min(0.995, (maxX + 45) / config.width);
-  const vT = Math.min(0.995, 1.0 - (minY - 35) / config.height);
-  const vB = Math.max(0.005, 1.0 - (maxY + 40) / config.height);
-  const patchMat=new T.ShaderMaterial({
-   uniforms:{
-    roomMap:{value:map},
-    winRect:{value:new T.Vector4(cx-fw/2,cy-fh/2,fw,fh)},
-    patchBounds:{value:new T.Vector4(cx-patchW/2,cy-patchH/2,patchW,patchH)},
-    wallUvRect:{value:new T.Vector4(uL,vT,uR,vB)}
-   },
-   vertexShader:patchVertex,
-   fragmentShader:patchFragment,
-   transparent:true,
-   depthWrite:true,
-   toneMapped:false
-  });
-  const patchMesh=new T.Mesh(new T.PlaneGeometry(patchW,patchH,16,16),patchMat);
-  patchMesh.position.set(cx,cy,.1205);
-  patchMesh.renderOrder=55;
-  patchMesh.name='Seamless_Sampled_Plaster_Patch';
-  patchMesh.userData.role='photo-infill';
-  patchMesh.raycast=()=>{};
-  room.infill.add(patchMesh);
- }
- const shadow=new T.Mesh(new T.PlaneGeometry(fw,.055),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:'varying vec2 vUv;void main(){gl_FragColor=vec4(.12,.085,.055,.20*(1.0-vUv.y)*(1.0-vUv.y));}',transparent:true,depthWrite:false,toneMapped:false}));
- shadow.position.set(cx,cy-fh/2+.0275,-.045);shadow.name='Soft_Sill_Contact_Shadow';shadow.renderOrder=40;shadow.raycast=()=>{};room.infill.add(shadow);
  a.root.updateMatrixWorld(true);
+ const frameDepth=(a.record?.type?.includes('sliding')||a.tracks)?.17:.07;
+ const zWindowFront=-.075-.04+frameDepth/2;
+ const zPatch=.1205;
+ const projScale=(6.0-zPatch)/(6.0-zWindowFront);
+ const cx_patch=cx*projScale,cy_patch=cy*projScale;
+ const w_patch=fw*projScale,h_patch=fh*projScale;
+ const overlap=.018;
+ const holeW=Math.max(.08,w_patch-2*overlap),holeH=Math.max(.08,h_patch-2*overlap);
+ const winLoX=cx_patch-holeW/2,winLoY=cy_patch-holeH/2;
+ room.fit={x:winLoX,y:winLoY,w:holeW,h:holeH,scale:roomScale,infill:true,status:'PROVISIONAL'};
+ for(const n of [...room.infill.children]){room.infill.remove(n);disposeGroup(n);}
+ room.matte.material.uniforms.hole.value.set(winLoX,winLoY,holeW,holeH);
+ if(config.wallColor){const [wr,wg,wb]=config.wallColor.map(v=>v/255);room.matte.material.uniforms.colour.value.setRGB(wr,wg,wb);}
+ const padX=0.35,padY=0.35;
+ const patchW=Math.max(w,w_patch)+2*padX,patchH=Math.max(h,h_patch)+2*padY;
+ const patchCenterX=(cx+cx_patch)/2,patchCenterY=(cy+cy_patch)/2;
+ const pLoX=patchCenterX-patchW/2,pLoY=patchCenterY-patchH/2;
+ const minX=config.pixelRect?config.pixelRect[0]:config.opening.x*config.width;
+ const minY=config.pixelRect?config.pixelRect[1]:config.opening.y*config.height;
+ const pW=config.pixelRect?config.pixelRect[2]:config.opening.w*config.width;
+ const pH=config.pixelRect?config.pixelRect[3]:config.opening.h*config.height;
+ const maxX=minX+pW-1,maxY=minY+pH-1;
+ const uL=Math.max(.005,(minX-45)/config.width);
+ const uR=Math.min(.995,(maxX+45)/config.width);
+ const vT=Math.min(.995,1.0-(minY-35)/config.height);
+ const vB=Math.max(.005,1.0-(maxY+40)/config.height);
+ const patchMat=new T.ShaderMaterial({
+  uniforms:{
+   roomMap:{value:map},
+   winRect:{value:new T.Vector4(winLoX,winLoY,holeW,holeH)},
+   patchBounds:{value:new T.Vector4(pLoX,pLoY,patchW,patchH)},
+   wallUvRect:{value:new T.Vector4(uL,vT,uR,vB)}
+  },
+  vertexShader:patchVertex,
+  fragmentShader:patchFragment,
+  transparent:true,
+  depthWrite:true,
+  toneMapped:false
+ });
+ const patchMesh=new T.Mesh(new T.PlaneGeometry(patchW,patchH,16,16),patchMat);
+ patchMesh.position.set(patchCenterX,patchCenterY,.1205);
+ patchMesh.renderOrder=55;
+ patchMesh.name='Seamless_Sampled_Plaster_Patch';
+ patchMesh.userData.role='photo-infill';
+ patchMesh.raycast=()=>{};
+ room.infill.add(patchMesh);
+ const shadow=new T.Mesh(new T.PlaneGeometry(w_patch,.055),new T.ShaderMaterial({vertexShader:vertex,fragmentShader:'varying vec2 vUv;void main(){gl_FragColor=vec4(.12,.085,.055,.20*(1.0-vUv.y)*(1.0-vUv.y));}',transparent:true,depthWrite:false,toneMapped:false}));
+ shadow.position.set(cx_patch,winLoY+.0275,-.045);shadow.name='Soft_Sill_Contact_Shadow';shadow.renderOrder=40;shadow.raycast=()=>{};room.infill.add(shadow);
 }
 
 export function restorePhotoAssembly(a){if(a?.photoRest){a.root.position.copy(a.photoRest.position);a.root.scale.copy(a.photoRest.scale);}}

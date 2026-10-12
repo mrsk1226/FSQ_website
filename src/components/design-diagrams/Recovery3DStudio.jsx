@@ -23,10 +23,10 @@ function texture(url){if(!textures.has(url)){const t=new T.TextureLoader().load(
 const scenery={ooty:'ooty_tea_estate.jpg',city:'modern_city_skyline.jpg',garden:'green_garden.jpg',hills:'hills_nature.jpg'};
 export default function Recovery3DStudio({product,windowType,design,finish,glass,state,viewMode,outdoorView,roomPreset}){
  const host=useRef(),r=useRef(),props=useRef();props.current={finish,glass,roomPreset,outdoorView,state};
- const [info,setInfo]=useState(null),[error,setError]=useState(''),[version,setVersion]=useState(0),[preset,setPreset]=useState('Interior'),[wallColor,setWallColor]=useState('#ded6c8'),[quality,setQuality]=useState('auto'),[detailsExpanded,setDetailsExpanded]=useState(false);
+ const [info,setInfo]=useState(null),[error,setError]=useState(''),[version,setVersion]=useState(0),[preset,setPreset]=useState('Interior'),[wallColor,setWallColor]=useState('#ded6c8'),[quality,setQuality]=useState('auto'),[detailsExpanded,setDetailsExpanded]=useState(false),[naturalScale,setNaturalScale]=useState(true);
  const record=resolveStudioRecord(product,windowType,design);
  const effectiveRoom=roomPreset==='smart'||!roomPreset?'photo-living':roomPreset;
- props.current.effectiveRoom=effectiveRoom;props.current.wallColor=wallColor;
+ props.current.effectiveRoom=effectiveRoom;props.current.wallColor=wallColor;props.current.naturalScale=naturalScale;
  const mark=()=>{const ctx=r.current;if(!ctx)return;ctx.dirty=true;if(ctx.assembly&&!ctx.photo){ctx.camera.position.y=T.MathUtils.clamp(ctx.camera.position.y,.25,Math.max(3.4,ctx.assembly.base+ctx.assembly.height+.45)-.15);ctx.camera.position.x=T.MathUtils.clamp(ctx.camera.position.x,-3.65,3.65);if(!ctx.exterior)ctx.camera.position.z=T.MathUtils.clamp(ctx.camera.position.z,.55,7.5);}};
  const setTarget=(m,p)=>{const linked=m.kind==='fold'?r.current.assembly.motions.filter(n=>n.kind==='fold'):[m];linked.forEach(n=>{if(!n.locked)n.target=p;});mark();};
  const switchMode=(m,mode)=>{if(m.current>.001){m.pendingMode=mode;m.pendingTarget=m.target;m.target=0;}else m.mode=mode;mark();};
@@ -49,7 +49,7 @@ export default function Recovery3DStudio({product,windowType,design,finish,glass
    if(r.current!==ctx||ctx.roomGeneration!==roomGeneration||ctx.assembly!==a)return;
    const map=texture(config.image),entering=!ctx.photo;
    if(entering){if(ctx.room){ctx.scene.remove(ctx.room);disposeGroup(ctx.room);}if(ctx.cameraInitialized)ctx.fallbackCamera={position:ctx.camera.position.clone(),target:ctx.controls.target.clone()};ctx.photo=createPhotoRoom(config,map);ctx.room=ctx.photo.group;ctx.scene.add(ctx.room);}
-   updatePhotoRoom(ctx.photo,config,map,a);configurePhotoCamera(ctx,entering);
+   updatePhotoRoom(ctx.photo,config,map,a,props.current.naturalScale);configurePhotoCamera(ctx,entering);
    if(entering&&ctx.savedPhotoCamera){ctx.camera.position.copy(ctx.savedPhotoCamera.position);ctx.controls.target.copy(ctx.savedPhotoCamera.target);ctx.controls.update();}
    ctx.cameraInitialized=true;
    const [wr,wg,wb]=config.wallColor.map(v=>v/255);
@@ -119,14 +119,14 @@ export default function Recovery3DStudio({product,windowType,design,finish,glass
  },[record?.id]);
  useEffect(()=>{applyAppearance();},[finish,glass,info]);
  useEffect(()=>{const ctx=r.current;if(ctx){ctx.quality=quality;ctx.resize();}},[quality]);
- useEffect(()=>{const ctx=r.current;if(ctx?.assembly)setRoom(ctx.assembly,effectiveRoom,wallColor).catch(e=>setError(e.message));},[effectiveRoom,wallColor]);
+ useEffect(()=>{const ctx=r.current;if(ctx?.assembly)setRoom(ctx.assembly,effectiveRoom,wallColor).catch(e=>setError(e.message));},[effectiveRoom,wallColor,naturalScale]);
  useEffect(()=>{const ctx=r.current;if(!ctx)return;const map=texture(`/textures/environments/${scenery[outdoorView]||scenery.ooty}`);if(!ctx.scenery){const mesh=new T.Mesh(new T.PlaneGeometry(150,84.375),new T.MeshBasicMaterial({map,side:T.DoubleSide,toneMapped:false}));mesh.position.set(0,3.5,-28);mesh.name='Stationary_Distant_Outdoor';ctx.scenery=mesh;ctx.scene.add(mesh);}else {ctx.scenery.material.map=map;ctx.scenery.material.needsUpdate=true;}mark();const timer=setTimeout(mark,1500);return()=>clearTimeout(timer);},[outdoorView]);
  useEffect(()=>{const a=r.current?.assembly;if(!a)return;for(const m of a.motions){const target=state==='open'||state==='turn'||state==='tilt'?1:state==='preview'?.25:0;if(target>0)m.locked=false;if(m.kind==='tilt'){switchMode(m,state==='tilt'?'tilt':'turn');if(m.pendingMode)m.pendingTarget=target;else m.target=target;}else m.target=target;}mark();setVersion(v=>v+1);},[state]);
  useEffect(()=>{if(info)camera(viewMode==='angle'?'3D Angle':'Elevation');},[viewMode]);
  const motions=r.current?.assembly?.motions||[];
  return <div className="recovery-studio" data-design-id={record?.id} data-load-status={error?'error':info?'ready':'loading'} style={{height:'100%',position:'relative',background:'#ece8df',borderRadius:14,overflow:'hidden'}}>
   <div ref={host} style={{height:'100%',width:'100%',touchAction:'none'}}/>
-  <div style={{position:'absolute',top:8,left:8,right:8,display:'flex',gap:4,flexWrap:'wrap'}}>{(isPhotoRoom(effectiveRoom)?['Interior','3D Angle','Hardware']:['Interior','Exterior','Elevation','3D Angle','Hardware']).map(n=><button key={n} onClick={()=>camera(n)} aria-pressed={preset===n}>{n}</button>)}<label style={{background:'white',padding:3,fontSize:11}}>Quality <select aria-label="3D quality" value={quality} onChange={e=>setQuality(e.target.value)}><option value="auto">Auto</option><option value="fast">Fast</option><option value="detail">Detail</option></select></label>{!isPhotoRoom(effectiveRoom)&&<label style={{background:'white',padding:3,fontSize:11}}>Wall <input aria-label="Wall comparison colour" type="color" value={wallColor} onChange={e=>setWallColor(e.target.value)}/></label>}</div>
+  <div style={{position:'absolute',top:8,left:8,right:8,display:'flex',gap:4,flexWrap:'wrap'}}>{(isPhotoRoom(effectiveRoom)?['Interior','3D Angle','Hardware']:['Interior','Exterior','Elevation','3D Angle','Hardware']).map(n=><button key={n} onClick={()=>camera(n)} aria-pressed={preset===n}>{n}</button>)}<label style={{background:'white',padding:3,fontSize:11}}>Quality <select aria-label="3D quality" value={quality} onChange={e=>setQuality(e.target.value)}><option value="auto">Auto</option><option value="fast">Fast</option><option value="detail">Detail</option></select></label>{isPhotoRoom(effectiveRoom)&&<label style={{background:'white',padding:'2px 6px',fontSize:11,display:'inline-flex',alignItems:'center',gap:4,borderRadius:4}}><input type="checkbox" aria-label="Natural room scale" checked={naturalScale} onChange={e=>setNaturalScale(e.target.checked)}/> Natural room scale</label>}{!isPhotoRoom(effectiveRoom)&&<label style={{background:'white',padding:3,fontSize:11}}>Wall <input aria-label="Wall comparison colour" type="color" value={wallColor} onChange={e=>setWallColor(e.target.value)}/></label>}</div>
   <div style={{position:'absolute',bottom:8,left:8,right:8,background:'rgba(255,255,255,.94)',backdropFilter:'blur(8px)',padding:'6px 12px',borderRadius:8,fontSize:11,zIndex:10,boxShadow:'0 2px 8px rgba(0,0,0,0.08)'}}>
    {error?<strong role="alert">{error}</strong>:!info?'Loading selected assembly…':<>
     <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:8,flexWrap:'wrap'}}>

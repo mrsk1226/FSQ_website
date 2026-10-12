@@ -62,7 +62,7 @@ function installJambStay(m,{width,bottom,front,frameFront,mountY,material}){
   const arm=mesh('Constant_Length_Flat_Arm',new T.BoxGeometry(length,.018,.0025));
   const pivot=mesh('Sash_Pivot',new T.CylinderGeometry(.006,.006,.005,24),m.node);pivot.rotation.x=Math.PI/2;
   const sliderShoe=mesh('Sash_Slider_Shoe',new T.BoxGeometry(.016,.022,.006),m.node);
-  const padDepth=z-front;
+  const padDepth=Math.min(.012,Math.max(.004,z-front));
   const pad=mesh('Sash_Pivot_Standoff',new T.BoxGeometry(.014,.014,padDepth),m.node);pad.userData.mountContact=true;
   m.stay={jamb:true,anchor,group,rail,shoe,foot,pad,rosette,sliderShoe,arm,pivot,pivotLocal,length,railStart,railEnd,sign,vertical:false,status:'PROVISIONAL',valid:true};
   updateJambStay(m);return m.stay;

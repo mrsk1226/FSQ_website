@@ -31,7 +31,7 @@ setTimeout(()=>{console.error('Catalogue audit timeout');process.exit(1);},90000
    await page.waitForFunction(id=>{const s=window.__FSQ_STUDIO__?.snapshot();return s?.id===id&&s.photo?.ready&&s.photo.room==='photo-living';},r.id);
    await page.locator('[data-load-status="ready"]').waitFor();
    await page.evaluate(async()=>{const {applyMotion}=await import('/src/components/design-diagrams/studioAssembly.js');const ctx=window.__FSQ_STUDIO__.ctx;ctx.assembly.motions.forEach(m=>{m.current=m.target=0;m.mode='turn';m.locked=false;applyMotion(m);});ctx.controls.target.set(0,0,0);ctx.camera.position.set(0,0,6);ctx.controls.update();ctx.dirty=true;});
-   if(capture>=0){await page.locator('.recovery-studio').scrollIntoViewIfNeeded();await page.waitForTimeout(600);const path=`${qa}/${r.id.replace(':','-')}-closed.png`;await page.locator('.recovery-studio').screenshot({path,timeout:60000});console.log(JSON.stringify({screenshot:path,id:r.id}));if(process.argv[capture+1].includes(',')){console.log('PAUSED_FOR_IMAGE_REVIEW');await new Promise(resolve=>{process.stdin.resume();process.stdin.once('data',()=>{process.stdin.pause();resolve();});});}continue;}
+   if(capture>=0){await page.locator('.recovery-studio').scrollIntoViewIfNeeded();await page.waitForTimeout(600);const path=`${qa}/${r.id.replace(':','-')}-closed.png`;await page.locator('.recovery-studio').screenshot({path,timeout:60000});console.log(JSON.stringify({screenshot:path,id:r.id}));continue;}
    result.geometry=await page.evaluate(async r=>{
     const T=await import('/node_modules/.vite/deps/three.js');
     const {OBB}=await import('/node_modules/three/examples/jsm/math/OBB.js');
