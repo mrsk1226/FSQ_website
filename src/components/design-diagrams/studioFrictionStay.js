@@ -4,6 +4,7 @@ import {OBB} from 'three/examples/jsm/math/OBB.js';
 // Photo-directed lower-rail stay. All dimensions and the slider mounting shoe
 // are PROVISIONAL: the photos do not establish a manufacturer hardware drawing.
 export function installFrictionStay(m, {width, height, sideX, bottom, front, frameFront, mountY, material}) {
+  if(m.kind!=='top')return installJambStay(m,{width,bottom,front,frameFront,mountY,material});
   const parent=m.node.parent, vertical=m.kind==='top',sign=vertical?1:m.left?1:-1;
   const reach=Math.min(width*.22,.22);
   const pivotLocal=new T.Vector3(vertical?sideX:sign*reach,bottom+.022,Math.max(front+.014,(frameFront??-.005)-m.node.position.z+.02));
@@ -37,9 +38,52 @@ export function installFrictionStay(m, {width, height, sideX, bottom, front, fra
   return m.stay;
 }
 
+// Photo-directed stationary lower-jamb cover. The constant-length arm drives a
+// pivot shoe in a sash-mounted channel: circle/line intersection in sash space.
+// The photographs establish placement and silhouette, not approved dimensions.
+function installJambStay(m,{width,bottom,front,frameFront,mountY,material}){
+  const sign=m.left?1:-1, parent=m.node.parent;
+  const y=Math.max(bottom+.024,(mountY??-Infinity)-m.node.position.y+.027);
+  const z=Math.max(front+.028,(frameFront??-.005)-m.node.position.z+.03);
+  const length=Math.max(Math.min(width*.25,.20),Math.abs(z)+.045);
+  const pivotLocal=new T.Vector3(sign*length,y,z);
+  const anchor=new T.Vector3(sign*.020,y,Math.max((frameFront??-.005)+.028,m.node.position.z+front+.026)).applyMatrix4(new T.Matrix4().makeTranslation(m.node.position.x,m.node.position.y,0));
+  const group=new T.Group();group.name=`${m.id}_Friction_Stay_PROVISIONAL`;parent.add(group);
+  const steel=material||new T.MeshStandardMaterial({name:'Friction_Stay_Brushed_Stainless_PROVISIONAL',color:0xbac2c8,metalness:.92,roughness:.38});
+  function mesh(name,geometry,owner=group){const n=new T.Mesh(geometry,steel);n.name=`${m.id}_Stay_${name}`;Object.assign(n.userData,{role:'friction-stay',status:'PROVISIONAL',motionId:m.id});n.castShadow=true;n.receiveShadow=true;owner.add(n);return n;}
+  // Channel kept within the lower sash rail. This is not a long fixed sill rail.
+  const railStart=-sign*.015,railEnd=sign*(length+.075);
+  const rail=mesh('Sash_Pivot_Channel',new T.BoxGeometry(Math.abs(railEnd-railStart),.006,.006),m.node);
+  rail.position.set((railStart+railEnd)/2,y-.015,z);
+  const rosette=mesh('Round_Jamb_Rosette',new T.CylinderGeometry(.018,.018,.004,32));rosette.rotation.x=Math.PI/2;rosette.position.copy(anchor);
+  const footDepth=Math.max(.004,anchor.z-(frameFront??-.005));
+  const foot=mesh('Jamb_Mount_Pad',new T.BoxGeometry(.018,.018,footDepth));foot.position.copy(anchor);foot.position.z-=footDepth/2;foot.userData.mountContact=true;
+  const shoe=mesh('Jamb_Rivet',new T.CylinderGeometry(.003,.003,.005,16));shoe.rotation.x=Math.PI/2;shoe.position.copy(anchor);shoe.position.z+=.003;
+  const arm=mesh('Constant_Length_Flat_Arm',new T.BoxGeometry(length,.018,.0025));
+  const pivot=mesh('Sash_Pivot',new T.CylinderGeometry(.006,.006,.005,24),m.node);pivot.rotation.x=Math.PI/2;
+  const sliderShoe=mesh('Sash_Slider_Shoe',new T.BoxGeometry(.016,.022,.006),m.node);
+  const padDepth=z-front;
+  const pad=mesh('Sash_Pivot_Standoff',new T.BoxGeometry(.014,.014,padDepth),m.node);pad.userData.mountContact=true;
+  m.stay={jamb:true,anchor,group,rail,shoe,foot,pad,rosette,sliderShoe,arm,pivot,pivotLocal,length,railStart,railEnd,sign,vertical:false,status:'PROVISIONAL',valid:true};
+  updateJambStay(m);return m.stay;
+}
+const jambLocal=new T.Vector3(),jambEnd=new T.Vector3(),jambInverse=new T.Matrix4();
+function updateJambStay(m){
+  const s=m.stay;m.node.updateMatrix();jambInverse.copy(m.node.matrix).invert();jambLocal.copy(s.anchor).applyMatrix4(jambInverse);
+  const d=s.length*s.length-(jambLocal.y-s.pivotLocal.y)**2-(jambLocal.z-s.pivotLocal.z)**2;
+  s.valid=d>=0;if(!s.valid)throw new Error(`PROVISIONAL jamb stay has insufficient travel: ${m.id}`);
+  s.pivotLocal.x=jambLocal.x+s.sign*Math.sqrt(d);
+  s.pivot.position.copy(s.pivotLocal);s.sliderShoe.position.copy(s.pivotLocal);s.sliderShoe.position.y-=.014;
+  s.pad.position.copy(s.pivotLocal);s.pad.position.z-=s.pad.geometry.parameters.depth/2;
+  jambEnd.copy(s.pivotLocal).applyMatrix4(m.node.matrix);
+  s.arm.position.copy(s.anchor).add(jambEnd).multiplyScalar(.5);
+  s.arm.quaternion.setFromUnitVectors(axis,direction.subVectors(jambEnd,s.anchor).normalize());
+}
+
 const point=new T.Vector3(),direction=new T.Vector3(),axis=new T.Vector3(1,0,0);
 export function updateFrictionStay(m){
   const s=m.stay;if(!s)return;
+  if(s.jamb){updateJambStay(m);return;}
   m.node.updateMatrix();point.copy(s.pivotLocal).applyMatrix4(m.node.matrix);
   // Circle (constant arm length about moving sash pivot) intersected with the
   // stationary X slider line. Keep the same branch throughout the swing.
@@ -59,8 +103,8 @@ export function inspectFrictionStays(a){
     const s=m.stay, mount=s.rosette.getWorldPosition(new T.Vector3()),pivot=s.pivot.getWorldPosition(new T.Vector3());
     const ends=[new T.Vector3(-s.length/2,0,0),new T.Vector3(s.length/2,0,0)].map(v=>s.arm.localToWorld(v));
     const error=Math.min(Math.max(ends[0].distanceTo(mount),ends[1].distanceTo(pivot)),Math.max(ends[1].distanceTo(mount),ends[0].distanceTo(pivot)));
-    const x=s.vertical?s.rosette.position.y:s.rosette.position.x,min=Math.min(s.railStart,s.railEnd),max=Math.max(s.railStart,s.railEnd);
-    return {id:m.id,status:s.status,attachmentError:error,lengthError:Math.abs(mount.distanceTo(pivot)-s.length),sliderOnTrack:x>=min&&x<=max,valid:s.valid,mount:mount.toArray(),pivot:pivot.toArray()};
+    const x=s.jamb?s.pivotLocal.x:s.vertical?s.rosette.position.y:s.rosette.position.x,min=Math.min(s.railStart,s.railEnd),max=Math.max(s.railStart,s.railEnd);
+    return {id:m.id,status:s.status,mountType:s.jamb?'stationary-jamb':'top-hung-side-track',mountError:s.jamb?s.rosette.position.distanceTo(s.anchor):0,attachmentError:error,lengthError:Math.abs(mount.distanceTo(pivot)-s.length),sliderOnTrack:x>=min&&x<=max,valid:s.valid,mount:mount.toArray(),pivot:pivot.toArray()};
   });
 }
 

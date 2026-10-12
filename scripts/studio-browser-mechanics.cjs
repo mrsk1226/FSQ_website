@@ -11,7 +11,7 @@ results.push({test:`${type}:${index}`,state:await page.evaluate(()=>window.__FSQ
 // Actual installed hardware attachment/clearance, independent operation, and material isolation.
 const stayResults=[];
 for(const [product,type,index] of [['upvc','casement',2],['upvc','casement',4],['aluminium','casement',2],['upvc','door-casement',0],['upvc','casement',23]]){
- await page.goto(`http://127.0.0.1:5173/#/products/window-studio?product=${product}&type=${type}&design=${index}`);await page.locator('[data-load-status="ready"]').waitFor();
+ await page.goto(`http://127.0.0.1:5173/#/products/window-studio?product=${product}&type=${type}&design=${index}&room=modern-bedroom`);await page.waitForFunction(({product,type,index})=>window.__FSQ_STUDIO__?.snapshot().id===`${product}-${type}:${index}`,{product,type,index});await page.locator('[data-load-status="ready"]').waitFor();
  const result=await page.evaluate(()=>{const api=window.__FSQ_STUDIO__,a=api.ctx.assembly,poses=[];
   for(const p of [0,.3,.6,1]){a.motions.forEach(m=>{m.current=m.target=p;});/* renderer loop applies transformations */poses.push(p);}
   return {id:a.record.id,expected:a.motions.filter(m=>['casement','top','recovered'].includes(m.kind)).length,poses};});
