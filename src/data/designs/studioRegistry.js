@@ -16,8 +16,8 @@ export const studioSystems=[...windowSystems,
 ];
 export const studioRecords=studioSystems.flatMap(system=>system.designs.map((design,index)=>({
  id:design.id || `${system.id}:${index}`,systemId:system.id,index,name:design.name,product:system.material,type:system.mechanismType,design,
- status:'PARTIAL_3D',source:system.id==='upvc-casement'&&index===4?'recovered-glb':'procedural',
- notes:'Catalogue layout implemented. Dimensions, profile sections, hardware and safe travel require approved manufacturer drawings and individual collision/visual validation.'
+ status:system.material==='aluminium'?'BLOCKED_BY_UNVERIFIED_SPEC':'PARTIAL_3D',source:system.id==='upvc-casement'&&index===4?'recovered-glb':'procedural',
+ notes:'Individually browser-tested catalogue layout, mitres, hardware presence, sampled motion and finish isolation. Dimensions and hardware remain provisional; photo perimeter defects remain. Aluminium uses generic slim sections pending Uniframe drawings.'
 })));
 export function resolveStudioRecord(product,type,design){
  return studioRecords.find(r=>r.product===product&&r.type===type&&r.design===design) ||

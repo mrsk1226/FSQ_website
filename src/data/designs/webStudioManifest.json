@@ -1,6 +1,6 @@
 {
   "studioVersion": "5.0.0-recovery-checkpoint",
-  "buildDate": "2026-10-10",
+  "buildDate": "2026-10-12",
   "framework": "React 18 + Vite + Three.js",
   "coordinateConvention": "Standard Three.js (Y is UP, X is RIGHT, +Z is ROOM INTERIOR, -Z is OUTDOORS)",
   "roomEnvironments": [
@@ -154,7 +154,9 @@
     "totalConfigurations": 78,
     "concepts": 3,
     "verified": 0,
-    "partial": 78,
+    "partial": 47,
+    "blocked": 31,
+    "partialConcepts": 3,
     "individuallyBrowserLayoutTested": 81,
     "status": "Historical blanket VERIFIED claims withdrawn. Browser layout evidence is not manufacturing or complete visual verification."
   },
@@ -168,7 +170,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -189,14 +191,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -210,7 +213,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -223,14 +226,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -244,7 +248,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -258,14 +262,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -279,7 +284,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -293,14 +298,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -314,7 +320,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "recovered-glb",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -332,14 +338,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "EXISTING_BLENDER_CONVEX_QA_NOT_FULL_BROWSER_REVALIDATION",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": null,
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -353,7 +360,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -370,14 +377,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -391,7 +399,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -409,14 +417,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -430,7 +439,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -448,14 +457,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -469,7 +479,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -486,14 +496,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -507,7 +518,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -529,14 +540,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -550,7 +562,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -582,14 +594,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -603,7 +616,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -624,14 +637,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -645,7 +659,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -667,14 +681,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -688,7 +703,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -710,14 +725,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -731,7 +747,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -752,14 +768,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -773,7 +790,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -791,14 +808,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -812,7 +830,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -836,14 +854,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -857,7 +876,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -885,14 +904,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -906,7 +926,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -938,14 +958,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -959,7 +980,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -976,14 +997,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -997,7 +1019,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -1036,14 +1058,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1057,7 +1080,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1088,14 +1111,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1109,7 +1133,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1134,14 +1158,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1155,7 +1180,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -1180,14 +1205,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1201,7 +1227,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -1235,14 +1261,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1256,7 +1283,7 @@
       "type": "casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1274,14 +1301,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1295,7 +1323,7 @@
       "type": "sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1313,14 +1341,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1334,7 +1363,7 @@
       "type": "sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1355,14 +1384,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1376,7 +1406,7 @@
       "type": "sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1402,14 +1432,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1423,7 +1454,7 @@
       "type": "sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1446,14 +1477,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1467,7 +1499,7 @@
       "type": "sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -1492,14 +1524,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1513,7 +1546,7 @@
       "type": "tilt-turn",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1528,14 +1561,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1549,7 +1583,7 @@
       "type": "tilt-turn",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1569,14 +1603,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1590,7 +1625,7 @@
       "type": "tilt-turn",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1608,14 +1643,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1629,7 +1665,7 @@
       "type": "tilt-turn",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1648,14 +1684,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1669,7 +1706,7 @@
       "type": "tilt-turn",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -1688,14 +1725,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1707,9 +1745,9 @@
       "name": "3-Pane Side Hung",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1730,14 +1768,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1749,9 +1788,9 @@
       "name": "Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1764,14 +1803,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1783,9 +1823,9 @@
       "name": "Single Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1799,14 +1839,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1818,9 +1859,9 @@
       "name": "Single Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1834,14 +1875,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1853,9 +1895,9 @@
       "name": "Double Side Hung",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1873,14 +1915,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1892,9 +1935,9 @@
       "name": "Fixed & Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1911,14 +1954,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1930,9 +1974,9 @@
       "name": "Twin Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1950,14 +1994,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -1969,9 +2014,9 @@
       "name": "Double French",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -1989,14 +2034,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2008,9 +2054,9 @@
       "name": "Left & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2027,14 +2073,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2046,9 +2093,9 @@
       "name": "Triple Open",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2070,14 +2117,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2089,9 +2137,9 @@
       "name": "Triple with Top Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2123,14 +2171,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2142,9 +2191,9 @@
       "name": "Left, Fixed, Right",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2165,14 +2214,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2184,9 +2234,9 @@
       "name": "Triple Left",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2208,14 +2258,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2227,9 +2278,9 @@
       "name": "Triple Alternate",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2251,14 +2302,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2270,9 +2322,9 @@
       "name": "Large 3-Pane",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2293,14 +2345,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2312,9 +2365,9 @@
       "name": "Top Hung & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2332,14 +2385,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2351,9 +2405,9 @@
       "name": "4-Pane Center Open",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2377,14 +2431,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2396,9 +2451,9 @@
       "name": "5-Pane Wide",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2426,14 +2481,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2445,9 +2501,9 @@
       "name": "6-Pane Extrawide",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2479,14 +2535,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2498,9 +2555,9 @@
       "name": "Door & Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2517,14 +2574,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2536,9 +2594,9 @@
       "name": "4-Pane Top Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2577,14 +2635,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2596,9 +2655,9 @@
       "name": "3-Pane Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2629,14 +2688,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2648,9 +2708,9 @@
       "name": "2-Pane Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2675,14 +2735,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2694,9 +2755,9 @@
       "name": "Top Hung Combinations",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2721,14 +2782,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2740,9 +2802,9 @@
       "name": "Triple Combination",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -2776,14 +2838,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2795,9 +2858,9 @@
       "name": "Single Bottom Fixed",
       "product": "aluminium",
       "type": "casement",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2815,14 +2878,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2834,9 +2898,9 @@
       "name": "2-Track 2-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2854,14 +2918,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2873,9 +2938,9 @@
       "name": "2-Track 3-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2896,14 +2961,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2915,9 +2981,9 @@
       "name": "2-Track 4-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2943,14 +3009,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -2962,9 +3029,9 @@
       "name": "3-Track 3-Panel",
       "product": "aluminium",
       "type": "sliding",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -2987,14 +3054,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3006,9 +3074,9 @@
       "name": "Sliding with Top Fixed",
       "product": "aluminium",
       "type": "sliding",
-      "status": "PARTIAL_3D",
+      "status": "BLOCKED_BY_UNVERIFIED_SPEC",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain. Generic slim aluminium sections require Uniframe extrusion drawings.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -3033,14 +3101,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3054,7 +3123,7 @@
       "type": "door-casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3068,14 +3137,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3089,7 +3159,7 @@
       "type": "door-casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3103,14 +3173,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3124,7 +3195,7 @@
       "type": "door-casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3142,14 +3213,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3163,7 +3235,7 @@
       "type": "door-casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3187,14 +3259,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3208,7 +3281,7 @@
       "type": "door-casement",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [
@@ -3233,14 +3306,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3254,7 +3328,7 @@
       "type": "door-sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3272,14 +3346,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3293,7 +3368,7 @@
       "type": "door-sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3311,14 +3386,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3332,7 +3408,7 @@
       "type": "door-sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3353,14 +3429,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3374,7 +3451,7 @@
       "type": "door-sliding",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3400,14 +3477,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3421,7 +3499,7 @@
       "type": "door-fold",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3446,14 +3524,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3467,7 +3546,7 @@
       "type": "door-fold",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": false,
       "panelLayout": {
         "top": [],
@@ -3497,14 +3576,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3518,7 +3598,7 @@
       "type": "bay-concepts",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": true,
       "panelLayout": {
         "top": [],
@@ -3537,14 +3617,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3558,7 +3639,7 @@
       "type": "bay-concepts",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": true,
       "panelLayout": {
         "top": [],
@@ -3583,14 +3664,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
@@ -3604,7 +3686,7 @@
       "type": "bay-concepts",
       "status": "PARTIAL_3D",
       "source": "procedural",
-      "notes": "Layout-specific preview implemented and individually checked where evidence records a pass. Manufacturer profile assignment, hardware and dimensions remain provisional.",
+      "notes": "Individually browser-tested by the current 81-record catalogue audit. Hardware and physical dimensions remain provisional; photo perimeter installation defects remain.",
       "concept": true,
       "panelLayout": {
         "top": [],
@@ -3635,14 +3717,15 @@
       },
       "dimensionSource": "2D catalogue proportions; metre conversion provisional",
       "validation": {
-        "layout": "BROWSER_LAYOUT_AND_MOTION_COUNT_PASS",
+        "currentAudit": "2026-10-12: individual browser checks passed; visual and manufacturer acceptance pending",
+        "layout": "CATALOGUE_SOURCE_VS_LOADED_BROWSER_PASS",
         "stationaryFrame": "BROWSER_PASS",
         "manufacturerSpec": "BLOCKED_BY_UNVERIFIED_SPEC",
-        "collision": "21_SAMPLED_PROFILE_BAR_OBB_PASS_HARDWARE_NOT_CERTIFIED",
+        "collision": "21_POSES_PER_SUPPORTED_MODE_ACTUAL_PROFILE_AND_STAY_OBB_PASS",
         "visual": "OWNER_ACCEPTANCE_PENDING"
       },
       "evidence": {
-        "catalogue": "Complete_Studio_Recovery/catalogue-browser-results.json",
+        "catalogue": "Complete_Studio_Recovery/catalogue-audit/catalogue.json",
         "geometry": "Complete_Studio_Recovery/geometry-21-samples.json",
         "limitations": "Endpoint and sampled bar checks do not certify hardware, flexible gaskets, manufacturer clearances, engineering accuracy or furnished-room realism."
       }
