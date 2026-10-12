@@ -308,7 +308,18 @@ export const WindowExperienceConfigurator = ({
           </p>
         </div>
 
-        <StudioDesignExplorer selectedId={`${activeSystemId}:${selectedDesignIdx}`} onSelect={r=>{if(r.product!==product)setSelectedFinish(r.product==='aluminium'?aluminiumFinishes[0]:upvcFinishes[0]);setProduct(r.product);setWindowType(r.type);setSelectedDesignIdx(r.index);setMechanismState('closed');}}/>
+        {import.meta.env.DEV && (
+          <StudioDesignExplorer
+            selectedId={`${activeSystemId}:${selectedDesignIdx}`}
+            onSelect={(r) => {
+              if (r.product !== product) setSelectedFinish(r.product === 'aluminium' ? aluminiumFinishes[0] : upvcFinishes[0]);
+              setProduct(r.product);
+              setWindowType(r.type);
+              setSelectedDesignIdx(r.index);
+              setMechanismState('closed');
+            }}
+          />
+        )}
 
         {/* ============================================================
            STUDIO CONTROLS BAR: Dropdowns (Product, Type, Design, Glass)
